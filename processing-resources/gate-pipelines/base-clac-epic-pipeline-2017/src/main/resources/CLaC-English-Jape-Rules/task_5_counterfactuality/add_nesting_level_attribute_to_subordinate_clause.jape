@@ -1,0 +1,53 @@
+/**
+* Project: Counterfactuality (SemEval Task 5 2020)
+* Created by: Nadia Sheikh
+* Created on: 2nd February 2020
+* Purpose: Adds nesting level attribute to Token
+* Development Notes:
+* Use Notes:
+*		
+*/
+
+Imports:{
+	import static gate.Utils.*;
+}
+
+Phase:SubordinationLevel
+Input:Token
+Options:control=all
+
+Rule: addSubordinationLevel
+(
+	{Token}
+):token
+--> 
+{
+	AnnotationSet tokenAnnotationSet = (gate.AnnotationSet)bindings.get("token");
+	Annotation tokenAnnotation =  (gate.Annotation)tokenAnnotationSet.iterator().next(); 
+
+	AnnotationSet subordinateClauses = (gate.AnnotationSet) getCoveringAnnotations(inputAS, tokenAnnotation,  "temp_subordinate_clause");
+	Integer nosOfSubordinateClauses = subordinateClauses.size();
+	if(nosOfSubordinateClauses == 0){
+				   tokenAnnotation.getFeatures().put("embedding_0", 1);
+				   tokenAnnotation.getFeatures().put("embedding_1", 0);
+				   tokenAnnotation.getFeatures().put("embedding_2", 0);
+				   tokenAnnotation.getFeatures().put("embedding_3", 0);
+	}else if(nosOfSubordinateClauses == 1){
+				   tokenAnnotation.getFeatures().put("embedding_0", 0);
+				   tokenAnnotation.getFeatures().put("embedding_1", 1);
+				   tokenAnnotation.getFeatures().put("embedding_2", 0);
+				   tokenAnnotation.getFeatures().put("embedding_3", 0);
+	}else if(nosOfSubordinateClauses == 2){
+				   tokenAnnotation.getFeatures().put("embedding_0", 0);
+				   tokenAnnotation.getFeatures().put("embedding_1", 1);
+				   tokenAnnotation.getFeatures().put("embedding_2", 1);
+				   tokenAnnotation.getFeatures().put("embedding_3", 0);
+	}else{
+				   tokenAnnotation.getFeatures().put("embedding_0", 0);
+				   tokenAnnotation.getFeatures().put("embedding_1", 1);
+				   tokenAnnotation.getFeatures().put("embedding_2", 1);
+				   tokenAnnotation.getFeatures().put("embedding_3", 1);
+	}
+		
+}
+

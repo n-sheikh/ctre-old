@@ -1,0 +1,49 @@
+Phase: Trigger
+Input: Lookup Token
+Options: control = appelt
+
+// Remove MPQA triggers with incorrect POS
+
+Rule: MPQAother
+(
+ { Lookup.majorType=="mpqa", Token, Lookup.pos1=="anypos" }
+):trigger
+    -->
+     :trigger.MPQATrigger = {
+        source = :trigger.Lookup.majorType
+        priorPolarity = :trigger.Lookup.priorpolarity
+        rule = MPQAother
+     }
+
+Rule: MPQAVB
+(
+ { Lookup.majorType=="mpqa", Token.category ==~ "VB.*", Lookup.pos1=="verb" }
+):trigger
+    -->
+     :trigger.MPQATrigger = {
+        source = :trigger.Lookup.majorType
+        priorPolarity = :trigger.Lookup.priorpolarity
+        rule = MPQAVB
+     }
+
+Rule: MPQANN
+(
+ { Lookup.majorType=="mpqa", Token.category ==~ "NN.*", Lookup.pos1=="noun" }
+):trigger
+    -->
+     :trigger.MPQATrigger = {
+        source = :trigger.Lookup.majorType
+        priorPolarity = :trigger.Lookup.priorpolarity
+        rule = MPQANN
+     }
+
+Rule: MPQAJJ
+(
+ { Lookup.majorType=="mpqa", Token.category ==~ "JJ.*", Lookup.pos1=="adj" }
+):trigger
+    -->
+     :trigger.MPQATrigger = {
+        source = :trigger.Lookup.majorType
+        priorPolarity = :trigger.Lookup.priorpolarity
+        rule = MPQAJJ
+     }

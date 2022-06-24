@@ -1,0 +1,251 @@
+index,text,label,agreement,num_votes,sample_set,0_arg0,0_arg1,0_sig0,0_sig1,0_sig2,1_arg0,1_arg1,1_sig0,1_sig1,1_sig2,2_arg0,2_arg1,2_sig0,2_sig1,2_sig2,3_arg0,3_arg1,3_sig0,3_sig1,3_sig2
+train_07_143,They said they would continue with the action until a concrete plan was in place .,1,1,2,train_07,52:80,10:45,46:51,:,:
+train_06_95,They protested against the Circle Inspector 's highhandedness .,1,1,2,train_06,15:61,0:14,:,:,:
+train_04_247,The decision was taken after hundreds of KSRP personnel and their family members staged a protest in Koramangala blocking traffic for more than eight hours on Wednesday .,1,1,3,train_04,29:112,0:22,:,:,:,29:112,113:168,113:121,:,:
+train_04_169,He said action would be taken against those found involved in attacks on vehicles .,1,0.666666667,3,train_04,30:81,8:29,:,:,:
+train_04_260,"Implats fired 17,200 workers after they refused to go back to their jobs .",1,1,3,train_04,35:72,0:28,:,:,:
+train_05_165,"Two protestors were shot dead , allegedly by police , on Monday during a service delivery protest .",1,1,2,train_05,71:97,0:63,:,:,:,45:97,0:29,42:44,:,:
+train_01_10,The farmworkers ' strike resumed on Tuesday when their demands were not met .,1,1,3,train_01,49:75,0:43,:,:,:
+train_07_85,"But as we work for the people , we obliged their request and released the men , ” said a Maoist leader who handed over the abducted to the tribal leaders .",1,1,2,train_07,7:29,32:77,4:6,:,:,32:56,61:77,:,:,:
+train_06_170,"Participating in the protest YSRC city convenor P.G. Narasimha Radav , city general secretary S. Noorullah Quadri , State joint secretary B. Zaheer Ahmad Khan and State Minority Cell secretary M. Saleem Basha said that only stringent punishment such as death sentence could act as a deterrent against such ‘ heinous crime ’ .",1,1,2,train_06,219:267,268:323,268:292,:,:
+train_09_B_20,“ Had the administration wanted it could have averted the incident .,1,1,2,train_09,6:31,32:66,2:5,:,:
+train_07_186,"In all , 58 persons were arrested for indulging in violence .",1,1,2,train_07,38:59,9:33,34:37,:,:
+train_04_113,"Following the protest , traffic on the highway was paralysed for some time .",1,1,2,train_04,10:21,24:74,0:9,:,:
+train_08_278,"If it does not act , the protests will continue . """,1,1,2,train_08,3:18,21:47,0:2,:,:
+train_01_84,Hartal supporters pelted stones at a KSRTC bus at Karamana injuring driver Babu .,1,1,3,train_01,0:58,59:79,59:67,:,:
+train_09_B_125,"RAMANATHAPURAM Man injured in clash March 29 , 2011 00:00 IST People block road traffic on NH 210 : One person was injured when a group of DMK men allegedly attacked him and some others at Sholandur near R.S. Mangalam on Monday .",1,1,2,train_09,128:227,100:122,:,:,:
+train_06_135,"Boycotting the classes and medical services , hundreds of junior doctors squatted at the hospital main building .",1,1,2,train_06,0:43,46:111,0:10,:,:
+train_08_211,`` We suspect that he pulled the trigger that killed Chika '' .,1,0.5,2,train_08,19:40,46:58,14:18,:,:
+train_07_15,Six protesters were injured in the firing .,1,0.5,2,train_07,31:41,0:27,:,:,:
+train_07_221,The LMC workers later protested by dumping garbage on the Hardoi road and blocking traffic .,1,1,2,train_07,0:31,35:90,32:34,:,:
+train_03_29,Seven people - four militants and three security personnel - were killed in the first two days of the battle .,1,0.666666667,3,train_03,76:108,0:72,:,:,:
+train_05_257,"The 60 - page charge sheet , filed by National Investigation Agency(NIA) on Saturday before a special court in New Delhi , details reconnaissance activities carried out by 50 - year-old Headley of the targets attacked by Lashker-e-Taiba(LeT) terrorists on November 26 , 2008 that left 166 people dead .",1,0.5,2,train_05,131:274,280:300,280:284,:,:
+train_06_216,Two men have been charged for their murders .,1,1,2,train_06,30:43,0:25,26:29,:,:
+train_06_248,"Partial in Singareni The Telangana NGOs State associate president , M. Sudhakar , who took part in the protest at the Collectorate , said the fears being expressed by employees and workers owed mainly to the moves of the government .",1,1,2,train_06,204:231,138:188,189:203,:,:
+train_02_259,""" The relay fast is a way of supporting Anna from Pune .",1,0.5,2,train_02,20:54,2:16,20:28,:,:
+train_09_B_24,"However , local villagers resisted the searches , saying there were no militants hiding there .",1,1,2,train_09,50:93,10:47,:,:,:
+train_02_62,Thackeray demanded the state postpone HSC exams in view of the strike .,1,1,2,train_02,59:69,0:47,48:58,:,:
+train_05_299,"ADILABAD : TRS condemns arrests March 11 , 2011 00:00 IST Telangana Rastra Samiti ( TRS ) on Thursday condemned arrests of Telangana protagonists from Adilabad district to foil the ‘ Million March ' .",1,1,2,train_05,169:198,58:168,169:171,:,:
+train_01_262,"Following the incident , the labourers went on a dharna and stopped work .",1,1,3,train_01,10:22,25:55,0:9,:,:,25:55,60:72,:,:,:
+train_01_153,The clash took place over use of the field .,1,1,3,train_01,26:42,0:20,21:25,:,:
+train_06_104,"On Monday , two people were killed , allegedly by police , during the protests .",1,0.5,2,train_06,37:78,12:34,37:49,:,:
+train_01_178,"Over 60,000 pupils were left stranded by the strike .",1,1,3,train_01,41:51,0:37,38:40,:,:
+train_01_83,Two bus drivers were hurt in the attacks .,1,0.666666667,3,train_01,29:40,0:25,:,:,:
+train_05_42,RDSC has held numerous agitations for restoration of night movement of trains .,1,1,2,train_05,38:77,0:33,34:37,:,:
+train_08_36,"In the melee , Ms. Rajakumari lost her consciousness .",1,0.5,2,train_08,3:12,15:52,:,:,:
+train_07_52,"On learning about the incident , the local police rushed to the spot .",1,1,2,train_07,3:30,33:68,0:2,:,:
+train_06_120,Lack of medical services because of the strike left several patients in agony .,1,1,2,train_06,36:46,0:24,25:35,:,:,0:24,47:77,47:51,:,:
+train_08_243,"Will the unprecedented protests embolden them to fight for their beliefs in future , or convince them that resistance to Beijing ’ s will is futile ?",1,1,2,train_08,5:31,32:147,88:96,32:40,:,59:82,32:54,55:58,:,:
+train_09_B_87,A bodyguard of Javed was killed in that attack .,1,1,2,train_09,35:46,0:31,:,:,:
+train_02_188,The bombing created panic among villagers .,1,1,3,train_02,0:11,12:41,12:19,:,:
+train_04_9,"The stone pelting resulted in injuries to about 12 security personnel , he said .",1,1,3,train_04,0:17,30:69,18:29,:,:
+train_04_243,About 120 PG students are on strike demanding payment of their stipend arrears .,1,1,3,train_04,36:78,0:35,36:45,:,:
+train_05_148,They then decided to call off the protest as the police had ceded to their demand .,1,1,2,train_05,45:81,0:41,42:44,:,:
+train_07_130,"He said some 200 protesters became violent , and traffic had to be diverted .",1,1,1,train_07,8:42,49:75,:,:,:
+train_05_171,"He said incidents of protest affected voting stations in areas including Mahikeng and Marikana in North West ; Malamulelele , Musina , Mogalakwena , and Northhampton , in Limpopo ; Bushbuckridge in Mpumalanaga ; Khayelitsha in the Western Cape ; Denver , George Koch , and Orange Farm in Gauteng ; Ethekwini and Jozini in KwaZulu-Natal ; Nelson Mandela Bay , Butterworth , and OR Tambo in the Eastern Cape ; Pampierstad in the Northern Cape ; and Maluti-a-Phofung in the Free State .",1,1,2,train_05,8:28,29:62,29:37,:,:
+train_08_182,"We will continue to boycott the work in all courts till the District Magistrate looks into our demands , ” Samal said .",1,1,2,train_08,56:102,0:50,51:55,:,:
+train_02_155,"Dissatisfied with the package , workers staged an all-nigh sit-in .",1,1,3,train_02,0:29,32:65,:,:,:
+train_02_109,"In 2009 , riots broke out in the capital , Urumqui , and in their wake , mass arrests were made and many Uyghurs were imprisoned or “ disappeared ” .",1,0.666666667,3,train_02,10:40,73:147,57:70,:,:
+train_08_122,Protestors had made the road completely impassable by adding more stones .,1,0.5,2,train_08,54:72,0:50,51:53,:,:
+train_09_A_129,"On July 28 , an argument between two shopkeepers had led to a communal flare-up .",1,1,3,train_09,13:48,60:79,53:59,:,:
+train_01_167,The government has blamed separatist forces from Xinjiang for the attack .,1,0.666666667,3,train_01,62:72,0:57,37:40,:,:
+train_06_76,Scuffles broke out around noon when police attempted to seize their banners .,1,1,2,train_06,36:75,0:30,:,:,:
+train_08_235,"“ I think independent film producers have the responsibility to document what mainstream media failed to report on. ” But on the eve of the protests ’ second anniversary , Chan claims all of Hong Kong ’ s major cinemas are refusing to show his film , the result , he suspects , of creeping self-censorship as businesses shy away from offending Beijing .",1,1,2,train_08,281:305,184:248,251:280,:,:,309:351,281:305,216:218,:,:
+train_08_128,"However , trade unions refused to accept it and continued their strike .",1,0.5,2,train_08,10:43,48:70,:,:,:
+train_04_323,"The strike has led losses worth Rs 10,000 crore per day to different stakeholders .",1,0.666666667,3,train_04,0:10,11:81,11:18,:,:
+train_05_305,"Irked over the arrests , the protestors staged dharna .",1,1,2,train_05,0:22,25:53,0:10,:,:
+train_07_11,Vehicles have also been used to commit attacks on civilians in Nice and Berlin .,1,0.5,2,train_07,29:78,0:28,29:31,:,:
+train_09_A_20,Her driver drove the SUV and hit him causing injuries to his hands and legs .,1,1,3,train_09,0:36,37:75,37:44,:,:
+train_09_A_100,Another person was arrested for setting fire to the councillor 's house .,1,0.666666667,3,train_09,32:71,0:27,28:31,:,:
+train_03_173,"On this day in 1956 around 20,000 women participated in a national march to protest against pass law legislation , which required non-white South Africans to carry a document on them to prove that they were allowed to enter `` white areas '' .",1,1,3,train_03,73:83,0:72,73:75,:,:,84:112,73:83,:,:,:,183:241,115:182,73:75,:,:
+train_02_41,A former state minister was also booked for inciting violence .,1,1,3,train_02,44:61,0:39,2:5,:,:
+train_07_124,This was to thwart economic well-being of the population .,1,1,2,train_07,9:56,0:4,9:11,:,:
+train_02_133,“ Suddenly the situation flared up and the vehicle was vandalised .,1,0.666666667,3,train_02,2:34,39:65,:,:,:
+train_01_104,The violence in Yuen Long has heightened tensions and fears of further attacks .,1,0.666666667,3,train_01,0:25,30:78,30:40,:,:
+train_01_124,Two more youths were arrested later for allegedly being involved in the blast .,1,1,3,train_01,40:77,0:35,36:39,:,:
+train_08_180,The lawyers are on a strike since Thursday after the incident .,1,1,2,train_08,49:61,0:42,:,:,:
+train_02_0,The blockade was lifted following an assurance from ADM Debraj Senapati and the additional SP J. Mahapatra to apprise the State Government of their demand .,1,1,3,train_02,34:106,0:23,24:33,:,:,107:154,0:23,107:109,:,:
+train_06_249,The protesters raised slogans against the government .,1,0.5,2,train_06,30:52,0:29,:,:,:
+train_06_283,"As the violence spread , the curfew was later extended to eight more localities .",1,1,2,train_06,3:22,25:79,0:2,:,:
+train_07_125,“ They blocked access to the villages by cutting down trees .,1,1,2,train_07,41:59,2:37,38:40,:,:
+train_02_177,Three people were killed and 69 others injured in the explosion .,1,0.666666667,3,train_02,50:63,0:46,:,:,:
+train_09_B_1,Night halt services to remote villages were suspended following the bandh call .,1,1,2,train_09,64:78,0:53,54:63,:,:
+train_03_291,The incident triggered outrage across the country and was condemned as despicable and shameful stirring memories of a similar attack last December in New Delhi that sparked nationwide protests .,1,1,3,train_03,0:12,13:192,13:22,58:67,95:103,116:159,165:192,160:172,:,:
+train_02_222,The clash left at least three students injured .,1,1,3,train_02,0:9,10:46,10:14,:,:
+train_02_36,Lawyers convinced them to accept bail to continue their campaign .,1,1,3,train_02,38:64,0:37,23:25,:,:
+train_01_246,"Search is on to trace and recover the abducted people , "" he said .",1,1,3,train_01,13:53,0:12,13:15,:,:
+train_09_A_99,Police arrested two women for allegedly looting the business that was set alight .,1,0.666666667,3,train_09,30:80,0:25,26:29,:,:
+train_02_180,Students and teachers of physical education relaunched their protest against the appointment of general teachers for physical education work in schools .,1,0.666666667,3,train_02,69:151,0:68,:,:,:
+train_01_211,"Sena legislators protest against Yedyurappa 01st April 2010 10:08 PM MUMBAI : Shiv Sena workers , including some legislators , today staged demonstrations against Karnataka Chief Minister B S Yeddyurappa here , protesting the ' forcible installation ' of a Kannadiga mayor in Marathi-dominated Belgaum city .",1,0.666666667,3,train_01,211:306,78:208,211:221,:,:,155:203,78:154,:,:,:
+train_02_26,The clashes erupted after a youth belonging to a minority Muslim sect was allegedly severely injured in a thrashing by a youth from the majority sect following an altercation .,1,1,3,train_02,26:149,0:19,:,:,:,160:174,26:149,150:159,:,:
+train_09_B_121,"DA MP Andrew Whitfield said he would ask police commissioner General Khehla Sitole to activate the National Joint Operations and Intelligence Structure ( Natjoints ) to intervene to curb violence , protect infrastructure and prevent further damage to the economy arising out of events such as looting , attacks on foreign nationals and the torching of trucks in an ongoing labour protest .",1,1,2,train_09,83:165,28:82,78:80,:,:,166:178,83:165,78:80,:,:,179:262,166:178,78:80,:,:,278:387,241:262,263:277,:,:
+train_05_135,They vowed to keep demonstrating until Khanyile was released on bail .,1,1,2,train_05,39:68,0:32,33:38,:,:
+train_07_156,The attacks resulted in over 250 deaths and injuries to more than 700 people .,1,0.5,2,train_07,0:11,24:76,12:23,:,:
+train_09_A_130,"As the Muslims and tribals clashed , eight people were injured in police firing .",1,0.666666667,3,train_09,66:79,37:62,:,:,:,3:34,66:79,0:2,:,:
+train_07_240,The fifth year students of Integrated Pharmaceutical Chemistry ( IPC ) have been protesting since 13 days demanding division of IPC from Chemistry department .,1,1,2,train_07,106:157,0:105,106:115,:,:
+train_03_59,"If an agreement was not reached the protests would continue , Gumede said .",1,1,3,train_03,3:31,32:59,0:2,:,:
+train_02_88,It has organised a political convention to mobilise support to secular forces .,1,1,3,train_02,40:77,0:39,40:42,:,:
+train_05_124,“ We will continue our strike till we get an assurance from the Government .,1,1,2,train_05,35:74,2:29,30:34,:,:
+train_06_102,The arrests came after residents took to the streets and barricaded roads .,1,1,2,train_06,23:73,0:16,:,:,:
+train_09_B_108,""" Three terrorists have been killed in this gunfight , which is still going on .",1,1,2,train_09,39:52,2:35,:,:,:
+train_07_239,"But Nithin would continue his hunger strike by not eating anything , he added .",1,0.5,2,train_07,47:66,4:43,44:46,:,:
+train_01_17,The attack on Karayogams had sparked sharp reactions from the CPM leaders .,1,0.666666667,3,train_01,0:24,25:73,29:36,:,:
+train_05_249,"Around 30,000 truck drivers countrywide began striking for better pay on Tuesday .",1,1,2,train_05,59:80,0:54,55:58,:,:
+train_03_6,There was a shutdown in various towns in Jammu regions against the incident .,1,0.666666667,3,train_03,55:75,0:54,:,:,:
+train_05_274,Heavy police presence was seen in the area due to the protest .,1,1,2,train_05,50:61,0:42,43:49,:,:
+train_07_64,The four inmates who held her hostage were arrested .,1,0.5,2,train_07,0:37,43:51,:,:,:
+train_06_286,The Cheriyathura clash was the outcome of a petty scuffle between two sections .,1,1,2,train_06,23:78,0:22,23:41,:,:
+train_06_231,The DGP said steps have been taken to prevent the escalation of violence .,1,1,2,train_06,35:72,13:34,:,:,:
+train_02_32,"CPI activists staged a road blockade in Mahbubnagar district , demanding the legislator 's arrest and a compensation of Rs .1 million to the family of the deceased .",1,0.666666667,3,train_02
+train_04_128,TDP MLAs led by the party president N. Chandrababu Naidu staged a protest at Gun Park in front of the Assembly against the government 's inability in stopping construction of projects by the neighbouring States .,1,0.666666667,3,train_04
+train_07_260,In its letter -- released to the media -- the Group of 63 calls for the underlying causes of these actions to be examined and addressed .,0,0.5,2,train_07
+train_01_114,"Some hotheads tried to gatecrash , provoking the policemen into action  they charged ferociously , dispersing the crowd within minutes .",1,0.666666667,3,train_01
+train_05_187,The police charged Mr. Chandrashekhar with instigating violence on May 9 under various IPC sections .,1,1,2,train_05
+train_02_18,The traffic on Rohtak-Jhajjar highway remained disrupted prompting police to divert vehicles to other routes .,1,1,3,train_02
+train_08_7,"While the management agreed to take back all the employees who were given the sack after their participated in the strike , representatives of employees agreed to report for duty on Friday morning .",1,0.5,2,train_08
+train_06_37,"After the Chief Minister was briefed about the incident , she was mobbed by the residents and had to listen to the acute power problem in the area .",1,0.5,2,train_06
+train_08_189,"Between 11 p.m. and 12 midnight , they set fire to the tower in the Kutumba police station area .",0,1,2,train_08
+train_09_B_118,"Maoists force Centre to revisit CRPF deployment 01st July 2010 03:56 AM NEW DELHI : Unnerved by another instance of sudden ambush and massacre of Central Reserve Police Force personnel by Maoists , the Centre on Wednesday gave hint of enacting a tactical retreat from Naxal strongholds like Dantewada and Narayanpur in Chhattisgarh , camouflaging it as ‘ revisiting deployment ’ .",1,0.5,2,train_09
+train_03_323,"“ Our students are smart enough to understand that exams are crucial and they ca n't boycott them every time , ” says B. Laxmaiah , OSD to Vice-Chancellor and who has dealt with students carefully at the peak of agitation as Dean of Students ' Welfare .",0,1,3,train_03
+train_05_54,"On Thursday , Phatsha told the commission that he did not consider disarming because this did not occur to him when police Nyalas ( armoured vehicles ) started deploying barbed wire at the hill where the strikers had assembled .",1,1,2,train_05
+train_01_109,"Hailey Leung , a university student who has been attending the protests this summer , said : “ The fear of the gangs is definitely stronger than the fear of the use of violence of the police. ” Her parents have been supportive of the protests but , since the violence in Yuen Long , they have asked her not to attend .",1,0.666666667,3,train_01
+train_06_172,This is the second time in two weeks the veterans have staged demonstrations outside the minister ’ s official residence .,0,1,2,train_06
+train_03_244,It found that the police were not suitably equipped to quell public disorder during the protest and had failed to devise a plan to regulate and monitor the protest .,0,1,3,train_03
+train_02_132,Locals said the attack was triggered when a “ vehicle of the security forces ” could not pass because of the rally and the jawans got into an “ altercation ” with some people in the gathering .,1,0.666666667,3,train_02
+train_08_135,"Speaking on the occasion , he said Sonia Gandhi has no interest in according statehood to Telangana .",0,0.5,2,train_08
+train_03_271,"But educational institutions , some of whom have declared holiday , remained closed entirely .",0,1,3,train_03
+train_07_142,About 200 members of the Treatment Action Campaign ( TAC ) protested outside the hospital and like the families they want answers .,1,0.5,2,train_07
+train_04_216,Shops in the area were also shut down .,0,1,3,train_04
+train_05_199,"To prepare ground for such a move , the state government had earlier sought reports from the district magistrates of Lucknow , Faizabad , Gorakhpur , Varanasi and Rampur , asking if there was sufficient evidence to prosecute suspects in the serial blasts and other terror attacks in the state .",1,1,2,train_05
+train_04_310,Police said a poster was first found on the walls of Gagandhuli Seva Samabaya Samiti ( co-operative society ) which was vandalised by some miscreants who had claimed themselves to be Maoists in the poster .,0,1,3,train_04
+train_06_19,"Maoist banners found 10th April 2011 05:14 AM KORAPUT : MAOIST banners were found near the District Primary Education Project ( DPEP ) office today in which the ultras threatened to kill Shikhya Sahayak candidates , outsiders to the district , who have been selected to join the service here .",0,0.5,2,train_06
+train_09_A_19,Yadav also alleged that Pradhan beat him when he was raising slogansin front of Khurshid 's vehicle .,0,1,3,train_09
+train_02_234,Strike-related events in Marikana in August last year didn ’ t necessarily have an impact on the rise .,0,0.666666667,3,train_02
+train_07_21,"In Friday 's memorandum , the Health and Other Service Personnel Trade Union ( Hospersa ) accused the department of denying cancer patients treatment , '' causing some of them to move from being treatable to terminal '' .",1,0.5,2,train_07
+train_03_184,Efforts to persuade the farmers to relent failed to yield result and the irate farmers continued their protest till late in the evening .,1,1,3,train_03
+train_06_205,"A section of Jet technicians started a ' symbolic ' protest by wearing black bands last Friday to protest the "" management 's proposed move to freeze wage hike over the next 2 -3 years "" , sources among the agitators said here .",1,1,2,train_06
+train_01_210,"`` We do not know about the strike , if we called for a strike we could have informed commuters , '' said president Philip Taaibosch .",1,1,3,train_01
+train_03_169,"As the violence mounted , the police hurled teargas shells and grenades at the mob .",0,0.666666667,3,train_03
+train_02_199,"Unique protest against FDI in retail - Indian Express Agencies , Agencies : New Delhi , Wed Nov 28 2012 , 14:05 hrs It was a protest with a difference where senior BJP leader Murli Manohar Joshi today joined traders in blowing horns to drive home a message that the government has become "" deaf and dumb "" to voices against FDI .",0,0.666666667,3,train_02
+train_08_105,"The incident was followed by a similar one in the same area around 8pm on Friday , where police again used rubber bullets .",0,0.5,2,train_08
+train_09_B_43,"During the entire impasse , Mallya did not come in the forefront and the negotiations were carried out by top officials of the airline and the UB Group , leading employees to demand his presence .",1,0.5,2,train_09
+train_06_158,"Another minister and legislator from Gadwal , DK Aruna , whose father C Narsi Reddy ( the then Congress MLA ) was brutally killed by Maoists in Mahaboobnagar district , is also playing a key rule lobbying with the Congress high command for formation of Telangana State .",0,0.5,2,train_06
+train_05_160,The agitating activists attacked the ruling party office to register their protest against the delay in categorisation of SCs .,1,1,2,train_05
+train_06_117,"Junior Docs Threaten to Intensify Agitation 06th October 2014 06:05 AM HYDERABAD : Junior doctors of government medical colleges in Telangana are showing no sings of calling off their indefinite strike , with the government paying no heed to their demands .",1,1,2,train_06
+train_07_159,"Sainath Metri , taluk panchayat member ; Pandurang , Yeshwant Datekar , Mahadev Kumtekar and Narayan Govekar , leaders of fishermen who led the agitation , told presspersons that the officials would forget the development of road after the inauguration of the bridge .",0,0.5,2,train_07
+train_04_4,"“ In fact , a majority of the students were in favour of keeping the agitation and exams on different platforms .",0,1,3,train_04
+train_02_125,"Ignoring warnings that any gathering would be illegal , they started congregating near the provincial government headquarters at about 10 am despite a heavy police presence .",0,0.666666667,3,train_02
+train_09_A_133,"Salwa Judum founder escapes attack 09th November 2012 09:33 AM Former MP and founder of Salwa Judum in Chhattisgarh , Mahendra Karma , had a narrow escape on Thursday when Naxals blew up his bullet-proof vehicle after triggering a landmine blast at Bhogam , about 20 kms from Dantewada district headquarters .",1,0.666666667,3,train_09
+train_03_16,The decision was taken following a demonstration staged by a group of persons who are natives of Salem and have registered with the District Employment Office ( DEO ) for the same post .,1,1,3,train_03
+train_03_84,Mbeki continued with his speech during the chaos and it soon died down .,0,1,3,train_03
+train_08_152,"She told Special Judge R Narayana Pisharadi that CPM Onchiyam area secretary C H Asokan , area committee member K K Krishnan and Kunnummakkara local committee member K C Ramachandran had taken out a march in front of their house at Onchiyam raising the slogan “ Chandrasekharan ’ s body would be draped in white cloth . ” On May 4 , 2012 , the day on which he was murdered , Chandrasekharan left home around 12.30 pm .",0,0.5,2,train_08
+train_05_181,Traffic was held up for an hour following rasta roko by students who were literally dragged away by police and SRP personnel and whisked away to Azad Maidan police station in police vans .,1,1,2,train_05
+train_08_153,"She came to know that he was killed at Vallikadu , only when her father and mother reached their home around 1 am on May 5 , 2012 , added Rema .",0,0.5,2,train_08
+train_05_263,"The division bench of Bombay High Court comprising justices Ranjana Desai and R V More while dismissing the plea of state government earlier this year had said "" we are of the view that the view taken by learned Sessions Judge so far as involvement of the duo in this case is concerned , cannot be called unreasonable , palpably false , manifestly erroneous and demonstratively unsustainable which merits our interference . "" The High court concurred with the view taken by Sessions Judge that the map recovered from killed terrorist pocket should have some wrinkles on it and blood spots as the LeT terrorist was badly injured in the gun-fight .",1,1,2,train_05
+train_09_B_93,Earlier Mr. Vijayan visited the houses of slain CPI(M) workers M.K. Sudheer and Pavithran .,0,1,2,train_09
+train_07_40,They were targeting anyone with a camera .,0,0.5,2,train_07
+train_08_99,"Eyewitness said three rebels armed with sophisticated weapons arrived near the Shiva temple in a motorcycle and fired point blank at 38 - year-old contractor Budra Dhangda Majhi , killing him on the spot .",1,0.5,2,train_08
+train_01_133,Bandhopadhay also said two Trinamool Congress workers were killed at Sashan in North 24 Parganas district recently .,0,0.666666667,3,train_01
+train_04_186,"Prof. Ratnam , who was one of the faculty members who got arrested during the unrest in UoH on March 22 , rejected Justice Roopanwal Commission report that declared Rohith Vemula non-Dalit .",0,1,3,train_04
+train_03_185,"The strike at Anglo American Platinum ( Amplats ) in Rustenburg will continue , the Rustenburg strike co-ordinating committee said on Monday .",0,1,3,train_03
+train_08_50,"An effigy of Tamil Nadu Congress Committee president , K.V. Thangakabalu was burnt near the Mariamman Teppakulam near here by three cadres of the peravai , the police said .",0,0.5,2,train_08
+train_04_87,"Victims Recall Trauma , Want Peace at All Cost 31st August 2015 04:57 AM VILLUPURAM : Two weeks after the caste clash , people of Sethusamudram village said they still could not come to terms with the trauma that rocked the village on Independence Day .",0,1,3,train_04
+train_09_B_46,"When quizzed about the alleged police intimidation most of those who submitted claimed off-record that they had been individually helped by the police during riots and that yesterday , some officers did call them up and ask them to depose in their favour .",1,1,2,train_09
+train_09_A_36,"Activists of the hardline Hindu outfit also staged a protest outside Jyoti Talkies in Bhopal where the film , which has grossed over Rs .200 crore within days of its release , was being screened .",0,1,3,train_09
+train_04_184,Gandhi and others also visited the hospital where the two monks injured in the blasts are being treated .,0,1,3,train_04
+train_09_A_93,"However , the absence of senior Trinamool Congress leaders during the agitation prompted opposition parties to raise fingers at "" TMC 's internal feud that led to the incident "" .",1,1,3,train_09
+train_01_254,"Addressing the gathering , Mr. Babumohan said that the party was committed to the cause of the farmers .",0,0.666666667,3,train_01
+train_04_219,EFF supporters accused ANC supporters of beating them .,0,1,3,train_04
+train_06_212,`` We are very concerned with the killing of our comrades .,0,0.5,2,train_06
+train_08_299,"A policeman was killed and several others were wounded in a lengthy gun battle with Maoists at Pollampalli , some 500 km south from Raipur .",1,1,2,train_08
+train_01_108,"In Yuen Long , Chung and other protesters are demanding the government conducts an independent investigation and officially characterises the violence as a “ cross-border terrorist attack ” .",0,0.666666667,3,train_01
+train_09_A_73,He denied that the men had attended any meetings where Chika 's murder was discussed .,0,1,3,train_09
+train_03_279,"KRISHNAGIRI : Call to shun all forms of violence against women December 13 , 2012 00:00 IST Over 300 people form human chain in Krishnagiri Over 300 people , including a sub judge , professors and college students , formed a human chain in Krishnagiri on Wednesday to shun all forms of violence against women .",1,1,3,train_03
+train_09_A_131,It was only after Katarias weekend visit to his constituency that the tribals gave up their nightlong vigil on the hilltops and shopkeepers agreed to open the market .,1,0.666666667,3,train_09
+train_02_184,"Students under the banner of the Students Federation of India ( SFI ) , Kerala Students Union ( KSU ) , and Muslim Students Federation ( MSF ) expressed solidarity with the protesting students and teachers .",0,1,3,train_02
+train_03_98,Tension gripped the city following the blasts and a red alert was sounded at all installations .,1,1,3,train_03
+train_05_288,Police injured in stone pelting 29th January 2012 01:34 AM JCBs being pressed into service in the road widening drive at Kolar on Saturday | Express Photo KOLAR : Tension prevailed at Ammavarpet in the city after protestors pelted stones at police who accompanied officials in a road-widening drive on Saturday .,1,1,2,train_05
+train_07_118,"On January 23 , Amcu members at Lonmin , Amplats , and Implats downed tools , demanding a monthly basic salary of R12,500 .",1,1,2,train_07
+train_01_100,"Demonstrators have filed for a permit to hold a rally on Saturday in Yuen Long , the district on the outskirts of Hong Kong where dozens of masked men chased and beat commuters and protesters with wooden poles and metal rods , leaving at least 45 people in hospital .",1,1,3,train_01
+train_08_206,"Their ages range from 19 to 30 years , they were arrested in connection with incidents of public violence on campus , which included the continuous stoning of SA Police Service members , '' said police spokeswoman Brigadier Sally de Beer .",1,1,2,train_08
+train_02_3,"There had been some violence on Friday , but this drastic step was not required .",0,1,3,train_02
+train_01_112,Thus we too joined the sloganeering .,0,1,3,train_01
+train_05_138,NLC strike to go on despite MK appeal 26th October 2010 06:13 PM CHENNAI : The 36 - day strike by contract workers of Neyveli Lignite Corp ( NLC ) is set to continue despite the request to resume work by Tamil Nadu Chief Minister M. Karunanidhi Tuesday .,0,0.5,2,train_05
+train_02_214,"Curiously , no policeman has died in any of these exchanges of fire   .",1,0.666666667,3,train_02
+train_04_303,He has recently expressed his willingness to return to India to stand trial in the hijacking case .,1,0.666666667,3,train_04
+train_02_278,"AISF State general secretary Viswanath , district president Srinivasulu , secretary Chandrasekhar , city secretary Mahendra , organising secretary Ranganna , vice-presidents Bhargav and Venkatesh and a large number of students jostled with the police when they picketed Kurnool Collectorate .",0,0.666666667,3,train_02
+train_06_83,"Referring to her criticism on his continuing in power after the serial blasts in Coimbatore in 1998 , he sought the Chief Minister 's explanation on why none has been arrested in connection with the May 1 Central station twin bomb blasts .",1,1,2,train_06
+train_06_179,"Govt Readies to Wield the Stick as Striking Doctors Decide to Harden Their Stand 15th September 2015 05:49 AM THIRUVANANTHAPURAM : With the government appearing to be in no mood to meet the demand of the doctors of the health service , the Kerala Government Medical Officers Association spearheading the hunger strike in front of the state secretariat has called for intensifying the agitation in the coming days .",1,1,2,train_06
+train_06_275,April 1 : Four people killed at Poradih-Chenpur village in Khunti district of Jharkhand .,0,1,2,train_06
+train_03_194,"The protesters , led by the Gaya district unit BJP President Anil Swami , raised slogans against the district police demanding arrest of the prime accused in the murder case .",1,1,3,train_03
+train_04_167,"Students and lawyers also joined the protests , focusing on Mahabubnagar district to stop vehicles entering Telangana coming from Kurnool district , which is a part of the Rayalaseema region .",1,0.666666667,3,train_04
+train_09_B_32,Big B in big trouble for anti-Sikh remarks 17th December 2011 02:43 PM AMRITSAR : A move by Bollywood superstar Amitabh Bachchan to get a clean chit from the Sikh clergy after his name was dragged into the 1984 anti-Sikh riots is facing opposition from sections of the community .,1,1,2,train_09
+train_03_49,"Urging the Commission to reveal names of people involved in the attacks , he said the protestors against the church attack were assaulted by police , youth were hunted and criminal cases were booked on them .",0,0.666666667,3,train_03
+train_05_251,RFEA chief executive Nico Badenhorst said the strike was costing the country R100 million a day .,1,1,2,train_05
+train_05_32,"Mchunu , an ANC activist and former councillor , was shot dead in May while turning into his driveway in the kwaPata area of Pietermaritzburg .",0,0.5,2,train_05
+train_01_215,"Thousands of demonstrators marched in Hong Kong on Saturday , facing the threat of arrest and increasingly severe warnings from Beijing .",0,1,3,train_01
+train_06_277,A hand-written note left behind by the Maoists claimed the four persons were being ' punished ' for indulging in robbery .,1,1,2,train_06
+train_07_296,Anti-government protesters in Hong Kong took over key roads early on Monday amid rising tensions ahead of what expected to be a huge pro-democracy rally on the anniversary of the city ’ s handover to China .,0,0.5,2,train_07
+train_05_87,Some protestors also ransacked two private hospitals in the vicinity and attacked the Ambur Town Station .,0,1,2,train_05
+train_03_320,"OTHER STATES Seeking their due February 23 , 2010 00:00 IST A A A IN AGITATION MODE : Members of the ’ Pramila Devi Mahila Kalyan Sangha ’ demonstrating in front of the RDC office in Berhampur on Monday against ‘ failure ’ of implementation of NREGA in parts of Ganjam district and non-inclusion of some BPL families in the BPL list .",1,0.666666667,3,train_03
+train_07_26,Party State secretary Ilankumar Sampath led the agitation .,0,1,2,train_07
+train_01_80,"Earlier , the protesters , led by workers of Jaya Karnataka Vedike , took out a procession and stopped the movement of vehicles for half an hour .",1,0.666666667,3,train_01
+train_02_230,"This attack comes two weeks after Nwabisa Ngcukana , 25 , was undressed assaulted by taxi drivers and hawkers because she was wearing a mini-skirt at the Noord Street taxi rank in Johannesburg .",1,0.666666667,3,train_02
+train_04_259,Implats has been blamed for the strike by National Union of Mineworkers ( NUM ) general secretary Frans Baleni .,1,0.666666667,3,train_04
+train_08_31,Today 's Paper Fiery protest YSR Congress activists take out a candlelight rally on Necklace Road on Monday to protest the delay in bail to Y.S. Jaganmohan Reddy .,1,0.5,2,train_08
+train_08_210,"A seventh suspect has been arrested for the murder of ANC North West official Obuti Chika , the Hawks said on Friday .",1,1,2,train_08
+train_01_63,"Joshua Wong , the teenage activist who was one of the most recognisable faces of Hong Kong ’ s umbrella movement protests , has been found guilty of “ illegal assembly ” by a court in the former British colony .",0,0.666666667,3,train_01
+train_04_81,Hundreds of them raised slogans against the SP .,0,1,3,train_04
+train_04_295,They also held a candlelight vigil near National College at Basavanagudi .,0,1,3,train_04
+train_02_217,"24th March 2016 05:23 AM THOOTHUKUDI : In recent days , particularly after the attack on Nadar Outfit leader , Subash Pannayar , police ‘ activism ’ in the form of torture has allegedly increased and the place that has been allegedly chosen for such torture is the shooting range on Vallanadu Hills .",1,0.666666667,3,train_02
+train_06_182,"Meanwhile , the government has warned of disciplinary action against the striking doctors .",0,0.5,2,train_06
+train_04_24,"In a bid to reach out to voters , the Trinamool Congress leader participated the 7 - km padayatra from Rajabazar , a minority dominated area to Ballygung Phari covering five Assembly constituencies .",1,1,3,train_04
+train_09_B_96,"The remaining person in the group , arrested during protests at the Khutsong stadium on Sunday where Defence Minister and African National Congress chairman Mosiuoa Lekota was speaking , was not charged and was released .",0,1,2,train_09
+train_05_141,"The unions argued that withdrawing the strike based on assurance "" without any concrete gains is a difficult proposition "" .",1,1,2,train_05
+train_06_33,"Personnel from the local police station , which is less than half-a-kilometre from the spot , reached 20 minutes after the clashes broke out .",1,0.5,2,train_06
+train_01_90,He was seen as proactive when he disposed of the mercy petitions of 26/11 attack convict Ajmal Kasab and Parliament attack convict Afzal Guru that had triggered a controversy but his aides explain that as President he had no choice but to go by the Cabinet advice .,1,0.666666667,3,train_01
+train_04_166,Police had a tough time in controlling them as they squatted on the highway at several points .,1,0.666666667,3,train_04
+train_07_42,The 300-strong crowd delivered a memorandum to the city 's mayor James Nxumalo at the Durban City hall .,0,1,2,train_07
+train_06_299,"Cassim said that the DA had since laid a complaint at the South African Human Rights Commission ( SAHRC ) against one identified leader in the EFF structure , Omphile Seleke , who allegedly incited chaos and violence at the University of Pretoria ( Tuks ) campus in particular .",1,1,2,train_06
+train_06_51,"KERALA Private bus strike total in city August 14 , 2008 00:00 IST DIFFICULT RIDE : Commuters had a hard time on the first day of the private bus strike in the city on Wednesday .",1,1,2,train_06
+train_04_275,"We condemn the incident and intend to file a defamation case against BJP President Tamilisai Soundarrajan for making derogatory speeches against the MLA , ” said Jawahirullah .",1,0.666666667,3,train_04
+train_09_A_43,Their signatures and a letter demanding the proposal be scrapped were submitted to Chevalier 's management through the Labour Department .,1,1,3,train_09
+train_07_162,"In a related development at Salem in Tamil Nadu , a 26 year-old man attempted self-immolation protesting against Rajapaksa ' visit .",1,1,2,train_07
+train_03_73,"Nagamarapalli Fans Ransack BJP Office 22nd March 2014 08:43 AM The surprise choice of Bhagwant Khuba by the BJP as its candidate for Bidar Lok Sabha constituency , leaving out the favourite father-son duo of Gurupadappa Nagamarapalli and his son Suryakant Nagamarapalli , has drawn a strong backlash in the district .",1,1,2,train_03
+train_08_38,She held the Daggubati couple responsible for the ugly incidents .,0,0.5,2,train_08
+train_07_5,"In the same breath , he made light of the Seemandhra protests , observing that when a state is bifurcated , it is natural for some to resign and protest .",1,1,2,train_07
+train_07_46,The taxi operators were protesting about routes .,1,0.5,2,train_07
+train_09_A_52,BCCI president Vikas R. Kalghatagi led the protest .,0,1,3,train_09
+train_03_248,"Delhi BJP Protests Against Power Tariff Hike 01st February 2014 02:07 PM Criticising the Delhi government for its failure to check power tariff hike , the Bharatiya Janata Party ( BJP ) Saturday protested against the hike in the national capital .",1,0.666666667,3,train_03
+train_01_40,"Then on Thursday , some pupils returned to classes after having spent months out of school as residents protested against the Municipal Demarcation Board 's decision to include their areas under a new municipality .",1,0.666666667,3,train_01
+train_05_61,Once inside they threw chairs and tore down and defaced portraits of past lawmakers .,0,1,2,train_05
+train_06_226,"Meanwhile , a PIL has been filed in the Orissa High Court appealing for declaring the cease-work illegal .",1,0.5,2,train_06
+train_08_37,"‘ Attack motivated ’ Speaking to The Hindu over telephone from her hospital bed , Ms. Rajakumari said it was a clear attempt on her life .",0,0.5,2,train_08
+train_09_A_121,She claimed that the police showed maximum restraint but lost temper when some of their colleagues got hurt during the stone-pelting and rataliated .,1,0.666666667,3,train_09
+train_03_72,"BJP protests dumping of fly ash in Haliyal 02nd May 2009 03:56 AM HALIYAL : The Haliyal BJP unit has protested against the reported dumping of fly ash by the West Coast Paper Mills Ltd ( WCPM ) of Dandeli , on various fields around Haliyal .",1,0.666666667,3,train_03
+train_03_319,"BSP stir against fuel hike - Indian Express Express News Service , Express News Service : Chandigarh , Fri Jul 01 2011 , 03:05 hrs The Chandigarh unit of Bahujan Samaj Party held a protest at the rally ground in Sector 25 against the rising prices of cooking gas , petrol , diesel , etc. The protest is part of a nationwide campaign of the party on the issue .",1,0.666666667,3,train_03
+train_06_176,A police helicopter monitored the funeral procession from the sky as mourners snaked through the streets of Lichtenburg to the cemetery .,0,0.5,2,train_06
+train_05_284,"Addressing a massive gathering of party workers and sympathisers from in and around the city at the ‘ maha dharna ' organised in the vicinity of the Collector 's office here on Monday , Mr. Naidu said the Rosaiah Government has failed on all fronts and neglected agriculture as reflected in the acute shortage of fertilizer faced by the farmers .",1,1,2,train_05
+train_07_41,Police used teargas and stun grenades on Wednesday during a march in central Durban by the KwaZulu-Natal Transport Alliance ( KZNTA ) .,0,0.5,2,train_07
+train_05_252,"On Tuesday , 29 truckers were arrested in the Johannesburg city centre after violent clashes with the police .",1,1,2,train_05
+train_03_107,In the streets too the general sense of animosity prevailed as the CPM and BJP workers scuffled outside the AKG Centre and 600 people were detained .,1,1,3,train_03
+train_07_304,"Millions have taken to the streets to protest against the proposed law allowing for the extradition of individuals for trial in mainland China , where the opaque court system is controlled by the Communist party .",1,1,2,train_07
+train_04_212,The hartal was observed as part of the protest against the government decision to widen National Highways in the state with 45 - meter width and also hike the toll rate at Varapuzha brige at National Highway 17 .,1,1,3,train_04
+train_08_185,"About a hundred Maoists blew up part of a power sub-station in Naxal-dominated Jamui district , affecting power supply in the area .",1,1,2,train_08
+train_02_208,"As more than 70 percent of the buses have been taken off the road , many passengers had to either postpone their travel or go by trains .",1,1,3,train_02
+train_01_31,"Barring this incident , the agitation by other organisations on Thursday was peaceful .",0,1,3,train_01
+train_08_142,The cadres also held demonstrations at all the taluk headquarters in Krishnagiri and Dharmapuri districts condemning the attack .,1,1,2,train_08
+train_04_101,Traffic between Bangalore and Mysore was also affected for several hours as protesters blocked roads in Mandya .,1,1,3,train_04
+train_03_249,"Staging a protest at Bhajanpura , BJP Delhi unit chief Vijay Goel said Chief Minister Arvind Kejriwal has failed to check power tariff hikes .",0,1,3,train_03
+train_03_203,The march started from the Martyrs ' Column at Palayam and concluded before the Secretariat .,0,1,3,train_03
+train_03_254,"Moreover , he said the Akhilesh Government ought to be complimented for ensuring that the state had not witnessed anymore incidents of communal violence since the Muzaffarnagar carnage .",0,0.666666667,3,train_03
+train_08_197,"Being turned back is one thing , getting hurt or disappearing is another , ” said Ng , the author of a book on Hong Kong ’ s umbrella movement protests .",0,0.5,2,train_08
+train_05_107,"According to two witnesses , some of the crowd threw stones and police detained at least 10 people .",0,0.5,2,train_05
+train_06_67,"Tension in Nagari After TDP Men Attack Roja 14th September 2014 06:15 AM TIRUPATI : The alleged attack on Nagari YSRC MLA RK Roja by some TDP men at Nagari on Friday mid-night , when she went there for offering the ‘ first Harathi ’ to the processional deity of Goddess Gangamma , led to tension in and round the town on Saturday with the actress-turned-politician and her supports staging widespread protests over the incident .",1,1,2,train_06
+train_07_279,"A Day of Protests Inside and Outside Assembly 17th February 2016 05:40 AM THIRUVANANTHAPURAM : Be it in the Assembly or outside , protests will be heard only if they rise to a high .",1,0.5,2,train_07
+train_03_188,"The company had further offered a once-off hardship allowance of R2000 to help workers deal with financial difficulties arising from the no-work , no-pay principle in place while they were striking .",1,0.666666667,3,train_03
+train_03_65,"He is facing charges of violating a court order , public violence , assault , theft , and damage to property during the 2016 protest against `` colonised '' tertiary education .",1,0.666666667,3,train_03
+train_08_23,"He wished speedy recovery to those who have been injured in the attack , including senior Congress leader V C Shukla .",0,0.5,2,train_08
+train_01_71,They poured out their woes to the reporters and photographers who reached the Police Stadium on hearing about the incident .,1,0.666666667,3,train_01
+train_03_144,"Wits students held protests demanding the realisation of free , quality and decolonised education , in line with the call of the # FeesMustFall movement .",1,1,3,train_03
+train_05_281,"Broken glass , rocks , a broken traffic light and other debris were scattered on Albertina Sisulu Road during the protests .",1,1,2,train_05

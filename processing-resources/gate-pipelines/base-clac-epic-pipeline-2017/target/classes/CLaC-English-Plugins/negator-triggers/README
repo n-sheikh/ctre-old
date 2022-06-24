@@ -1,0 +1,64 @@
+
+
+Description of the GATE ExtractGenericTriggers(V3) processing resource
+Sabine Rosenberg for the CLaC lab, Concordia University, Montreal, QC
+Sept 2013
+
+The ExtractGenericTriggers(V3) processing resource is be placed into the relevant GATE plugins folder (in the GATE App folder). 
+It has been tried and tested in GATE 5.- and GATE 6.- . 
+*****************************************************************************************************************************
+Note: the aim of this module is also allow the user to run as many wordlists as they like with only having to instantiate the ExtractGenericTriggersV3 module once in GATE. Therefore,  functionality has been implemented for the resource to be able to read the required parameters from a custom text file.
+
+** Requirements:
+1/ to have done the 4 preprocessing steps:
+(A) - ANNIE Sentence Splitter : Output of Sentence Annotations in GATE
+(B) - ANNIE Tokenizer - Tokenization: Output of Token Annotations in GATE
+(C(i)) - Stanford Parser - the COLLAPSED dependency relations + the parse tree constituents: Output of SyntaxTreeNode Annotations+ Dependency Annotations in GATE.
+OR 
+(C(ii))- Charniak Parser -the parse tree constituents + the Stanford COLLAPSED dependency relations : Output of Charniak Parse Node Annotations + Dependency Annotations in GATE.
+(D) the "root" feature should be present within the token annotation : tried and tested the GATE Morphological Analyzer module in the "Tools" plugin folder in GATE.
+(E) - *** (needed for modal trigger scope annotations only) *** ANNIE VP Chunker (in the "Tools" plugin folder in GATE): Output the "VG" AnnotationSet (the verb groups)
+
+2/ have access to the wordlist files (XML) accompanied with this module ( in the wordlists directory).
+
+Input Parameters to the module:
+(A) - The path to the file containing the required input parameters. 
+i.e: Users/computer_name/triggersToAnnotate.txt. (Note: I have included a sample txt file in the paths folder which will annotate all triggers - however you need to specify YOUR path in the file...)
+
+(B) - The name of the parse tree constituents annotations (note the name is different depending on if you parsed with the Stanford or the Charniak Parser - i.e for text parsed with Charniak the input parameter would be: CharniakParserTreeNode.
+For Stanford parsed text, the input Parameter is: SyntaxTreeNode.- (Default)
+
+(C) - the name of the annotation set containing tokens (usually leave the default setting "Token")
+
+*** This text file i.e "triggersToAnnotate.txt"  will contain one entry on each line (for each type of trigger required): each entry is made up of 2 parts separated by a comma (A,B).
+
+Example:
+If you want to annotate both implicit and explicit negation triggers:
+
+	A -  path to the wordlist file (i.e Users/computer_name/explicitNeg.xml)
+	B - name of the output AnnotationSet (i.e explicitNegTriggers)
+
+	A -  path to the wordlist file (i.e Users/computer_name/implicitNeg.xml)
+	B - name of the output AnnotationSet (i.e implicitNegTriggers)
+
+
+Therefore the entry in the text file would be:
+Users/computer_name/explicitNeg.xml,explicitNegTriggers
+Users/computer_name/implicitNeg.xml,implicitNegTriggers
+
+Now the module will process at one time as many wordlists as have been entered in the text file.
+
+Description of ExtractGenericTriggersModule:
+This component uses an existing word list(s) to find initial negation triggers within a text. The word list(s) are in XML format ( have a specific format - so please at tis time uses the provided wordlists) and may be placed in any location. Once the input parameters (as described above) are input, the terms in the text will be determined to be Negation Triggers based on matches found with the said wordlist(s). The component will output annotations specifying:
+(i): the type of negation found (explicit or implicit or self neg or modal)
+(ii): the part of speech of the found trigger 
+(iii): the prior polarity (its polarity out of context) attribute of the found trigger
+(iii) the text (string)
+(iv) the start and end offsets of the annotation
+ 
+Additionally:
+if the negation trigger found is a term that "became" a negation trigger due to its prefix (i.e. "un" happy) then there will be another annotation associated with this term specifying:
+(i) the "prefix" which rendered the term to be a negation trigger(i.e. "un") - "selfNegTrigger" AnnotationSet
+(ii) the scope over which the prefix falls (i.e "happy") - "localPrefixScope" AnnotationSet
+This annotation is meant to show the instances where the word itself has already undergone an alteration (a switch in polarity/ or a shifting in polarity) due to the presence of the prefix.
+*****************************************************************************************************************************

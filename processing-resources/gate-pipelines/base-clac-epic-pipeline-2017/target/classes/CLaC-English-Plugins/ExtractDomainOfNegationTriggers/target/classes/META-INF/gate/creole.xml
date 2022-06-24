@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CREOLE-DIRECTORY NAME="ExtractDomainOfNegationTriggers" VERSION="0.0.1" GATE-MIN="8.6">
+  <!--this file is auto-generated, modifications will have no effect-->
+  <!-- plugins can require other plugins as follows:
+	<REQUIRES GROUP="group" ARTIFACT="artifact" VERSION="version"/>
+	-->
+  <RESOURCE>
+    <CLASS>ca.concordia.clac.ExtractDomainOfNegationTriggers</CLASS>
+    <NAME>ExtractDomainOfNegationTriggers</NAME>
+    <COMMENT>This resource annotates the relevent constituents within the domain of a negation trigger</COMMENT>
+    <PARAMETER NAME="annotationSetName" COMMENT="the set name for the used input annotation set name" RUNTIME="true" OPTIONAL="true">java.lang.String</PARAMETER>
+    <PARAMETER NAME="fileName" COMMENT="path to the scope mappings file" DEFAULT=" ">java.net.URL</PARAMETER>
+    <PARAMETER NAME="dependenciesName" COMMENT="Name of Dependencies Annotation Set" DEFAULT="Dependency">java.lang.String</PARAMETER>
+    <PARAMETER NAME="treeNodeName" COMMENT="Name of Parse Tree Constituents Annotation Set" DEFAULT="SyntaxTreeNode">java.lang.String</PARAMETER>
+    <PARAMETER NAME="tokenNodeName" COMMENT="Name of Token Annotation Set" DEFAULT="Token">java.lang.String</PARAMETER>
+    <PARAMETER NAME="sentenceNodeName" COMMENT="name of Sentence AnnotationSet" DEFAULT="Sentence">java.lang.String</PARAMETER>
+    <PARAMETER NAME="includeSubjectConstituent" COMMENT="add wide scope" DEFAULT="false">java.lang.Boolean</PARAMETER>
+    <PARAMETER NAME="usePropScope" COMMENT="add wide scope for selfNeg Triggers" DEFAULT="false">java.lang.Boolean</PARAMETER>
+    <PARAMETER NAME="corpus" COMMENT="The corpus containing the document to process" RUNTIME="true" OPTIONAL="true">gate.Corpus</PARAMETER>
+    <PARAMETER NAME="document" COMMENT="The document to process" RUNTIME="true">gate.Document</PARAMETER>
+  </RESOURCE>
+</CREOLE-DIRECTORY>
+

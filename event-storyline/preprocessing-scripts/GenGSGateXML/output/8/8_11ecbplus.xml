@@ -1,0 +1,2939 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<GateDocument version="3">
+<!-- The document's features-->
+
+<GateDocumentFeatures>
+<Feature>
+  <Name className="java.lang.String">gate.SourceURL</Name>
+  <Value className="java.lang.String">created from String</Value>
+</Feature>
+</GateDocumentFeatures>
+<!-- The document content area with serialized nodes -->
+
+<TextWithNodes><Node id="0"/>http<Node id="4"/> <Node id="5"/>:<Node id="6"/> <Node id="7"/>/<Node id="8"/> <Node id="9"/>/<Node id="10"/> <Node id="11"/>news<Node id="15"/> <Node id="16"/>.<Node id="17"/> <Node id="18"/>bbc<Node id="21"/> <Node id="22"/>.<Node id="23"/> <Node id="24"/>co<Node id="26"/> <Node id="27"/>.<Node id="28"/> <Node id="29"/>uk<Node id="31"/> <Node id="32"/>/<Node id="33"/> <Node id="34"/>2<Node id="35"/> <Node id="36"/>/<Node id="37"/> <Node id="38"/>hi<Node id="40"/> <Node id="41"/>/<Node id="42"/> <Node id="43"/>europe<Node id="49"/> <Node id="50"/>/<Node id="51"/> <Node id="52"/>8665488<Node id="59"/> <Node id="60"/>.<Node id="61"/> <Node id="62"/>stm<Node id="65"/> <Node id="66"/>Greek<Node id="71"/> <Node id="72"/>austerity<Node id="81"/> <Node id="82"/>:<Node id="83"/> <Node id="84"/>British<Node id="91"/> <Node id="92"/>views<Node id="97"/> <Node id="98"/>Greece's<Node id="106"/> <Node id="107"/>parliament<Node id="117"/> <Node id="118"/>is<Node id="120"/> <Node id="121"/>due<Node id="124"/> <Node id="125"/>to<Node id="127"/> <Node id="128"/>vote<Node id="132"/> <Node id="133"/>on<Node id="135"/> <Node id="136"/>the<Node id="139"/> <Node id="140"/>hefty<Node id="145"/> <Node id="146"/>cuts<Node id="150"/> <Node id="151"/>and<Node id="154"/> <Node id="155"/>reforms<Node id="162"/> <Node id="163"/>proposed<Node id="171"/> <Node id="172"/>by<Node id="174"/> <Node id="175"/>the<Node id="178"/> <Node id="179"/>government<Node id="189"/> <Node id="190"/>to<Node id="192"/> <Node id="193"/>address<Node id="200"/> <Node id="201"/>the<Node id="204"/> <Node id="205"/>country's<Node id="214"/> <Node id="215"/>financial<Node id="224"/> <Node id="225"/>crisis<Node id="231"/> <Node id="232"/>.<Node id="233"/> <Node id="234"/>It<Node id="236"/> <Node id="237"/>comes<Node id="242"/> <Node id="243"/>a<Node id="244"/> <Node id="245"/>day<Node id="248"/> <Node id="249"/>after<Node id="254"/> <Node id="255"/>three<Node id="260"/> <Node id="261"/>bank<Node id="265"/> <Node id="266"/>workers<Node id="273"/> <Node id="274"/>died<Node id="278"/> <Node id="279"/>in<Node id="281"/> <Node id="282"/>a<Node id="283"/> <Node id="284"/>petrol<Node id="290"/> <Node id="291"/>bomb<Node id="295"/> <Node id="296"/>attack<Node id="302"/> <Node id="303"/>as<Node id="305"/> <Node id="306"/>demonstrations<Node id="320"/> <Node id="321"/>over<Node id="325"/> <Node id="326"/>the<Node id="329"/> <Node id="330"/>planned<Node id="337"/> <Node id="338"/>austerity<Node id="347"/> <Node id="348"/>measures<Node id="356"/> <Node id="357"/>turned<Node id="363"/> <Node id="364"/>violent<Node id="371"/> <Node id="372"/>.<Node id="373"/></TextWithNodes>
+<!-- The default annotation set -->
+
+<AnnotationSet>
+<Annotation Id="0" Type="GS_ECB+_NAF-WF" StartNode="0" EndNode="4">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">http</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+</Annotation>
+<Annotation Id="1" Type="GS_ECB+_NAF-WF" StartNode="5" EndNode="6">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">:</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+</Annotation>
+<Annotation Id="2" Type="GS_ECB+_NAF-WF" StartNode="7" EndNode="8">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">/</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+</Annotation>
+<Annotation Id="3" Type="GS_ECB+_NAF-WF" StartNode="9" EndNode="10">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">/</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">9</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+</Annotation>
+<Annotation Id="4" Type="GS_ECB+_NAF-WF" StartNode="11" EndNode="15">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">news</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">11</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+</Annotation>
+<Annotation Id="5" Type="GS_ECB+_NAF-WF" StartNode="16" EndNode="17">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">.</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">16</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+</Annotation>
+<Annotation Id="6" Type="GS_ECB+_NAF-WF" StartNode="18" EndNode="21">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">bbc</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">18</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+</Annotation>
+<Annotation Id="7" Type="GS_ECB+_NAF-WF" StartNode="22" EndNode="23">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w8</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">.</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">22</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+</Annotation>
+<Annotation Id="8" Type="GS_ECB+_NAF-WF" StartNode="24" EndNode="26">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w9</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">co</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">24</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+</Annotation>
+<Annotation Id="9" Type="GS_ECB+_NAF-WF" StartNode="27" EndNode="28">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w10</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">.</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">27</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+</Annotation>
+<Annotation Id="10" Type="GS_ECB+_NAF-WF" StartNode="29" EndNode="31">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w11</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">uk</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">29</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+</Annotation>
+<Annotation Id="11" Type="GS_ECB+_NAF-WF" StartNode="32" EndNode="33">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w12</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">/</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">32</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+</Annotation>
+<Annotation Id="12" Type="GS_ECB+_NAF-WF" StartNode="34" EndNode="35">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w13</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">34</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+</Annotation>
+<Annotation Id="13" Type="GS_ECB+_NAF-WF" StartNode="36" EndNode="37">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w14</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">/</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">36</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+</Annotation>
+<Annotation Id="14" Type="GS_ECB+_NAF-WF" StartNode="38" EndNode="40">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w15</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">hi</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">38</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+</Annotation>
+<Annotation Id="15" Type="GS_ECB+_NAF-WF" StartNode="41" EndNode="42">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w16</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">/</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">41</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+</Annotation>
+<Annotation Id="16" Type="GS_ECB+_NAF-WF" StartNode="43" EndNode="49">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w17</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">europe</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">43</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+</Annotation>
+<Annotation Id="17" Type="GS_ECB+_NAF-WF" StartNode="50" EndNode="51">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w18</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">/</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">50</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+</Annotation>
+<Annotation Id="18" Type="GS_ECB+_NAF-WF" StartNode="52" EndNode="59">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w19</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">8665488</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">52</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+</Annotation>
+<Annotation Id="19" Type="GS_ECB+_NAF-WF" StartNode="60" EndNode="61">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w20</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">.</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">60</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+</Annotation>
+<Annotation Id="20" Type="GS_ECB+_NAF-WF" StartNode="62" EndNode="65">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w21</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">stm</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">62</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+</Annotation>
+<Annotation Id="21" Type="GS_ECB+_NAF-WF" StartNode="66" EndNode="71">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w22</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Greek</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">66</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+</Annotation>
+<Annotation Id="22" Type="GS_ECB+_NAF-WF" StartNode="72" EndNode="81">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">9</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w23</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">austerity</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">72</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+</Annotation>
+<Annotation Id="23" Type="GS_ECB+_NAF-WF" StartNode="82" EndNode="83">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w24</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">:</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">82</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+</Annotation>
+<Annotation Id="24" Type="GS_ECB+_NAF-WF" StartNode="84" EndNode="91">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w25</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">British</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">84</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+</Annotation>
+<Annotation Id="25" Type="GS_ECB+_NAF-WF" StartNode="92" EndNode="97">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w26</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">views</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">92</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+</Annotation>
+<Annotation Id="26" Type="GS_ECB+_NAF-WF" StartNode="98" EndNode="106">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">8</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w27</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Greece's</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">98</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="27" Type="GS_ECB+_NAF-WF" StartNode="107" EndNode="117">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">10</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w28</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">parliament</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">107</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="28" Type="GS_ECB+_NAF-WF" StartNode="118" EndNode="120">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w29</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">is</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">118</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="29" Type="GS_ECB+_NAF-WF" StartNode="121" EndNode="124">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w30</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">due</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">121</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="30" Type="GS_ECB+_NAF-WF" StartNode="125" EndNode="127">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w31</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">to</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">125</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="31" Type="GS_ECB+_NAF-WF" StartNode="128" EndNode="132">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w32</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">vote</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">128</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="32" Type="GS_ECB+_NAF-WF" StartNode="133" EndNode="135">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w33</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">on</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">133</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="33" Type="GS_ECB+_NAF-WF" StartNode="136" EndNode="139">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w34</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">the</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">136</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="34" Type="GS_ECB+_NAF-WF" StartNode="140" EndNode="145">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w35</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">hefty</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">140</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="35" Type="GS_ECB+_NAF-WF" StartNode="146" EndNode="150">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w36</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">cuts</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">146</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="36" Type="GS_ECB+_NAF-WF" StartNode="151" EndNode="154">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w37</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">and</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">151</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="37" Type="GS_ECB+_NAF-WF" StartNode="155" EndNode="162">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w38</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">reforms</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">155</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="38" Type="GS_ECB+_NAF-WF" StartNode="163" EndNode="171">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">8</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w39</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">proposed</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">163</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="39" Type="GS_ECB+_NAF-WF" StartNode="172" EndNode="174">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w40</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">by</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">172</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="40" Type="GS_ECB+_NAF-WF" StartNode="175" EndNode="178">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w41</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">the</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">175</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="41" Type="GS_ECB+_NAF-WF" StartNode="179" EndNode="189">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">10</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w42</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">government</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">179</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="42" Type="GS_ECB+_NAF-WF" StartNode="190" EndNode="192">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w43</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">to</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">190</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="43" Type="GS_ECB+_NAF-WF" StartNode="193" EndNode="200">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w44</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">address</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">193</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="44" Type="GS_ECB+_NAF-WF" StartNode="201" EndNode="204">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w45</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">the</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">201</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="45" Type="GS_ECB+_NAF-WF" StartNode="205" EndNode="214">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">9</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w46</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">country's</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">205</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="46" Type="GS_ECB+_NAF-WF" StartNode="215" EndNode="224">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">9</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w47</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">financial</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">215</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="47" Type="GS_ECB+_NAF-WF" StartNode="225" EndNode="231">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w48</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">crisis</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">225</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="48" Type="GS_ECB+_NAF-WF" StartNode="232" EndNode="233">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w49</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">.</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">232</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="49" Type="GS_ECB+_NAF-WF" StartNode="234" EndNode="236">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w50</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">It</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">234</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="50" Type="GS_ECB+_NAF-WF" StartNode="237" EndNode="242">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w51</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">comes</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">237</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="51" Type="GS_ECB+_NAF-WF" StartNode="243" EndNode="244">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w52</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">243</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="52" Type="GS_ECB+_NAF-WF" StartNode="245" EndNode="248">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w53</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">day</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">245</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="53" Type="GS_ECB+_NAF-WF" StartNode="249" EndNode="254">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w54</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">after</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">249</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="54" Type="GS_ECB+_NAF-WF" StartNode="255" EndNode="260">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w55</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">three</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">255</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="55" Type="GS_ECB+_NAF-WF" StartNode="261" EndNode="265">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w56</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">bank</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">261</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="56" Type="GS_ECB+_NAF-WF" StartNode="266" EndNode="273">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w57</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">workers</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">266</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="57" Type="GS_ECB+_NAF-WF" StartNode="274" EndNode="278">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w58</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">died</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">274</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="58" Type="GS_ECB+_NAF-WF" StartNode="279" EndNode="281">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w59</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">in</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">279</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="59" Type="GS_ECB+_NAF-WF" StartNode="282" EndNode="283">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w60</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">282</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="60" Type="GS_ECB+_NAF-WF" StartNode="284" EndNode="290">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w61</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">petrol</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">284</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="61" Type="GS_ECB+_NAF-WF" StartNode="291" EndNode="295">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w62</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">bomb</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">291</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="62" Type="GS_ECB+_NAF-WF" StartNode="296" EndNode="302">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w63</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">attack</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">296</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="63" Type="GS_ECB+_NAF-WF" StartNode="303" EndNode="305">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w64</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">as</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">303</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="64" Type="GS_ECB+_NAF-WF" StartNode="306" EndNode="320">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">14</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w65</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">demonstrations</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">306</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="65" Type="GS_ECB+_NAF-WF" StartNode="321" EndNode="325">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w66</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">over</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">321</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="66" Type="GS_ECB+_NAF-WF" StartNode="326" EndNode="329">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w67</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">the</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">326</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="67" Type="GS_ECB+_NAF-WF" StartNode="330" EndNode="337">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w68</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">planned</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">330</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="68" Type="GS_ECB+_NAF-WF" StartNode="338" EndNode="347">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">9</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w69</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">austerity</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">338</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="69" Type="GS_ECB+_NAF-WF" StartNode="348" EndNode="356">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">8</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w70</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">measures</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">348</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="70" Type="GS_ECB+_NAF-WF" StartNode="357" EndNode="363">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w71</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">turned</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">357</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="71" Type="GS_ECB+_NAF-WF" StartNode="364" EndNode="371">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w72</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">violent</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">364</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="72" Type="GS_ECB+_NAF-WF" StartNode="372" EndNode="373">
+<Feature>
+  <Name className="java.lang.String">length</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">id</Name>
+  <Value className="java.lang.String">w73</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">.</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">offset</Name>
+  <Value className="java.lang.String">372</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sent</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+</Annotation>
+<Annotation Id="73" Type="GS_TOKEN" StartNode="0" EndNode="4">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">http</Value>
+</Feature>
+</Annotation>
+<Annotation Id="74" Type="GS_TOKEN" StartNode="5" EndNode="6">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">:</Value>
+</Feature>
+</Annotation>
+<Annotation Id="75" Type="GS_TOKEN" StartNode="7" EndNode="8">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">/</Value>
+</Feature>
+</Annotation>
+<Annotation Id="76" Type="GS_TOKEN" StartNode="9" EndNode="10">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">/</Value>
+</Feature>
+</Annotation>
+<Annotation Id="77" Type="GS_TOKEN" StartNode="11" EndNode="15">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">news</Value>
+</Feature>
+</Annotation>
+<Annotation Id="78" Type="GS_TOKEN" StartNode="16" EndNode="17">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">.</Value>
+</Feature>
+</Annotation>
+<Annotation Id="79" Type="GS_TOKEN" StartNode="18" EndNode="21">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">bbc</Value>
+</Feature>
+</Annotation>
+<Annotation Id="80" Type="GS_TOKEN" StartNode="22" EndNode="23">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">8</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">.</Value>
+</Feature>
+</Annotation>
+<Annotation Id="81" Type="GS_TOKEN" StartNode="24" EndNode="26">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">9</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">8</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">co</Value>
+</Feature>
+</Annotation>
+<Annotation Id="82" Type="GS_TOKEN" StartNode="27" EndNode="28">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">10</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">9</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">.</Value>
+</Feature>
+</Annotation>
+<Annotation Id="83" Type="GS_TOKEN" StartNode="29" EndNode="31">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">11</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">10</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">uk</Value>
+</Feature>
+</Annotation>
+<Annotation Id="84" Type="GS_TOKEN" StartNode="32" EndNode="33">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">12</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">11</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">/</Value>
+</Feature>
+</Annotation>
+<Annotation Id="85" Type="GS_TOKEN" StartNode="34" EndNode="35">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">13</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">12</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+</Annotation>
+<Annotation Id="86" Type="GS_TOKEN" StartNode="36" EndNode="37">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">14</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">13</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">/</Value>
+</Feature>
+</Annotation>
+<Annotation Id="87" Type="GS_TOKEN" StartNode="38" EndNode="40">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">15</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">14</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">hi</Value>
+</Feature>
+</Annotation>
+<Annotation Id="88" Type="GS_TOKEN" StartNode="41" EndNode="42">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">16</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">15</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">/</Value>
+</Feature>
+</Annotation>
+<Annotation Id="89" Type="GS_TOKEN" StartNode="43" EndNode="49">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">17</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">16</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">europe</Value>
+</Feature>
+</Annotation>
+<Annotation Id="90" Type="GS_TOKEN" StartNode="50" EndNode="51">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">18</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">17</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">/</Value>
+</Feature>
+</Annotation>
+<Annotation Id="91" Type="GS_TOKEN" StartNode="52" EndNode="59">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">19</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">18</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">8665488</Value>
+</Feature>
+</Annotation>
+<Annotation Id="92" Type="GS_TOKEN" StartNode="60" EndNode="61">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">20</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">19</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">.</Value>
+</Feature>
+</Annotation>
+<Annotation Id="93" Type="GS_TOKEN" StartNode="62" EndNode="65">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">21</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">20</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">stm</Value>
+</Feature>
+</Annotation>
+<Annotation Id="94" Type="GS_TOKEN" StartNode="66" EndNode="71">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">22</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Greek</Value>
+</Feature>
+</Annotation>
+<Annotation Id="95" Type="GS_TOKEN" StartNode="72" EndNode="81">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">23</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">austerity</Value>
+</Feature>
+</Annotation>
+<Annotation Id="96" Type="GS_TOKEN" StartNode="82" EndNode="83">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">24</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">:</Value>
+</Feature>
+</Annotation>
+<Annotation Id="97" Type="GS_TOKEN" StartNode="84" EndNode="91">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">25</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">British</Value>
+</Feature>
+</Annotation>
+<Annotation Id="98" Type="GS_TOKEN" StartNode="92" EndNode="97">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">26</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">views</Value>
+</Feature>
+</Annotation>
+<Annotation Id="99" Type="GS_TOKEN" StartNode="98" EndNode="106">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">27</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">Greece's</Value>
+</Feature>
+</Annotation>
+<Annotation Id="100" Type="GS_TOKEN" StartNode="107" EndNode="117">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">28</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">parliament</Value>
+</Feature>
+</Annotation>
+<Annotation Id="101" Type="GS_TOKEN" StartNode="118" EndNode="120">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">29</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">is</Value>
+</Feature>
+</Annotation>
+<Annotation Id="102" Type="GS_TOKEN" StartNode="121" EndNode="124">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">30</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">due</Value>
+</Feature>
+</Annotation>
+<Annotation Id="103" Type="GS_TOKEN" StartNode="125" EndNode="127">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">31</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">to</Value>
+</Feature>
+</Annotation>
+<Annotation Id="104" Type="GS_TOKEN" StartNode="128" EndNode="132">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">32</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">vote</Value>
+</Feature>
+</Annotation>
+<Annotation Id="105" Type="GS_TOKEN" StartNode="133" EndNode="135">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">33</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">on</Value>
+</Feature>
+</Annotation>
+<Annotation Id="106" Type="GS_TOKEN" StartNode="136" EndNode="139">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">34</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">the</Value>
+</Feature>
+</Annotation>
+<Annotation Id="107" Type="GS_TOKEN" StartNode="140" EndNode="145">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">35</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">8</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">hefty</Value>
+</Feature>
+</Annotation>
+<Annotation Id="108" Type="GS_TOKEN" StartNode="146" EndNode="150">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">36</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">9</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">cuts</Value>
+</Feature>
+</Annotation>
+<Annotation Id="109" Type="GS_TOKEN" StartNode="151" EndNode="154">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">37</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">10</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">and</Value>
+</Feature>
+</Annotation>
+<Annotation Id="110" Type="GS_TOKEN" StartNode="155" EndNode="162">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">38</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">11</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">reforms</Value>
+</Feature>
+</Annotation>
+<Annotation Id="111" Type="GS_TOKEN" StartNode="163" EndNode="171">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">39</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">12</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">proposed</Value>
+</Feature>
+</Annotation>
+<Annotation Id="112" Type="GS_TOKEN" StartNode="172" EndNode="174">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">40</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">13</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">by</Value>
+</Feature>
+</Annotation>
+<Annotation Id="113" Type="GS_TOKEN" StartNode="175" EndNode="178">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">41</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">14</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">the</Value>
+</Feature>
+</Annotation>
+<Annotation Id="114" Type="GS_TOKEN" StartNode="179" EndNode="189">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">42</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">15</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">government</Value>
+</Feature>
+</Annotation>
+<Annotation Id="115" Type="GS_TOKEN" StartNode="190" EndNode="192">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">43</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">16</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">to</Value>
+</Feature>
+</Annotation>
+<Annotation Id="116" Type="GS_TOKEN" StartNode="193" EndNode="200">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">44</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">17</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">address</Value>
+</Feature>
+</Annotation>
+<Annotation Id="117" Type="GS_TOKEN" StartNode="201" EndNode="204">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">45</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">18</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">the</Value>
+</Feature>
+</Annotation>
+<Annotation Id="118" Type="GS_TOKEN" StartNode="205" EndNode="214">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">46</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">19</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">country's</Value>
+</Feature>
+</Annotation>
+<Annotation Id="119" Type="GS_TOKEN" StartNode="215" EndNode="224">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">47</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">20</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">financial</Value>
+</Feature>
+</Annotation>
+<Annotation Id="120" Type="GS_TOKEN" StartNode="225" EndNode="231">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">48</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">21</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">crisis</Value>
+</Feature>
+</Annotation>
+<Annotation Id="121" Type="GS_TOKEN" StartNode="232" EndNode="233">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">49</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">22</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">.</Value>
+</Feature>
+</Annotation>
+<Annotation Id="122" Type="GS_TOKEN" StartNode="234" EndNode="236">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">50</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">0</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">It</Value>
+</Feature>
+</Annotation>
+<Annotation Id="123" Type="GS_TOKEN" StartNode="237" EndNode="242">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">51</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">1</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">comes</Value>
+</Feature>
+</Annotation>
+<Annotation Id="124" Type="GS_TOKEN" StartNode="243" EndNode="244">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">52</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">2</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+</Annotation>
+<Annotation Id="125" Type="GS_TOKEN" StartNode="245" EndNode="248">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">53</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">day</Value>
+</Feature>
+</Annotation>
+<Annotation Id="126" Type="GS_TOKEN" StartNode="249" EndNode="254">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">54</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">4</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">after</Value>
+</Feature>
+</Annotation>
+<Annotation Id="127" Type="GS_TOKEN" StartNode="255" EndNode="260">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">55</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">5</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">three</Value>
+</Feature>
+</Annotation>
+<Annotation Id="128" Type="GS_TOKEN" StartNode="261" EndNode="265">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">56</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">6</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">bank</Value>
+</Feature>
+</Annotation>
+<Annotation Id="129" Type="GS_TOKEN" StartNode="266" EndNode="273">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">57</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">7</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">workers</Value>
+</Feature>
+</Annotation>
+<Annotation Id="130" Type="GS_TOKEN" StartNode="274" EndNode="278">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">58</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">8</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">died</Value>
+</Feature>
+</Annotation>
+<Annotation Id="131" Type="GS_TOKEN" StartNode="279" EndNode="281">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">59</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">9</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">in</Value>
+</Feature>
+</Annotation>
+<Annotation Id="132" Type="GS_TOKEN" StartNode="282" EndNode="283">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">60</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">10</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">a</Value>
+</Feature>
+</Annotation>
+<Annotation Id="133" Type="GS_TOKEN" StartNode="284" EndNode="290">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">61</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">11</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">petrol</Value>
+</Feature>
+</Annotation>
+<Annotation Id="134" Type="GS_TOKEN" StartNode="291" EndNode="295">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">62</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">12</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">bomb</Value>
+</Feature>
+</Annotation>
+<Annotation Id="135" Type="GS_TOKEN" StartNode="296" EndNode="302">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">63</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">13</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">attack</Value>
+</Feature>
+</Annotation>
+<Annotation Id="136" Type="GS_TOKEN" StartNode="303" EndNode="305">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">64</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">14</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">as</Value>
+</Feature>
+</Annotation>
+<Annotation Id="137" Type="GS_TOKEN" StartNode="306" EndNode="320">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">65</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">15</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">demonstrations</Value>
+</Feature>
+</Annotation>
+<Annotation Id="138" Type="GS_TOKEN" StartNode="321" EndNode="325">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">66</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">16</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">over</Value>
+</Feature>
+</Annotation>
+<Annotation Id="139" Type="GS_TOKEN" StartNode="326" EndNode="329">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">67</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">17</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">the</Value>
+</Feature>
+</Annotation>
+<Annotation Id="140" Type="GS_TOKEN" StartNode="330" EndNode="337">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">68</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">18</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">planned</Value>
+</Feature>
+</Annotation>
+<Annotation Id="141" Type="GS_TOKEN" StartNode="338" EndNode="347">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">69</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">19</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">austerity</Value>
+</Feature>
+</Annotation>
+<Annotation Id="142" Type="GS_TOKEN" StartNode="348" EndNode="356">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">70</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">20</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">measures</Value>
+</Feature>
+</Annotation>
+<Annotation Id="143" Type="GS_TOKEN" StartNode="357" EndNode="363">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">71</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">21</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">turned</Value>
+</Feature>
+</Annotation>
+<Annotation Id="144" Type="GS_TOKEN" StartNode="364" EndNode="371">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">72</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">22</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">violent</Value>
+</Feature>
+</Annotation>
+<Annotation Id="145" Type="GS_TOKEN" StartNode="372" EndNode="373">
+<Feature>
+  <Name className="java.lang.String">t_id</Name>
+  <Value className="java.lang.String">73</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">sentence</Name>
+  <Value className="java.lang.String">3</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">number</Name>
+  <Value className="java.lang.String">23</Value>
+</Feature>
+<Feature>
+  <Name className="java.lang.String">string</Name>
+  <Value className="java.lang.String">.</Value>
+</Feature>
+</Annotation>
+</AnnotationSet>
+
+</GateDocument>

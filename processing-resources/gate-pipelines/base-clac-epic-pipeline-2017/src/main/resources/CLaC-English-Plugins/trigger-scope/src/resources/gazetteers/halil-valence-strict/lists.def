@@ -1,0 +1,5 @@
+negator.lst:valence_shifter:negator
+hedge.lst:valence_shifter:hedge
+intensifier.lst:valence_shifter:intensifier
+positive_shift.lst:valence_shifter:positive_shift
+diminisher.lst:valence_shifter:diminisher

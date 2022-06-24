@@ -1,0 +1,52 @@
+Phase: Scope
+Input: explicitNegDomainNN implicitNegDomainNN selfNegDomainNN modalityDomainNN valenceDomainNN
+Options: control = all
+
+
+Rule: explicitNegDomainNN
+(
+ {explicitNegDomainNN}
+):scope
+    -->
+     :scope.Scope = {
+         triggerID = :scope.explicitNegDomainNN.TriggerID
+         heuristic = negator-explicit
+     }
+Rule: implicitNegDomainNN
+(
+ {implicitNegDomainNN}
+):scope
+    -->
+     :scope.Scope = {
+         triggerID = :scope.implicitNegDomainNN.TriggerID
+         heuristic = negator-implicit
+     }
+Rule: selfNegDomainNN
+(
+ {selfNegDomainNN}
+):scope
+    -->
+     :scope.Scope = {
+         triggerID = :scope.selfNegDomainNN.TriggerID
+         heuristic = negator-self
+     }
+Rule: modalityDomainNN
+(
+ {modalityDomainNN}
+):scope
+    -->
+     :scope.Scope = {
+         triggerID = :scope.modalityDomainNN.TriggerID
+         heuristic = negator-modality
+     }
+Rule: valenceDomainNN
+(
+ {valenceDomainNN}
+):scope
+    -->
+     :scope.Scope = {
+         triggerID = :scope.valenceDomainNN.TriggerID
+         heuristic = negator-valence
+     }
+
+

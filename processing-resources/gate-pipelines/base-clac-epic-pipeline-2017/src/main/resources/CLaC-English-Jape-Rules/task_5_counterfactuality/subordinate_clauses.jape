@@ -1,0 +1,37 @@
+/**
+* Project: Counterfactuality (SemEval Task 5 2020) 
+* Created by: Nadia Sheikh
+* Created on: 2nd February 2020
+* Purpose: Identifies all subordinate clauses within a sentence
+* Development Notes: Temp Jape rule, not be used as is in a pipeline
+* Use Notes:
+*		
+*/
+
+Imports:{
+	import static gate.Utils.*;
+}
+
+Phase: SubordinateClauses
+Input: SyntaxTreeNode Token
+Options: control=all
+
+Rule:ElevateSBARFeatureToAnnotation
+(
+	({SyntaxTreeNode.cat=="SBAR"})
+):subordinateClause
+--> 
+{
+	AnnotationSet subordinateClauseAnnotationSet = (gate.AnnotationSet) bindings.get("subordinateClause");
+	Annotation subordinateClauseAnnotation = (gate.Annotation)subordinateClauseAnnotationSet.iterator().next();
+
+	FeatureMap subordinateClauseFeatureMap = Factory.newFeatureMap();
+	Integer subordinatingConjunctionId = (Integer)((List)subordinateClauseAnnotation.getFeatures().get("consists")).get(0);
+	Annotation subordinatingConjunctionTokenAnn = inputAS.get(subordinatingConjunctionId);
+	String subordinatingConjunctionTokenString = gate.Utils.stringFor(doc, subordinatingConjunctionTokenAnn);
+	subordinateClauseFeatureMap.put("subordinatingConjunction", subordinatingConjunctionTokenString);
+
+	outputAS.add(subordinateClauseAnnotation.getStartNode(), subordinateClauseAnnotation.getEndNode(), "temp_subordinate_clause", subordinateClauseFeatureMap);
+	
+}
+

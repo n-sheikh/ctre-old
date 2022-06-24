@@ -1,0 +1,3 @@
+Jape transducers used to detect scope of a predicate.
+This attempt was abandonned because the Jape transducers
+are not flexible enough.

@@ -1,0 +1,39 @@
+n't:pos=:source=Not_Defined
+//aren't:pos=:source=Not_Defined
+//can't:pos=:source=Not_Defined
+//cannot:pos=:source=Not_Defined
+//couldn't:pos=:source=Not_Defined
+//didn't:pos=:source=Not_Defined
+//doesn't:pos=:source=Not_Defined
+//don't:pos=:source=Not_Defined
+//hadn't:pos=:source=Not_Defined
+//hasn't:pos=:source=Not_Defined
+//isn't:pos=:source=Not_Defined
+//mightn't:pos=:source=Not_Defined
+//mustn't:pos=:source=Not_Defined
+//shouldn't:pos=:source=Not_Defined
+//weren't:pos=:source=Not_Defined
+//won't:pos=:source=Not_Defined
+//wouldn't:pos=:source=Not_Defined
+neither:pos=:source=Not_Defined
+never:pos=:source=Not_Defined
+never:pos=:source=Not_Defined
+nix:pos=:source=Not_Defined
+no:pos=:source=Not_Defined
+no:pos=:source=Not_Defined
+no one:pos=:source=Not_Defined
+nobody:pos=:source=Not_Defined
+non:pos=:source=Not_Defined
+none:pos=:source=Not_Defined
+nor:pos=:source=Not_Defined
+not:pos=:source=Not_Defined
+nothing:pos=:source=Not_Defined
+without:pos=:source=Not_Defined
+nowhere:pos=:source=Not_Defined
+rather than:pos=:source=Not_Defined
+instead of:pos=:source=Not_Defined
+turned down:pos=:source=Not_Defined
+with the exception of:pos=:source=Not_Defined
+by no means:pos=:source=Conan-Doyle
+on the contrary:pos=:source=Conan-Doyle
+except:pos=IN:source=Roser

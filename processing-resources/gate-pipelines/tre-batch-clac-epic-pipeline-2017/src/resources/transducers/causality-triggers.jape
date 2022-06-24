@@ -1,0 +1,43 @@
+/**
+* Project: CNC - (Shared Task Carried out by Nadia (in May 2022)
+* Created by: Nadia Sheikh
+* Purpose: Reannotates Causality Triggers identified using MCM/Khoo Gazetteer 
+* Development Notes:
+* Use Notes:
+*/
+
+
+
+Imports:{
+	import static gate.Utils.*;
+}
+
+
+
+
+Phase: MCMKhooCausalityTriggers
+Input: Lookup
+Options: control = appelt
+
+Rule: ReannotateMCMTriggers
+(
+ {Lookup.majorType == "causality_triggers", Lookup.minorType=="mcm"}
+):cTriggers -->
+{
+	gate.AnnotationSet causalityTriggerAnnSet = (gate.AnnotationSet)bindings.get("cTriggers");
+	gate.Annotation causalityAnn = causalityTriggerAnnSet.iterator().next();
+	outputAS.add(causalityTriggerAnnSet.firstNode(), causalityTriggerAnnSet.lastNode() ,"MCM_Causality_Trigger", Factory.newFeatureMap());
+	
+}
+
+Rule: ReannotateKhooTriggers
+(
+ {Lookup.majorType == "causality_triggers", Lookup.minorType=="khoo"}
+):cTriggers -->
+{
+	gate.AnnotationSet causalityTriggerAnnSet = (gate.AnnotationSet)bindings.get("cTriggers");
+	gate.Annotation causalityAnn = causalityTriggerAnnSet.iterator().next();
+	outputAS.add(causalityTriggerAnnSet.firstNode(), causalityTriggerAnnSet.lastNode() ,"Khoo_Causality_Trigger", Factory.newFeatureMap());
+	
+}
+

@@ -1,0 +1,26 @@
+Phase: Scope
+Input: tweet
+Options: control = appelt
+
+Rule: positive
+(
+ {tweet.sentiment == "\"positive\""}
+):sent
+    -->
+     :sent.Positive = {}
+
+Rule: negative
+(
+ {tweet.sentiment == "\"negative\""}
+):sent
+    -->
+     :sent.Negative = {}
+
+Rule: neutral
+(
+ { tweet.sentiment == "\"neutral\""   } |
+ { tweet.sentiment == "\"objective\"" } |
+ { tweet.sentiment == "\"objective-OR-neutral\"" }
+):sent
+    -->
+     :sent.Neutral = {}

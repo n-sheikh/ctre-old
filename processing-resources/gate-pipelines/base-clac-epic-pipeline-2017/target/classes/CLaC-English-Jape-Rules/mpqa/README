@@ -1,0 +1,3 @@
+This transducer is used to create Trigger annotations from MPQA lookup,
+correcting mislabelled tokens by verifying the part-of-speech against
+the MPQA pos feature.

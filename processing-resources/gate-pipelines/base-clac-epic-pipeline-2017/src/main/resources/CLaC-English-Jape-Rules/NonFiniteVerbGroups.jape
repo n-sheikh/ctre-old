@@ -1,0 +1,1188 @@
+// Nonfinite Verb Groups
+//    $Id: NonFiniteVerbGroups.jape,v 1.6 2005/02/11 22:58:36 zhuoy_li Exp $
+//    $Log: NonFiniteVerbGroups.jape,v $
+//    Revision 1.6  2005/02/11 22:58:36  zhuoy_li
+//    codes that mark up mainverb annotations added
+//
+//    Revision 1.5  2004/01/28 01:00:47  doandes
+//    according to, special verb group used in reported speech analysis
+//
+//    Revision 1.4  2003/12/17 03:13:14  doandes
+//    Checked it against Quirk's ABCD patterns and corrected a few tag errors. New order for features for consistency and Quirk rule order for clarity.
+//
+//    Revision 1.3  2003/12/15 10:35:25  doandes
+//    VB leftovers catcher.
+//
+//    Revision 1.2  2003/12/12 16:41:19  yunyu_ch
+//    Features added.
+//
+//    Revision 1.2  2003/12/11 19:19:44  yunyu_ch
+//    Unite three types  (Ving Ved Nonfinite) to one type (Nonfinite).
+//
+//    Revision 1.1  2003/12/11 19:13:06  yunyu_ch
+//    Reduced the select-out rules.
+//
+//    Revision 1.1  2003/12/10 18:08:19  yunyu_ch
+//    Added some features for nonfinite verb phrases, V_ing and V_ed.
+//
+//    Revision 1.1  2003/11/04 12:42:18  doandes
+//    Initial commit. VBG has extra features because it will be used later. The nonfinite verb groups still need work, but this version is good enough to try it out.
+//
+//
+// Quirk's ABCD patterns applied to nonfinite verb groups:
+//
+//  aux1      aux2    aux3    mv   voice
+//
+//                            VB   active   ; (TO) + VB                      simple
+//  HAVE_VB                   VBN  active   ; (TO) + have + VBN              B
+//  HAVE_VB   BE_VBN          VBG  active   ; (TO) + have + been + VBG       BC
+//  HAVE_VB   BE_VBN  BE_VBG  VBN  passive  ; (TO) + have + been + being +VB BCD
+//  HAVE_VB           BE_VBN  VBN  passive  ; (TO) + have + been + VBN       BD
+//            BE_VB           VBG  active   ; (TO) + be + VBG                C
+//            BE_VB   BE_VBG  VBN  passive  ; (TO) + be + being + VBN        CD
+//                    BE_VB   VBN  passive  ; (TO) + be + VBN                D
+//
+//                            VBG  active   ; VBG                            simple
+//  HAVE_VBG                  VBN  active   ; having + VBN                   B
+//  HAVE_VBG  BE_VBN          VBG  active   ; having + been + VBG            BC
+//  HAVE_VBG  BE_VBN  BE_VBG  VBN  passive  ; having + been + being + VBN    BCD
+//  HAVE_VBG          BE_VBN  VBN  passive  ; having + been + VBN            BD
+//            [____]  BE_VBG  VBN  passive  ; _____ + being + VBN            CD
+//                    [____]  VBN  passive  ; _____ + VBN                    D
+
+
+
+Phase: NonfiniteVerbGroup
+Input: VGCLaC Token
+Options: control = appelt
+
+
+Macro: TO
+(
+({Token.string == "to"})?
+)
+
+Macro: ADVERBS
+(
+({Token.category == RB})?
+|
+({Token.category == RB} {Token.category == RB})
+|
+({Token.category == RB} {Token.category == RB} {Token.category == RB})
+)
+
+Rule: DropFinite
+Priority:100
+(
+{VGCLaC}
+):movealong -->
+{}
+
+
+
+// nfvg.jape
+// Non-Finite Verb Groups
+
+
+// INFINITIVES      
+
+Rule: INFAct
+// Simple Infinitive Active: to eat
+// (to) VB
+(
+(TO)
+(ADVERBS)
+{Token.category == VB}
+):capturevp -->
+{
+
+    // get all the annotations associated with the rule "capturevp"
+    gate.AnnotationSet Ann = (gate.AnnotationSet)bindings.get("capturevp");
+  
+    // from the global annotations get all the Token annotations out
+    // I use one object "annotations" here, which is a pre-defined object in the jape RHS java code, which denotes all the annotations within the document,
+
+    //gate.AnnotationSet allToken = annotations.get("Token");
+    gate.AnnotationSet allToken = inputAS.get("Token");
+    try{
+	Long start = Ann.firstNode().getOffset() ;
+	Long end = Ann.lastNode().getOffset() ;
+	ArrayList tmpList = new ArrayList( Ann );
+	
+	// sort all tokens by start offset
+	Collections.sort( tmpList , new gate.util.OffsetComparator() );
+	AnnotationSet tokenInside = allToken.get( start , end ) ;
+	
+	if( tokenInside != null && tokenInside.size() > 0 ){   //normally it should not be empty, just double check
+	    Iterator tokenIter = tmpList.iterator() ;
+	    
+	    // now I am going to get the last token of the VG and annotated it as CLaCVG
+	    // first we get to the last one
+	    for( int i = 0 ; i < tokenInside.size()-1 ; i ++ ){
+		tokenIter.next() ;
+	    }
+	    Annotation lastToken = (Annotation) tokenIter.next();
+	    Long tokenSpanStartOffset = lastToken.getStartNode().getOffset() ;
+	    Long tokenSpanEndOffset   = lastToken.getEndNode().getOffset();
+	    
+	    // Then we get the string content of this Token annotation
+	    // To get the content of the text, you should always use this method
+	    // 		document.getContent().getContent( Long begineOffset , Long endOffset ).toString()
+	    String lastTokenString = doc.getContent().getContent( tokenSpanStartOffset , tokenSpanEndOffset ).toString() ;
+	    String vgString = doc.getContent().getContent( start , end ).toString();
+
+	    // Then we create a FeatureMap object, where we put some feature inside.
+	    // To create the new Gate Annotation inside the JAVA code ( in the self-developed components
+	    // or the Right-Hand-Side jape embedded-java-code ), you always have to create one new
+	    // FeatureMap object in the following way
+
+	    // !!! do not use something like FeatureMap obj = new FeatureMap() !!!
+	    FeatureMap newFeature = Factory.newFeatureMap() ;
+
+	    newFeature.put( "TAGMAINVERB" , "VB" );
+	    newFeature.put( "VOICE" , "active" );
+	    newFeature.put( "AUXS" ,"");
+	    newFeature.put( "MAINVERB" , lastTokenString );
+	    newFeature.put( "TYPE" ,"nonfinite");
+
+	    // then we add this annotation to the default annotation set
+	    // syntax:
+	    //  AnnotationSet.add(Node start, Node end, String type, FeatureMap features)
+	    // or AnnotationSet.add( Long start , Long end , String type , FeatureMap features)
+	    // check the gate online documentation for the API
+
+	    //annotations.add(start, end, "VGCLaC",	newFeature);
+	    outputAS.add(start, end, "VGCLaC",	newFeature);
+
+	    newFeature = Factory.newFeatureMap();
+	    List idList = new ArrayList();
+	    idList.add(lastToken.getId());
+	    newFeature.put("annoIncluded",idList);
+	    //annotations.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	    outputAS.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	}
+    }catch(Exception e){
+        System.out.println(e.toString());
+    }
+}
+
+
+Rule: INFPerAct
+// B Infinitive Perfect Active:  to have eaten
+// (to) have VBN
+(
+(TO)
+{Token.string == "have", Token.category == VB}
+(ADVERBS)
+{Token.category == VBN}
+):capturevp -->
+{
+    gate.AnnotationSet Ann = (gate.AnnotationSet)bindings.get("capturevp");
+
+    //gate.AnnotationSet allToken = annotations.get("Token");
+    gate.AnnotationSet allToken = inputAS.get("Token");
+
+    try{
+	Long start = Ann.firstNode().getOffset() ;
+	Long end = Ann.lastNode().getOffset() ;
+	ArrayList tmpList = new ArrayList( Ann );
+
+	// sort all tokens by start offset
+	Collections.sort( tmpList , new gate.util.OffsetComparator() );
+	AnnotationSet tokenInside = allToken.get( start , end ) ;
+
+	if( tokenInside != null && tokenInside.size() > 0 ){   //normally it should not be empty, just double check
+	    Iterator tokenIter = tmpList.iterator() ;
+
+	    for( int i = 0 ; i < tokenInside.size()-1 ; i ++ ){
+		tokenIter.next() ;
+	    }
+	    Annotation lastToken = (Annotation) tokenIter.next();
+	    Long tokenSpanStartOffset = lastToken.getStartNode().getOffset() ;
+	    Long tokenSpanEndOffset   = lastToken.getEndNode().getOffset();
+
+	    String lastTokenString = doc.getContent().getContent( tokenSpanStartOffset , tokenSpanEndOffset ).toString() ;
+	    String vgString = doc.getContent().getContent( start , end ).toString();
+
+	    // !!! do not use something like FeatureMap obj = new FeatureMap() !!!
+	    FeatureMap newFeature = Factory.newFeatureMap() ;
+
+	    ////////////ADVBERVBS ASPECT AUXS MAINVERB MODAL MODALITY MOOD POLARITY TAGMAINVERB TENSE TYPE VOICE
+	    newFeature.put( "TAGMAINVERB" , "VBN" );
+	    newFeature.put( "VOICE" , "active" );
+	    newFeature.put( "AUXS" ,"have");
+	    newFeature.put( "MAINVERB" , lastTokenString );
+	    newFeature.put( "TYPE" ,"nonfinite");
+
+	    //annotations.add(start, end, "VGCLaC",	newFeature);
+	    outputAS.add(start, end, "VGCLaC",	newFeature);
+
+	    newFeature = Factory.newFeatureMap();
+	    List idList = new ArrayList();
+	    idList.add(lastToken.getId());
+	    newFeature.put("annoIncluded",idList);
+	    //annotations.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	    outputAS.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	}
+    }catch(Exception e){
+        System.out.println(e.toString());
+    }
+}
+
+Rule: INFPerConAct
+Priority:30
+// BC Infinitive Perfect Continuous Active:  to have been eating
+// (to) have been VBG
+(
+(TO)
+{Token.string == "have",Token.category == VB}
+{Token.string == "been"}
+(ADVERBS)
+{Token.category == VBG}
+):capturevp -->
+{
+    gate.AnnotationSet Ann = (gate.AnnotationSet)bindings.get("capturevp");
+
+    //gate.AnnotationSet allToken = annotations.get("Token");
+    gate.AnnotationSet allToken = inputAS.get("Token");
+    try{
+	Long start = Ann.firstNode().getOffset() ;
+	Long end = Ann.lastNode().getOffset() ;
+	ArrayList tmpList = new ArrayList( Ann );
+
+	// sort all tokens by start offset
+	Collections.sort( tmpList , new gate.util.OffsetComparator() );
+	AnnotationSet tokenInside = allToken.get( start , end ) ;
+
+	if( tokenInside != null && tokenInside.size() > 0 ){   //normally it should not be empty, just double check
+	    Iterator tokenIter = tmpList.iterator() ;
+
+	    for( int i = 0 ; i < tokenInside.size()-1 ; i ++ ){
+		tokenIter.next() ;
+	    }
+	    Annotation lastToken = (Annotation) tokenIter.next();
+	    Long tokenSpanStartOffset = lastToken.getStartNode().getOffset() ;
+	    Long tokenSpanEndOffset   = lastToken.getEndNode().getOffset();
+
+	    String lastTokenString = doc.getContent().getContent( tokenSpanStartOffset , tokenSpanEndOffset ).toString() ;
+	    String vgString = doc.getContent().getContent( start , end ).toString();
+
+	    // !!! do not use something like FeatureMap obj = new FeatureMap() !!!
+	    FeatureMap newFeature = Factory.newFeatureMap() ;
+
+
+	    ////////////ADVBERVBS ASPECT AUXS MAINVERB MODAL MODALITY MOOD POLARITY TAGMAINVERB TENSE TYPE VOICE
+	    newFeature.put( "TAGMAINVERB" , "VBG" );
+	    newFeature.put( "VOICE" , "active" );
+	    newFeature.put( "AUXS" ,"have been");
+	    newFeature.put( "MAINVERB" , lastTokenString );
+	    newFeature.put( "TYPE" ,"nonfinite");
+
+	    //annotations.add(start, end, "VGCLaC",	newFeature);
+	    outputAS.add(start, end, "VGCLaC",	newFeature);
+
+	    newFeature = Factory.newFeatureMap();
+	    List idList = new ArrayList();
+	    idList.add(lastToken.getId());
+	    newFeature.put("annoIncluded",idList);
+	    //annotations.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	    outputAS.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	}
+    }catch(Exception e){
+        System.out.println(e.toString());
+    }
+}
+
+Rule: INFPerConPas
+Priority:10
+// BCD Infinitive Perfect Continuous Passive:  to have been being eaten
+// (to) have been being VBN
+(
+(TO)
+{Token.string == "have"}
+{Token.string == "been"}
+{Token.string == "being"}
+(ADVERBS)
+{Token.category == VBN}
+):capturevp -->
+{
+    gate.AnnotationSet Ann = (gate.AnnotationSet)bindings.get("capturevp");
+
+    //gate.AnnotationSet allToken = annotations.get("Token");
+    gate.AnnotationSet allToken = inputAS.get("Token");
+    try{
+	Long start = Ann.firstNode().getOffset() ;
+	Long end = Ann.lastNode().getOffset() ;
+	ArrayList tmpList = new ArrayList( Ann );
+
+	// sort all tokens by start offset
+	Collections.sort( tmpList , new gate.util.OffsetComparator() );
+	AnnotationSet tokenInside = allToken.get( start , end ) ;
+
+	if( tokenInside != null && tokenInside.size() > 0 ){   //normally it should not be empty, just double check
+	    Iterator tokenIter = tmpList.iterator() ;
+
+	    for( int i = 0 ; i < tokenInside.size()-1 ; i ++ ){
+		tokenIter.next() ;
+	    }
+	    Annotation lastToken = (Annotation) tokenIter.next();
+	    Long tokenSpanStartOffset = lastToken.getStartNode().getOffset() ;
+	    Long tokenSpanEndOffset   = lastToken.getEndNode().getOffset();
+
+	    String lastTokenString = doc.getContent().getContent( tokenSpanStartOffset , tokenSpanEndOffset ).toString() ;
+	    String vgString = doc.getContent().getContent( start , end ).toString();
+
+	    // !!! do not use something like FeatureMap obj = new FeatureMap() !!!
+	    FeatureMap newFeature = Factory.newFeatureMap() ;
+	    
+
+	    ////////////ADVBERVBS ASPECT AUXS MAINVERB MODAL MODALITY MOOD POLARITY TAGMAINVERB TENSE TYPE VOICE
+	    newFeature.put( "TAGMAINVERB" , "VBN" );
+	    newFeature.put( "VOICE" , "passive" );
+	    newFeature.put( "AUXS" ,"have being been");
+	    newFeature.put( "MAINVERB" , lastTokenString );
+	    newFeature.put( "TYPE" ,"nonfinite");
+
+	    //annotations.add(start, end, "VGCLaC",	newFeature);
+	    outputAS.add(start, end, "VGCLaC",	newFeature);
+
+	    newFeature = Factory.newFeatureMap();
+	    List idList = new ArrayList();
+	    idList.add(lastToken.getId());
+	    newFeature.put("annoIncluded",idList);
+	    //annotations.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	    outputAS.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	}
+    }catch(Exception e){
+        System.out.println(e.toString());
+    }
+}
+
+Rule: INFPerPas
+Priority:10
+// BD Infinitive Perfect Passive:  to have been eaten
+// (to) have been VBN
+(
+(TO)
+{Token.string == "have",Token.category == VB}
+{Token.string == "been"}
+(ADVERBS)
+{Token.category == VBN}
+):capturevp -->
+{
+    gate.AnnotationSet Ann = (gate.AnnotationSet)bindings.get("capturevp");
+
+    //gate.AnnotationSet allToken = annotations.get("Token");
+    gate.AnnotationSet allToken = inputAS.get("Token");
+    try{
+	Long start = Ann.firstNode().getOffset() ;
+	Long end = Ann.lastNode().getOffset() ;
+	ArrayList tmpList = new ArrayList( Ann );
+
+	// sort all tokens by start offset
+	Collections.sort( tmpList , new gate.util.OffsetComparator() );
+	AnnotationSet tokenInside = allToken.get( start , end ) ;
+
+	if( tokenInside != null && tokenInside.size() > 0 ){   //normally it should not be empty, just double check
+	    Iterator tokenIter = tmpList.iterator() ;
+
+	    for( int i = 0 ; i < tokenInside.size()-1 ; i ++ ){
+		tokenIter.next() ;
+	    }
+	    Annotation lastToken = (Annotation) tokenIter.next();
+	    Long tokenSpanStartOffset = lastToken.getStartNode().getOffset() ;
+	    Long tokenSpanEndOffset   = lastToken.getEndNode().getOffset();
+
+	    String lastTokenString = doc.getContent().getContent( tokenSpanStartOffset , tokenSpanEndOffset ).toString() ;
+	    String vgString = doc.getContent().getContent( start , end ).toString();
+
+	    // !!! do not use something like FeatureMap obj = new FeatureMap() !!!
+	    FeatureMap newFeature = Factory.newFeatureMap() ;
+
+
+	    ////////////ADVBERVBS ASPECT AUXS MAINVERB MODAL MODALITY MOOD POLARITY TAGMAINVERB TENSE TYPE VOICE
+	    newFeature.put( "TAGMAINVERB" , "VBN" );
+	    newFeature.put( "VOICE" , "passive" );
+	    newFeature.put( "AUXS" ,"have been");
+	    newFeature.put( "MAINVERB" , lastTokenString );
+	    newFeature.put( "TYPE" ,"nonfinite");
+
+	    //annotations.add(start, end, "VGCLaC",	newFeature);
+	    outputAS.add(start, end, "VGCLaC",	newFeature);
+
+	    newFeature = Factory.newFeatureMap();
+	    List idList = new ArrayList();
+	    idList.add(lastToken.getId());
+	    newFeature.put("annoIncluded",idList);
+	    //annotations.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	    outputAS.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	}
+    }catch(Exception e){
+        System.out.println(e.toString());
+    }
+}
+
+
+Rule: INFPreConAct
+// C Infinitive Present Continuous: to be eating
+// (to) be VBG
+(
+(TO)
+{Token.string == "be"}
+(ADVERBS)
+{Token.category == VBG}
+):capturevp -->
+{
+    gate.AnnotationSet Ann = (gate.AnnotationSet)bindings.get("capturevp");
+
+    //gate.AnnotationSet allToken = annotations.get("Token");
+    gate.AnnotationSet allToken = inputAS.get("Token");
+
+    try{
+	Long start = Ann.firstNode().getOffset() ;
+	Long end = Ann.lastNode().getOffset() ;
+	ArrayList tmpList = new ArrayList( Ann );
+
+	// sort all tokens by start offset
+	Collections.sort( tmpList , new gate.util.OffsetComparator() );
+	AnnotationSet tokenInside = allToken.get( start , end ) ;
+
+	if( tokenInside != null && tokenInside.size() > 0 ){   //normally it should not be empty, just double check
+	    Iterator tokenIter = tmpList.iterator() ;
+
+	    for( int i = 0 ; i < tokenInside.size()-1 ; i ++ ){
+		tokenIter.next() ;
+	    }
+	    Annotation lastToken = (Annotation) tokenIter.next();
+	    Long tokenSpanStartOffset = lastToken.getStartNode().getOffset() ;
+	    Long tokenSpanEndOffset   = lastToken.getEndNode().getOffset();
+
+	    String lastTokenString = doc.getContent().getContent( tokenSpanStartOffset , tokenSpanEndOffset ).toString() ;
+	    String vgString = doc.getContent().getContent( start , end ).toString();
+
+	    // !!! do not use something like FeatureMap obj = new FeatureMap() !!!
+	    FeatureMap newFeature = Factory.newFeatureMap() ;
+
+	    ////////////ADVBERVBS ASPECT AUXS MAINVERB MODAL MODALITY MOOD POLARITY TAGMAINVERB TENSE TYPE VOICE
+	    newFeature.put( "TAGMAINVERB" , "VBG" );
+	    newFeature.put( "VOICE" , "active" );
+	    newFeature.put( "AUXS" ,"be");
+	    newFeature.put( "MAINVERB" , lastTokenString );
+	    newFeature.put( "TYPE" ,"nonfinite");
+
+	    //annotations.add(start, end, "VGCLaC",	newFeature);
+	    outputAS.add(start, end, "VGCLaC",	newFeature);
+
+	    newFeature = Factory.newFeatureMap();
+	    List idList = new ArrayList();
+	    idList.add(lastToken.getId());
+	    newFeature.put("annoIncluded",idList);
+	    //annotations.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	    outputAS.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	}
+    }catch(Exception e){
+        System.out.println(e.toString());
+    }
+}
+
+Rule: INFPreConPas
+// CD Infinitive Present Continuous: to be being eaten
+// (to) be being VBN
+(
+(TO)
+{Token.string == "be"}
+{Token.string == "being"}
+(ADVERBS)
+{Token.category == VBN}
+):capturevp -->
+{
+    gate.AnnotationSet Ann = (gate.AnnotationSet)bindings.get("capturevp");
+
+    //gate.AnnotationSet allToken = annotations.get("Token");
+    gate.AnnotationSet allToken = inputAS.get("Token");
+
+    try{
+	Long start = Ann.firstNode().getOffset() ;
+	Long end = Ann.lastNode().getOffset() ;
+	ArrayList tmpList = new ArrayList( Ann );
+
+	// sort all tokens by start offset
+	Collections.sort( tmpList , new gate.util.OffsetComparator() );
+	AnnotationSet tokenInside = allToken.get( start , end ) ;
+
+	if( tokenInside != null && tokenInside.size() > 0 ){   //normally it should not be empty, just double check
+	    Iterator tokenIter = tmpList.iterator() ;
+
+	    for( int i = 0 ; i < tokenInside.size()-1 ; i ++ ){
+		tokenIter.next() ;
+	    }
+	    Annotation lastToken = (Annotation) tokenIter.next();
+	    Long tokenSpanStartOffset = lastToken.getStartNode().getOffset() ;
+	    Long tokenSpanEndOffset   = lastToken.getEndNode().getOffset();
+
+	    String lastTokenString = doc.getContent().getContent( tokenSpanStartOffset , tokenSpanEndOffset ).toString() ;
+	    String vgString = doc.getContent().getContent( start , end ).toString();
+
+	    // !!! do not use something like FeatureMap obj = new FeatureMap() !!!
+	    FeatureMap newFeature = Factory.newFeatureMap() ;
+
+	    ////////////ADVBERVBS ASPECT AUXS MAINVERB MODAL MODALITY MOOD POLARITY TAGMAINVERB TENSE TYPE VOICE
+	    newFeature.put( "TAGMAINVERB" , "VBN" );
+	    newFeature.put( "VOICE" , "passive" );
+	    newFeature.put( "AUXS" ,"be being");
+	    newFeature.put( "MAINVERB" , lastTokenString );
+	    newFeature.put( "TYPE" ,"nonfinite");
+
+	    //annotations.add(start, end, "VGCLaC",	newFeature);
+	    outputAS.add(start, end, "VGCLaC",	newFeature);
+
+	    newFeature = Factory.newFeatureMap();
+	    List idList = new ArrayList();
+	    idList.add(lastToken.getId());
+	    newFeature.put("annoIncluded",idList);
+	    //    annotations.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	    outputAS.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	    
+	}
+    }catch(Exception e){
+        System.out.println(e.toString());
+    }
+}
+
+Rule: INFPas
+// D Infinitive Passive: to be eaten
+// (to) be VBN
+(
+(TO)
+{Token.string == "be"}
+(ADVERBS)
+{Token.category == VBN}
+):capturevp -->
+{
+    gate.AnnotationSet Ann = (gate.AnnotationSet)bindings.get("capturevp");
+
+    //gate.AnnotationSet allToken = annotations.get("Token");
+    gate.AnnotationSet allToken = inputAS.get("Token");
+
+    try{
+	Long start = Ann.firstNode().getOffset() ;
+	Long end = Ann.lastNode().getOffset() ;
+	ArrayList tmpList = new ArrayList( Ann );
+
+	// sort all tokens by start offset
+	Collections.sort( tmpList , new gate.util.OffsetComparator() );
+	AnnotationSet tokenInside = allToken.get( start , end ) ;
+
+	if( tokenInside != null && tokenInside.size() > 0 ){   //normally it should not be empty, just double check
+	    Iterator tokenIter = tmpList.iterator() ;
+
+	    for( int i = 0 ; i < tokenInside.size()-1 ; i ++ ){
+		tokenIter.next() ;
+	    }
+	    Annotation lastToken = (Annotation) tokenIter.next();
+	    Long tokenSpanStartOffset = lastToken.getStartNode().getOffset() ;
+	    Long tokenSpanEndOffset   = lastToken.getEndNode().getOffset();
+
+	    String lastTokenString = doc.getContent().getContent( tokenSpanStartOffset , tokenSpanEndOffset ).toString() ;
+	    String vgString = doc.getContent().getContent( start , end ).toString();
+
+	    // !!! do not use something like FeatureMap obj = new FeatureMap() !!!
+	    FeatureMap newFeature = Factory.newFeatureMap() ;
+
+	    ////////////ADVBERVBS ASPECT AUXS MAINVERB MODAL MODALITY MOOD POLARITY TAGMAINVERB TENSE TYPE VOICE
+	    newFeature.put( "TAGMAINVERB" , "VBN" );
+	    newFeature.put( "VOICE" , "passive" );
+	    newFeature.put( "AUXS" ,"be");
+	    newFeature.put( "MAINVERB" , lastTokenString );
+	    newFeature.put( "TYPE" ,"nonfinite");
+
+	    //annotations.add(start, end, "VGCLaC",	newFeature);
+	    outputAS.add(start, end, "VGCLaC",	newFeature);
+
+	    newFeature = Factory.newFeatureMap();
+	    List idList = new ArrayList();
+	    idList.add(lastToken.getId());
+	    newFeature.put("annoIncluded",idList);
+	    //annotations.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	    outputAS.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	}
+    }catch(Exception e){
+        System.out.println(e.toString());
+    }
+}
+
+
+
+
+// PARTICIPLES
+// participles -ing, -ed, -n
+
+Rule: PARTPreAct
+// Simple or C Participle Present: eating
+// VBG
+(
+{Token.category == VBG}
+// special treatment for use in reporting verbs
+):capturevp -->
+{
+    gate.AnnotationSet Ann = (gate.AnnotationSet)bindings.get("capturevp");
+    //gate.AnnotationSet allToken = annotations.get("Token");
+    gate.AnnotationSet allToken = inputAS.get("Token");
+
+    try{
+	Long start = Ann.firstNode().getOffset() ;
+      	Long end = Ann.lastNode().getOffset() ;
+        ArrayList tmpList = new ArrayList( Ann );
+
+      	// sort all tokens by start offset
+      	Collections.sort( tmpList , new gate.util.OffsetComparator() );
+      	AnnotationSet tokenInside = allToken.get( start , end ) ;
+
+      	if( tokenInside != null && tokenInside.size() > 0 ){   //normally it should not be empty, just double check
+	    Iterator tokenIter = tmpList.iterator() ;
+
+	    for( int i = 0 ; i < tokenInside.size()-1 ; i ++ ){
+		tokenIter.next() ;
+	    }
+
+	    Annotation lastToken = (Annotation) tokenIter.next();
+	    Long tokenSpanStartOffset = lastToken.getStartNode().getOffset() ;
+	    Long tokenSpanEndOffset   = lastToken.getEndNode().getOffset();
+
+	    String lastTokenString = doc.getContent().getContent( tokenSpanStartOffset , tokenSpanEndOffset ).toString() ;
+	    String vgString = doc.getContent().getContent( start , end ).toString();
+	    FeatureMap newFeature = Factory.newFeatureMap() ;
+   
+	    newFeature.put("TAGMAINVERB","VBG");
+	    newFeature.put("VOICE","active");
+	    newFeature.put("AUXS","");
+	    newFeature.put("MAINVERB",lastTokenString);
+	    newFeature.put("TYPE","nonfinite");
+
+	    //annotations.add(start, end, "VGCLaC", newFeature);
+	    //outputAS.add(allToken.firstNode(),allToken.lastNode(),"VGCLaC",newFeature);
+	    outputAS.add(start,end,"VGCLaC",newFeature);
+
+	    newFeature = Factory.newFeatureMap();
+	    List idList = new ArrayList();
+	    idList.add(lastToken.getId());
+	    newFeature.put("annoIncluded",idList);
+	    //annotations.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	    outputAS.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	}
+    }catch(Exception e){
+        System.out.println(e.toString());
+    }
+}
+
+Rule: PARTPrePerAct
+// B Participle Present Perfect Active: having eaten
+// having VBN
+(
+{Token.string == "having"}
+(ADVERBS)
+{Token.category == VBN}
+):capturevp -->
+{
+    gate.AnnotationSet Ann = (gate.AnnotationSet)bindings.get("capturevp");
+
+    //gate.AnnotationSet allToken = annotations.get("Token");
+    gate.AnnotationSet allToken = inputAS.get("Token");
+
+    try{
+	Long start = Ann.firstNode().getOffset() ;
+	Long end = Ann.lastNode().getOffset() ;
+	ArrayList tmpList = new ArrayList( Ann );
+
+	// sort all tokens by start offset
+
+	Collections.sort( tmpList , new gate.util.OffsetComparator() );
+	AnnotationSet tokenInside = allToken.get( start , end ) ;
+
+	if( tokenInside != null && tokenInside.size() > 0 ){   //normally it should not be empty, just double check
+	    Iterator tokenIter = tmpList.iterator() ;
+
+	    for( int i = 0 ; i < tokenInside.size()-1 ; i ++ ){
+		tokenIter.next() ;
+	    }
+	    Annotation lastToken = (Annotation) tokenIter.next();
+	    Long tokenSpanStartOffset = lastToken.getStartNode().getOffset() ;
+	    Long tokenSpanEndOffset   = lastToken.getEndNode().getOffset();
+
+	    String lastTokenString = doc.getContent().getContent( tokenSpanStartOffset , tokenSpanEndOffset ).toString() ;
+	    String vgString = doc.getContent().getContent( start , end ).toString();
+
+	    // !!! do not use something like FeatureMap obj = new FeatureMap() !!!
+	    FeatureMap newFeature = Factory.newFeatureMap() ;
+
+	    ////////////ADVBERVBS ASPECT AUXS MAINVERB MODAL MODALITY MOOD POLARITY TAGMAINVERB TENSE TYPE VOICE
+	    newFeature.put( "TAGMAINVERB" , "VBN" );
+	    newFeature.put( "VOICE" , "active" );
+	    newFeature.put( "AUXS" ,"having");
+	    newFeature.put( "MAINVERB" , lastTokenString );
+	    newFeature.put( "TYPE" ,"nonfinite");
+
+	    //annotations.add(start, end, "VGCLaC",	newFeature);
+	    outputAS.add(start, end, "VGCLaC",	newFeature);
+
+	    newFeature = Factory.newFeatureMap();
+	    List idList = new ArrayList();
+	    idList.add(lastToken.getId());
+	    newFeature.put("annoIncluded",idList);
+	    //annotations.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	    outputAS.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	}
+    }catch(Exception e){
+        System.out.println(e.toString());
+    }
+
+}
+
+Rule: PARTPrePerConAct
+Priority:9
+// BC Participle Present Perfect Cont.  Active: having been eating
+// having VBN
+(
+{Token.string == "having"}
+{Token.string == "been"}
+(ADVERBS)
+{Token.category == VBG}
+):capturevp -->
+{
+    gate.AnnotationSet Ann = (gate.AnnotationSet)bindings.get("capturevp");
+
+    //gate.AnnotationSet allToken = annotations.get("Token");
+    gate.AnnotationSet allToken = inputAS.get("Token");
+
+    try{
+	Long start = Ann.firstNode().getOffset() ;
+	Long end = Ann.lastNode().getOffset() ;
+	ArrayList tmpList = new ArrayList( Ann );
+
+	// sort all tokens by start offset
+	Collections.sort( tmpList , new gate.util.OffsetComparator() );
+	AnnotationSet tokenInside = allToken.get( start , end ) ;
+
+	if( tokenInside != null && tokenInside.size() > 0 ){   //normally it should not be empty, just double check
+	    Iterator tokenIter = tmpList.iterator() ;
+
+	    for( int i = 0 ; i < tokenInside.size()-1 ; i ++ ){
+		tokenIter.next() ;
+	    }
+	    Annotation lastToken = (Annotation) tokenIter.next();
+	    Long tokenSpanStartOffset = lastToken.getStartNode().getOffset() ;
+	    Long tokenSpanEndOffset   = lastToken.getEndNode().getOffset();
+
+	    String lastTokenString = doc.getContent().getContent( tokenSpanStartOffset , tokenSpanEndOffset ).toString() ;
+	    String vgString = doc.getContent().getContent( start , end ).toString();
+
+	    // !!! do not use something like FeatureMap obj = new FeatureMap() !!!
+	    FeatureMap newFeature = Factory.newFeatureMap() ;
+
+	    ////////////ADVBERVBS ASPECT AUXS MAINVERB MODAL MODALITY MOOD POLARITY TAGMAINVERB TENSE TYPE VOICE
+	    newFeature.put( "TAGMAINVERB" , "VBG" );
+	    newFeature.put( "VOICE" , "active" );
+	    newFeature.put( "AUXS" ,"having been");
+	    newFeature.put( "MAINVERB" , lastTokenString );
+	    newFeature.put( "TYPE" ,"nonfinite");
+
+	    //annotations.add(start, end, "VGCLaC",	newFeature);
+	    outputAS.add(start, end, "VGCLaC",	newFeature);
+
+	    newFeature = Factory.newFeatureMap();
+	    List idList = new ArrayList();
+	    idList.add(lastToken.getId());
+	    newFeature.put("annoIncluded",idList);
+	    //annotations.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	    outputAS.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	}
+    }catch(Exception e){
+        System.out.println(e.toString());
+    }
+
+}
+
+Rule: PARTPrePerConPas
+Priority:9
+// BCD Participle Present Perfect Cont.  Passive: having been being eaten
+// having been being VBN
+
+(
+{Token.string == "having"}
+{Token.string == "been"}
+{Token.string == "being"}
+(ADVERBS)
+{Token.category == VBN}
+):capturevp -->
+{
+    gate.AnnotationSet Ann = (gate.AnnotationSet)bindings.get("capturevp");
+
+    //gate.AnnotationSet allToken = annotations.get("Token");
+    gate.AnnotationSet allToken = inputAS.get("Token");
+
+    try{
+	Long start = Ann.firstNode().getOffset() ;
+	Long end = Ann.lastNode().getOffset() ;
+	ArrayList tmpList = new ArrayList( Ann );
+
+	// sort all tokens by start offset
+
+	Collections.sort( tmpList , new gate.util.OffsetComparator() );
+	AnnotationSet tokenInside = allToken.get( start , end ) ;
+
+	if( tokenInside != null && tokenInside.size() > 0 ){   //normally it should not be empty, just double check
+	    Iterator tokenIter = tmpList.iterator() ;
+
+	    for( int i = 0 ; i < tokenInside.size()-1 ; i ++ ){
+		tokenIter.next() ;
+	    }
+	    Annotation lastToken = (Annotation) tokenIter.next();
+	    Long tokenSpanStartOffset = lastToken.getStartNode().getOffset() ;
+	    Long tokenSpanEndOffset   = lastToken.getEndNode().getOffset();
+
+	    String lastTokenString = doc.getContent().getContent( tokenSpanStartOffset , tokenSpanEndOffset ).toString() ;
+	    String vgString = doc.getContent().getContent( start , end ).toString();
+
+	    // !!! do not use something like FeatureMap obj = new FeatureMap() !!!
+	    FeatureMap newFeature = Factory.newFeatureMap() ;
+
+
+	    ////////////ADVBERVBS ASPECT AUXS MAINVERB MODAL MODALITY MOOD POLARITY TAGMAINVERB TENSE TYPE VOICE
+	    newFeature.put( "TAGMAINVERB" , "VBN" );
+	    newFeature.put( "VOICE" , "passive" );
+	    newFeature.put( "AUXS" ,"having been being");
+	    newFeature.put( "MAINVERB" , lastTokenString );
+	    newFeature.put( "TYPE" ,"nonfinite");
+
+	    //annotations.add(start, end, "VGCLaC",	newFeature);
+	    outputAS.add(start, end, "VGCLaC",	newFeature);
+
+	    newFeature = Factory.newFeatureMap();
+	    List idList = new ArrayList();
+	    idList.add(lastToken.getId());
+	    newFeature.put("annoIncluded",idList);
+	    //annotations.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	    outputAS.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	}
+    }catch(Exception e){
+        System.out.println(e.toString());
+    }
+
+}
+
+Rule: PARTPrePerPas
+Priority:9
+// BD Participle Present Perfect Passive: having been eaten
+// having been VBN
+(
+{Token.string == "having"}
+{Token.string == "been"}
+(ADVERBS)
+{Token.category == VBN}
+):capturevp -->
+{
+    gate.AnnotationSet Ann = (gate.AnnotationSet)bindings.get("capturevp");
+
+    //gate.AnnotationSet allToken = annotations.get("Token");
+    gate.AnnotationSet allToken = inputAS.get("Token");
+
+    try{
+	Long start = Ann.firstNode().getOffset() ;
+	Long end = Ann.lastNode().getOffset() ;
+	ArrayList tmpList = new ArrayList( Ann );
+
+	// sort all tokens by start offset
+
+	Collections.sort( tmpList , new gate.util.OffsetComparator() );
+	AnnotationSet tokenInside = allToken.get( start , end ) ;
+
+	if( tokenInside != null && tokenInside.size() > 0 ){   //normally it should not be empty, just double check
+	    Iterator tokenIter = tmpList.iterator() ;
+
+	    for( int i = 0 ; i < tokenInside.size()-1 ; i ++ ){
+		tokenIter.next() ;
+	    }
+	    Annotation lastToken = (Annotation) tokenIter.next();
+	    Long tokenSpanStartOffset = lastToken.getStartNode().getOffset() ;
+	    Long tokenSpanEndOffset   = lastToken.getEndNode().getOffset();
+
+	    String lastTokenString = doc.getContent().getContent( tokenSpanStartOffset , tokenSpanEndOffset ).toString() ;
+	    String vgString = doc.getContent().getContent( start , end ).toString();
+
+	    // !!! do not use something like FeatureMap obj = new FeatureMap() !!!
+	    FeatureMap newFeature = Factory.newFeatureMap() ;
+
+
+	    ////////////ADVBERVBS ASPECT AUXS MAINVERB MODAL MODALITY MOOD POLARITY TAGMAINVERB TENSE TYPE VOICE
+	    newFeature.put( "TAGMAINVERB" , "VBN" );
+	    newFeature.put( "VOICE" , "passive" );
+	    newFeature.put( "AUXS" ,"having been");
+	    newFeature.put( "MAINVERB" , lastTokenString );
+	    newFeature.put( "TYPE" ,"nonfinite");
+
+	    //annotations.add(start, end, "VGCLaC",	newFeature);
+	    outputAS.add(start, end, "VGCLaC",	newFeature);
+
+	    newFeature = Factory.newFeatureMap();
+	    List idList = new ArrayList();
+	    idList.add(lastToken.getId());
+	    newFeature.put("annoIncluded",idList);
+	    //annotations.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	    outputAS.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	}
+    }catch(Exception e){
+        System.out.println(e.toString());
+    }
+
+}
+
+Rule: PARTPrePas
+// CD Participle Present Passive: being  eaten
+// being VBN
+
+(
+{Token.string == "being"}
+(ADVERBS)
+{Token.category == VBN}
+):capturevp -->
+{
+    gate.AnnotationSet Ann = (gate.AnnotationSet)bindings.get("capturevp");
+
+    //gate.AnnotationSet allToken = annotations.get("Token");
+    gate.AnnotationSet allToken = inputAS.get("Token");
+
+    try{
+	Long start = Ann.firstNode().getOffset() ;
+	Long end = Ann.lastNode().getOffset() ;
+	ArrayList tmpList = new ArrayList( Ann );
+
+	// sort all tokens by start offset
+
+	Collections.sort( tmpList , new gate.util.OffsetComparator() );
+	AnnotationSet tokenInside = allToken.get( start , end ) ;
+
+	if( tokenInside != null && tokenInside.size() > 0 ){   //normally it should not be empty, just double check
+	    Iterator tokenIter = tmpList.iterator() ;
+
+	    for( int i = 0 ; i < tokenInside.size()-1 ; i ++ ){
+		tokenIter.next() ;
+	    }
+	    Annotation lastToken = (Annotation) tokenIter.next();
+	    Long tokenSpanStartOffset = lastToken.getStartNode().getOffset() ;
+	    Long tokenSpanEndOffset   = lastToken.getEndNode().getOffset();
+
+	    String lastTokenString = doc.getContent().getContent( tokenSpanStartOffset , tokenSpanEndOffset ).toString() ;
+	    String vgString = doc.getContent().getContent( start , end ).toString();
+
+	    // !!! do not use something like FeatureMap obj = new FeatureMap() !!!
+	    FeatureMap newFeature = Factory.newFeatureMap() ;
+
+
+	    ////////////ADVBERVBS ASPECT AUXS MAINVERB MODAL MODALITY MOOD POLARITY TAGMAINVERB TENSE TYPE VOICE
+	    newFeature.put( "TAGMAINVERB" , "VBN" );
+	    newFeature.put( "VOICE" , "passive" );
+	    newFeature.put( "AUXS" ,"being");
+	    newFeature.put( "MAINVERB" , lastTokenString );
+	    newFeature.put( "TYPE" ,"nonfinite");
+
+	    //annotations.add(start, end, "VGCLaC",	newFeature);
+	    outputAS.add(start, end, "VGCLaC",	newFeature);
+
+	    newFeature = Factory.newFeatureMap();
+	    List idList = new ArrayList();
+	    idList.add(lastToken.getId());
+	    newFeature.put("annoIncluded",idList);
+
+	    //annotations.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	    outputAS.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	}
+    }catch(Exception e){
+        System.out.println(e.toString());
+    }
+}
+
+Rule: PARTPas
+// D Past Participle: eaten
+// VBN
+(
+{Token.category == VBN}
+):capturevp -->
+{
+    gate.AnnotationSet Ann = (gate.AnnotationSet)bindings.get("capturevp");
+
+    //gate.AnnotationSet allToken = annotations.get("Token");
+    gate.AnnotationSet allToken = inputAS.get("Token");
+
+    try{
+	Long start = Ann.firstNode().getOffset() ;
+	Long end = Ann.lastNode().getOffset() ;
+	ArrayList tmpList = new ArrayList( Ann );
+
+	// sort all tokens by start offset
+
+	Collections.sort( tmpList , new gate.util.OffsetComparator() );
+	AnnotationSet tokenInside = allToken.get( start , end ) ;
+
+	if( tokenInside != null && tokenInside.size() > 0 ){   //normally it should not be empty, just double check
+	    Iterator tokenIter = tmpList.iterator() ;
+
+	    for( int i = 0 ; i < tokenInside.size()-1 ; i ++ ){
+		tokenIter.next() ;
+	    }
+	    Annotation lastToken = (Annotation) tokenIter.next();
+	    Long tokenSpanStartOffset = lastToken.getStartNode().getOffset() ;
+	    Long tokenSpanEndOffset   = lastToken.getEndNode().getOffset();
+
+	    String lastTokenString = doc.getContent().getContent( tokenSpanStartOffset , tokenSpanEndOffset ).toString() ;
+	    String vgString = doc.getContent().getContent( start , end ).toString();
+
+	    // !!! do not use something like FeatureMap obj = new FeatureMap() !!!
+	    FeatureMap newFeature = Factory.newFeatureMap() ;
+
+	    ////////////ADVBERVBS ASPECT AUXS MAINVERB MODAL MODALITY MOOD POLARITY TAGMAINVERB TENSE TYPE VOICE
+	    newFeature.put( "TAGMAINVERB" , "VBN" );
+	    newFeature.put( "VOICE" , "passive" );
+	    newFeature.put( "AUXS" ,"");
+	    newFeature.put( "MAINVERB" , lastTokenString );
+	    newFeature.put( "TYPE" ,"nonfinite");
+
+	    //annotations.add(start, end, "VGCLaC",	newFeature);
+	    outputAS.add(start, end, "VGCLaC",	newFeature);
+
+	    newFeature = Factory.newFeatureMap();
+	    List idList = new ArrayList();
+	    idList.add(lastToken.getId());
+	    newFeature.put("annoIncluded",idList);
+
+	    //annotations.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	    outputAS.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	}
+    }catch(Exception e){
+        System.out.println(e.toString());
+    }
+}
+
+// The following rule has a "have" ellipsis
+Rule: PARTPasPer
+// BD with ellipsis or finite verb group with ellipsis: Past Participle: been eaten
+// been VBN
+(
+{Token.string == "been"}
+(ADVERBS)
+{Token.category == VBN}
+):capturevp -->
+{
+    gate.AnnotationSet Ann = (gate.AnnotationSet)bindings.get("capturevp");
+
+    //gate.AnnotationSet allToken = annotations.get("Token");
+    gate.AnnotationSet allToken = inputAS.get("Token");
+
+    try{
+	Long start = Ann.firstNode().getOffset() ;
+	Long end = Ann.lastNode().getOffset() ;
+	ArrayList tmpList = new ArrayList( Ann );
+
+	// sort all tokens by start offset
+	Collections.sort( tmpList , new gate.util.OffsetComparator() );
+	AnnotationSet tokenInside = allToken.get( start , end ) ;
+
+	if( tokenInside != null && tokenInside.size() > 0 ){   //normally it should not be empty, just double check
+	    Iterator tokenIter = tmpList.iterator() ;
+
+	    for( int i = 0 ; i < tokenInside.size()-1 ; i ++ ){
+		tokenIter.next() ;
+	    }
+	    Annotation lastToken = (Annotation) tokenIter.next();
+	    Long tokenSpanStartOffset = lastToken.getStartNode().getOffset() ;
+	    Long tokenSpanEndOffset   = lastToken.getEndNode().getOffset();
+
+	    String lastTokenString = doc.getContent().getContent( tokenSpanStartOffset , tokenSpanEndOffset ).toString() ;
+	    String vgString = doc.getContent().getContent( start , end ).toString();
+
+	    // !!! do not use something like FeatureMap obj = new FeatureMap() !!!
+	    FeatureMap newFeature = Factory.newFeatureMap() ;
+
+	    ////////////ADVBERVBS ASPECT AUXS MAINVERB MODAL MODALITY MOOD POLARITY TAGMAINVERB TENSE TYPE VOICE
+	    newFeature.put( "TAGMAINVERB" , "VBN" );
+	    newFeature.put( "VOICE" , "passive" );
+	    newFeature.put( "AUXS" ,"been");
+	    newFeature.put( "MAINVERB" , lastTokenString );
+	    newFeature.put( "TYPE" ,"nonfinite");
+
+	    //annotations.add(start, end, "VGCLaC",	newFeature);
+	    outputAS.add(start, end, "VGCLaC",	newFeature);
+
+	    newFeature = Factory.newFeatureMap();
+	    List idList = new ArrayList();
+	    idList.add(lastToken.getId());
+	    newFeature.put("annoIncluded",idList);
+
+	    //annotations.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	    outputAS.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	}
+    }catch(Exception e){
+        System.out.println(e.toString());
+    }
+}
+
+// The following rule is a special rule for the pseudo reporting verb group "according to"
+Rule: PARTPreActAccordingTo
+// according to
+(
+({Token.string == "according"} | {Token.string == "According"})
+):capturevp 
+(TO)
+-->
+{
+    gate.AnnotationSet Ann = (gate.AnnotationSet)bindings.get("capturevp");
+
+    //gate.AnnotationSet allToken = annotations.get("Token");
+    gate.AnnotationSet allToken = inputAS.get("Token");
+
+    try{
+	Long start = Ann.firstNode().getOffset() ;
+	Long end = Ann.lastNode().getOffset() ;
+	ArrayList tmpList = new ArrayList( Ann );
+
+	// sort all tokens by start offset
+	Collections.sort( tmpList , new gate.util.OffsetComparator() );
+	AnnotationSet tokenInside = allToken.get( start , end ) ;
+
+	if( tokenInside != null && tokenInside.size() > 0 ){   //normally it should not be empty, just double check
+	    Iterator tokenIter = tmpList.iterator() ;
+
+	    for( int i = 0 ; i < tokenInside.size()-1 ; i ++ ){
+		tokenIter.next() ;
+	    }
+	    Annotation lastToken = (Annotation) tokenIter.next();
+	    Long tokenSpanStartOffset = lastToken.getStartNode().getOffset() ;
+	    Long tokenSpanEndOffset   = lastToken.getEndNode().getOffset();
+
+	    String lastTokenString = doc.getContent().getContent( tokenSpanStartOffset , tokenSpanEndOffset ).toString() ;
+	    String vgString = doc.getContent().getContent( start , end ).toString();
+
+	    // !!! do not use something like FeatureMap obj = new FeatureMap() !!!
+	    FeatureMap newFeature = Factory.newFeatureMap() ;
+
+	    ////////////ADVBERVBS ASPECT AUXS MAINVERB MODAL MODALITY MOOD POLARITY TAGMAINVERB TENSE TYPE VOICE
+	    newFeature.put( "TAGMAINVERB" , "VBG" );
+	    newFeature.put( "VOICE" , "active" );
+	    newFeature.put( "AUXS" ,"");
+	    newFeature.put( "MAINVERB" , "according" );
+	    newFeature.put( "TYPE" ,"nonfinite");
+
+	    //annotations.add(start, end, "VGCLaC",	newFeature);
+	    outputAS.add(start, end, "VGCLaC",	newFeature);
+
+	    newFeature = Factory.newFeatureMap();
+	    List idList = new ArrayList();
+	    idList.add(lastToken.getId());
+	    newFeature.put("annoIncluded",idList);
+
+	    ///annotations.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	    outputAS.add(lastToken.getStartNode(),lastToken.getEndNode(),"MAINVERB",newFeature);
+	}
+    }catch(Exception e){
+        System.out.println(e.toString());
+    }
+}

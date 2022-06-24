@@ -1,0 +1,12 @@
+<!-- creole.xml Scoper -->
+<!-- ma_fauch, 19/1/2014 -->
+
+<!--
+This file just references the JAR file that contains the compiled resource.
+Configuration is contained in the @CreoleResource annotation on 
+clac.creole.scope.Scoper
+-->
+
+<CREOLE-DIRECTORY>
+    <JAR SCAN="true">Scoper.jar</JAR>
+</CREOLE-DIRECTORY>

@@ -1,0 +1,10 @@
+Phase: Scope
+Input: Predicate Dependency
+Options: control = first
+
+Rule: Dependency
+(
+ {{Dependency.kind == neg} contains Predicate}
+):pred
+-->
+  :pred.Scope = { rule = "testing1" }

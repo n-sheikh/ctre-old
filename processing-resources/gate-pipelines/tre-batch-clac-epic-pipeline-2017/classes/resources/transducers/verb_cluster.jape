@@ -1,0 +1,1188 @@
+/* The A, B, C, D notation comes from the chapter on structure of verb phrases,
+*  Quirk R, et all, "A Comprehensive Grammar of the English Language", p.120
+* 
+* simple verb phrase
+* ===========>
+* complex verb phrase
+* ===========>  __A	modal aux + infinitive
+*               \ |
+*                \__B	perfective aux (HAVE) + _ed participle
+*                 \ |
+*                  \__C	progressive aux (BE) + _ing participle
+*                   \ |
+*                    \__D	passive aux (BE) + _ed participle
+* 
+* Verb clusters can be formed only by reading left to right and up down.
+* Any of A, B, C or D can be skipped.
+* 
+* The following table was developped by myself, following his explanations,
+* and the previous web research on English verb tense/aspect. 
+*
+*
+*modal    aux1      aux2    aux3    mv   voice   tense   aspect
+*
+*WILL_MD                            VB   active  future  indefinite ; will + VB                      A
+*WILL_MD  HAVE_VB                   VBN  active  future  perfect    ; will + have + VBN              AB
+*WILL_MD  HAVE_VB   BE_VBN          VBG  active  future  progressiv ; will + have + been + VBG       ABC
+*WILL_MD  HAVE_VB   BE_VBN  BE_VBG  VBN  passive future  progressiv ; will + have + been + being +VB ABCD
+*WILL_MD  HAVE_VB           BE_VBN  VBN  passive future  perfect    ; will + have + been + VBN       ABD
+*WILL_MD            BE_VB           VBG  active  future  progressiv ; will + be + VBG                AC
+*WILL_MD            BE_VB   BE_VBG  VBN  passive future  progressiv ; will + be + being + VBN        ACD
+*WILL_MD                    BE_VB   VBN  passive future  indefinite ; will + be + VBN                AD
+*         HAVE_VBD                  VBN  active  past    perfect    ; had + VBN                      B
+*         HAVE_VBP                  VBN  active  pres    perfect    ; have/has + VBN                 B
+*         HAVE_VBZ                  VBN  active  pres    perfect    ; have/has + VBN                 B
+*         HAVE_VBD  BE_VBN          VBG  active  past    progressiv ; had + been + VBG               BC
+*         HAVE_VBP  BE_VBN          VBG  active  pres    progressiv ; have/has + been + VBG          BC
+*         HAVE_VBZ  BE_VBN          VBG  active  pres    progressiv ; have/has + been + VBG          BC
+*         HAVE_VBD  BE_VBN  BE_VBG  VBN  passive past    progressiv ; had + been + being + VBN       BCD
+*         HAVE_VBP  BE_VBN  BE_VBG  VBN  passive pres    progressiv ; have/has + been + being + VBN  BCD
+*         HAVE_VBZ  BE_VBN  BE_VBG  VBN  passive pres    progressiv ; have/has + been + being + VBN  BCD
+*         HAVE_VBD          BE_VBN  VBN  passive past    perfect    ; had + been + VBN               BD
+*         HAVE_VBP          BE_VBN  VBN  passive pres    perfect    ; have/has + been + VBN          BD
+*         HAVE_VBZ          BE_VBN  VBN  passive pres    perfect    ; have/has + been + VBN          BD
+*                   BE_VBD          VBG  active  past    progressiv ; was/were + VBG                 C
+*                   BE_VBP          VBG  active  pres    progressiv ; am/are/is + VBG                C
+*                   BE_VBZ          VBG  active  pres    progressiv ; am/are/is + VBG                C
+*                   BE_VBD  BE_VBG  VBN  passive past    progressiv ; were/was + being + VBN         CD
+*                   BE_VBP  BE_VBG  VBN  passive pres    progressiv ; am/are/is + being + VBN        CD
+*                   BE_VBZ  BE_VBG  VBN  passive pres    progressiv ; am/are/is + being + VBN        CD
+*                           BE_VBD  VBN  passive past    indefinite ; was/were + VBN                 D
+*                           BE_VBP  VBN  passive pres    indefinite ; am/are/is + VBN                D
+*                           BE_VBZ  VBN  passive pres    indefinite ; am/are/is + VBN                D
+*                                   VBD  active  past    indefinite ; VBD
+*                                   VBP  active  pres    indefinite ; VBP
+*                                   VBZ  active  pres    indefinite ; VBZ
+*/ 
+Imports: { import static gate.Utils.*; }
+Phase: VC
+Input: Token VGCLaC
+Options: control = appelt
+
+
+
+Macro: TO
+(
+	{Token.category == "TO"}
+
+)
+
+Macro: FUTURE_MD
+(
+	{Token.string == "will"} | {Token.string == "shall"}  | {Token.string == "'ll"}
+
+)
+Macro: PAST_MD
+(
+	{Token.string == "could"} | {Token.string == "should"} |{Token.string == "would"} | {Token.string == "had to"} | {Token.string == "used to"} |{Token.string == "dared"} |{Token.string == "might"} | {Token.string == "'d"}
+
+)
+Macro: PRESENT_MD
+(
+	{Token.string == "can"} | {Token.string == "may"}  | {Token.string == "must"} | {Token.string == "ought to"} |{Token.string == "dare"} | {Token.string == "need"} | {Token.string == "ca"}
+
+)
+Macro: MAIN_VERB_VBG
+(
+	{Token.category == "VBG" } | {Token.string == "being"} | {Token.string == "having"} 
+
+)
+Macro: MAIN_VERB_VBN
+(
+	{Token.category == "VBN" } | {Token.string == "been"}
+
+)
+Macro: MAIN_VERB_FINITE
+(
+	{Token.category == "VBD" } | {Token.category == "VBP" } | {Token.category == "VBZ" } | {Token.string == "had"} | {Token.string == "have"} |
+	{Token.string == "has"} | {Token.string == "were"} | {Token.string == "was"} | {Token.string == "am"} | {Token.string == "are"} | {Token.string == "is"} |
+	{Token.string == "did"} | {Token.string == "do"} | {Token.string == "does"}
+
+)
+Macro: MAIN_VERB_VB
+(
+	{Token.category == "VB" } | {Token.string == "have"} | {Token.string == "be"} | {Token.string == "do"}
+
+)
+Macro: AUX_DO	
+(
+	{Token.string == "do"} | {Token.string == "does"} | {Token.string == "did"}
+)
+
+Macro: AUX_BE_VBG
+(
+	{Token.string == "being"}
+)
+Macro: AUX_BE_VBN
+(
+	{Token.string == "been"}
+)
+Macro: AUX_BE_FINITE
+(
+	{Token.string == "were"} | {Token.string == "was"} | {Token.string == "am"} | {Token.string == "are"} | {Token.string == "is"}
+)	
+Macro: AUX_BE_VB
+(
+	{Token.string == "be"}
+)
+Macro: AUX_HAVE_FINITE 
+(
+	{Token.string == "had"} |  {Token.string == "have"} | {Token.string == "has"}
+)
+Macro: AUX_HAVE_VB
+(
+	{Token.string == "have"}
+)
+Macro: ADVERBS
+(
+	{Token.category == "RBR", Token.category == "RB" } | {Token.category == "RB",Token.category == "CC", Token.category == "RB" } |
+	{Token.category == "RB", Token.category == "RB" } | {Token.category == "RB"}
+
+)
+Macro: INV_OBJ
+(
+	{Token.category == "NP"}
+)
+Macro: MANY
+(	{ANY, MANY}
+)
+Rule: A
+(
+	(ADVERBS)* 
+	(FUTURE_MD)
+	(INV_OBJ)*
+	(ADVERBS)*
+	(INV_OBJ)*
+	(MAIN_VERB_VB)		
+):annotate --> :annotate.VC= 
+{ voice = "active", tense = "future", aspect = "indefinite"
+}	
+Rule: AMODALPAST
+(
+	(ADVERBS)* 
+	(PAST_MD)
+	(INV_OBJ)*
+	(ADVERBS)*
+	(INV_OBJ)*
+	(MAIN_VERB_VB)		
+):annotate --> :annotate.VC= 
+{ voice = "active", tense = "modal_past", aspect = "indefinite"
+}
+Rule: AMODALPRESENT
+(
+	(ADVERBS)* 
+	(PRESENT_MD)
+	(INV_OBJ)*
+	(ADVERBS)*
+	(INV_OBJ)*
+	(MAIN_VERB_VB)		
+):annotate --> :annotate.VC= 
+{ voice = "active", tense = "modal_present", aspect = "indefinite"
+}					
+Rule: AB
+(
+	(ADVERBS)*
+	(FUTURE_MD)
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*  
+	(AUX_HAVE_VB)
+	(ADVERBS)*
+	(MAIN_VERB_VBN)						
+):annotate --> :annotate.VC = 
+{ voice = "active", tense = "future", aspect = "perfect"
+}
+Rule: ABMODALPAST
+(
+	(ADVERBS)*
+	(PAST_MD)
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*  
+	(AUX_HAVE_VB)
+	(ADVERBS)*
+	(MAIN_VERB_VBN)						
+):annotate --> :annotate.VC = 
+{ voice = "active", tense = "modal_past", aspect = "perfect"
+}
+Rule: ABMODALPRESENT
+(
+	(ADVERBS)*
+	(PRESENT_MD)
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*  
+	(AUX_HAVE_VB)
+	(ADVERBS)*
+	(MAIN_VERB_VBN)						
+):annotate --> :annotate.VC = 
+{ voice = "active", tense = "modal_present", aspect = "perfect"
+}
+Rule: ABC
+(
+	(ADVERBS)*
+	(FUTURE_MD)
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*
+	(AUX_HAVE_VB)
+	(ADVERBS)*
+	(AUX_BE_VBN)
+	(ADVERBS)*
+	(MAIN_VERB_VBG)
+):annotate --> :annotate.VC = 
+{ voice = "active", tense = "future", aspect = "perfect progressive"
+}
+Rule: ABCMODALPAST
+(
+	(ADVERBS)*
+	(PAST_MD)
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*
+	(AUX_HAVE_VB)
+	(ADVERBS)*
+	(AUX_BE_VBN)
+	(ADVERBS)*
+	(MAIN_VERB_VBG)
+):annotate --> :annotate.VC = 
+{ voice = "active", tense = "modal_past", aspect = "perfect progressive"
+}
+Rule: ABCMODALPRESENT
+(
+	(ADVERBS)*
+	(PRESENT_MD)
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*
+	(AUX_HAVE_VB)
+	(ADVERBS)*
+	(AUX_BE_VBN)
+	(ADVERBS)*
+	(MAIN_VERB_VBG)
+):annotate --> :annotate.VC = 
+{ voice = "active", tense = "modal_present", aspect = "present progressive"
+}
+Rule: ABCD
+(
+	(ADVERBS)*
+	(FUTURE_MD)
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*
+	(AUX_HAVE_VB)
+	(ADVERBS)*
+	(AUX_BE_VBN)
+	(ADVERBS)*
+	(AUX_BE_VBG)
+	(ADVERBS)*
+	(MAIN_VERB_VBN)
+
+):annotate --> :annotate.VC = 
+{ voice = "passive", tense = "future", aspect = "perferct progressive"
+}
+Rule: ABCDMODALPAST
+(
+	(ADVERBS)*
+	(PAST_MD)
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*
+	(AUX_HAVE_VB)
+	(ADVERBS)*
+	(AUX_BE_VBN)
+	(ADVERBS)*
+	(AUX_BE_VBG)
+	(ADVERBS)*
+	(MAIN_VERB_VBN)
+
+):annotate --> :annotate.VC = 
+{ voice = "passive", tense = "modal_past", aspect = "perfect progressive"
+}
+Rule: ABCDMODALPRESENT
+(
+	(ADVERBS)*
+	(PRESENT_MD)
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*
+	(AUX_HAVE_VB)
+	(ADVERBS)*
+	(AUX_BE_VBN)
+	(ADVERBS)*
+	(AUX_BE_VBG)
+	(ADVERBS)*
+	(MAIN_VERB_VBN)
+
+):annotate --> :annotate.VC = 
+{ voice = "passive", tense = "modal_present", aspect = "perfect progressive"
+}
+Rule: ABD
+(
+	(ADVERBS)*
+	(FUTURE_MD)
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*
+	(AUX_HAVE_VB)
+	(ADVERBS)*
+	(AUX_BE_VBN)
+	(ADVERBS)*
+	(MAIN_VERB_VBN)
+
+):annotate --> :annotate.VC = 
+{ voice = "passive", tense = "future", aspect = "perfect"
+}
+Rule: ABDMODALPAST
+(
+	(ADVERBS)*
+	(PAST_MD)
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*
+	(AUX_HAVE_VB)
+	(ADVERBS)*
+	(AUX_BE_VBN)
+	(ADVERBS)*
+	(MAIN_VERB_VBN)
+
+):annotate --> :annotate.VC = 
+{ voice = "passive", tense = "modal_past", aspect = "perfect"
+}
+Rule: ABDMODALPRESENT
+(
+	(ADVERBS)*
+	(PRESENT_MD)
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*
+	(AUX_HAVE_VB)
+	(ADVERBS)*
+	(AUX_BE_VBN)
+	(ADVERBS)*
+	(MAIN_VERB_VBN)
+
+):annotate --> :annotate.VC = 
+{ voice = "passive", tense = "modal_present", aspect = "perfect"
+}
+Rule: AC
+(
+	(ADVERBS)*
+	(FUTURE_MD)
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*
+	(AUX_BE_VB)
+	(ADVERBS)*
+	(MAIN_VERB_VBG)
+
+):annotate --> :annotate.VC = 
+{ voice = "active", tense = "future", aspect = "progressive"
+}
+Rule: ACMODALPAST
+(
+	(ADVERBS)*
+	(PAST_MD)
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*
+	(AUX_BE_VB)
+	(ADVERBS)*
+	(MAIN_VERB_VBG)
+
+):annotate --> :annotate.VC = 
+{ voice = "active", tense = "modal_past", aspect = "progressive"
+}
+Rule: ACMODALPRESENT
+(
+	(ADVERBS)*
+	(PRESENT_MD)
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*
+	(AUX_BE_VB)
+	(ADVERBS)*
+	(MAIN_VERB_VBG)
+
+):annotate --> :annotate.VC = 
+{ voice = "active", tense = "modal_present", aspect = "progressive"
+}
+Rule: ACD
+(
+	(ADVERBS)*
+	(FUTURE_MD)
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*
+	(AUX_BE_VB)
+	(ADVERBS)*
+	(AUX_BE_VBG)
+	(ADVERBS)*
+	(MAIN_VERB_VBN)	
+
+):annotate --> :annotate.VC = 
+{ voice = "passive", tense = "future", aspect = "progressive"
+}
+Rule: ACDMODALPAST
+(
+	(ADVERBS)*
+	(PAST_MD)
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*
+	(AUX_BE_VB)
+	(ADVERBS)*
+	(AUX_BE_VBG)
+	(ADVERBS)*
+	(MAIN_VERB_VBN)	
+
+):annotate --> :annotate.VC = 
+{ voice = "passive", tense = "modal_past", aspect = "progressive"
+}	
+Rule: ACDMODALPRESENT
+(
+	(ADVERBS)*
+	(PRESENT_MD)
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*
+	(AUX_BE_VB)
+	(ADVERBS)*
+	(AUX_BE_VBG)
+	(ADVERBS)*
+	(MAIN_VERB_VBN)	
+
+):annotate --> :annotate.VC = 
+{ voice = "passive", tense = "modal_present", aspect = "progressive"
+}
+Rule: AD
+(
+	(ADVERBS)*
+	(FUTURE_MD)
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*
+	(AUX_BE_VB)
+	(ADVERBS)*
+	(MAIN_VERB_VBN)
+
+):annotate --> :annotate.VC= 
+{ voice = "passive", tense = "future", aspect = "indefinite"
+}
+Rule: ADMODALPAST
+(
+	(ADVERBS)*
+	(PAST_MD)
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*
+	(AUX_BE_VB)
+	(ADVERBS)*
+	(MAIN_VERB_VBN)
+
+):annotate --> :annotate.VC= 
+{ voice = "passive", tense = "modal_past", aspect = "indefinite"
+}
+Rule: ADMODALPRESENT
+(
+	(ADVERBS)*
+	(PRESENT_MD)
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*
+	(AUX_BE_VB)
+	(ADVERBS)*
+	(MAIN_VERB_VBN)
+
+):annotate --> :annotate.VC= 
+{ voice = "passive", tense = "modal_present", aspect = "indefinite"
+}
+Rule: B	
+(
+	
+	(ADVERBS)*
+	{Token.string == "had"}
+	(ADVERBS)* 
+	(INV_OBJ)*
+	(ADVERBS)*
+	(MAIN_VERB_VBN)			
+):annotate --> :annotate.VC = 
+{ voice = "active", tense = "past", aspect = "perfect"
+}
+	
+Rule: B2
+(
+	
+	(
+		(ADVERBS)*
+		{Token.string == "have"}
+		(ADVERBS)* 
+		(INV_OBJ)*
+		(ADVERBS)*
+		(MAIN_VERB_VBN)	
+	) |
+	(
+		(ADVERBS)*
+		{Token.string == "has"}
+		(ADVERBS)* 
+		(INV_OBJ)*
+		(ADVERBS)*
+		(MAIN_VERB_VBN)	
+	)		
+):annotate --> :annotate.VC = 
+{ voice = "active", tense = "present", aspect = "perfect"
+}
+Rule: BC
+(
+	(ADVERBS)*
+	{Token.string == "had"}
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*
+	(AUX_BE_VBN)
+	(ADVERBS)*
+	(MAIN_VERB_VBG)	
+):annotate --> :annotate.VC = 
+{ voice = "active", tense = "past", aspect = "perfect progressive"
+		
+}	
+Rule: BC2
+(
+	(
+		(ADVERBS)*
+		{Token.string == "have"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(AUX_BE_VBN)
+		(ADVERBS)*
+		(MAIN_VERB_VBG)	
+	) |
+	(
+		(ADVERBS)*
+		{Token.string == "has"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(AUX_BE_VBN)
+		(ADVERBS)*
+		(MAIN_VERB_VBG)	
+	)
+
+):annotate --> :annotate.VC = 
+{ voice = "active", tense = "present", aspect = "perfect progressive"
+}	
+Rule: BCD
+(
+	(ADVERBS)*
+	{Token.string == "had"}
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*
+	(AUX_BE_VBN)
+	(ADVERBS)*
+	(AUX_BE_VBG)
+	(ADVERBS)*
+	(MAIN_VERB_VBN)	
+
+):annotate --> :annotate.VC = 
+{ voice = "passive", tense = "past", aspect = "perfect progressive"
+}
+Rule: BCD2
+(
+	(
+		(ADVERBS)*
+		{Token.string == "have"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(AUX_BE_VBN)
+		(ADVERBS)*
+		(AUX_BE_VBG)
+		(ADVERBS)*
+		(MAIN_VERB_VBN)	
+	) |	
+	(
+		(ADVERBS)*
+		{Token.string == "has"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(AUX_BE_VBN)
+		(ADVERBS)*
+		(AUX_BE_VBG)
+		(ADVERBS)*
+		(MAIN_VERB_VBN)	
+	)
+
+):annotate --> :annotate.VC = 
+{ voice = "passive", tense = "present", aspect = "perfect progressive"
+}	
+Rule: BD
+(
+	(ADVERBS)*
+	{Token.string == "had"}
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*
+	(AUX_BE_VBN)
+	(ADVERBS)*
+	(MAIN_VERB_VBN)	
+
+):annotate --> :annotate.VC = 
+{ voice = "passive", tense = "past", aspect = "perfect"
+}
+Rule: BD2
+(
+	(
+		(ADVERBS)*
+		{Token.string == "have"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(AUX_BE_VBN)
+		(ADVERBS)*
+		(MAIN_VERB_VBN)
+	) |
+	(
+		(ADVERBS)*
+		{Token.string == "has"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(AUX_BE_VBN)
+		(ADVERBS)*
+		(MAIN_VERB_VBN)
+	)	
+
+):annotate --> :annotate.VC = 
+{ voice = "passive", tense = "present", aspect = "perfect"
+}
+
+Rule: C
+(
+	(
+		(ADVERBS)*
+		{Token.string == "was"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(MAIN_VERB_VBG)
+	)|
+	(
+		(ADVERBS)*
+		{Token.string == "were"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(MAIN_VERB_VBG)
+	)	
+):annotate --> :annotate.VC = 
+{ voice = "active", tense = "past", aspect = "progressive"
+}
+Rule: C2
+(
+	(
+		(ADVERBS)*
+		{Token.string == "is"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(MAIN_VERB_VBG)
+	)|
+	(
+		(ADVERBS)*
+		{Token.string == "are"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(MAIN_VERB_VBG)
+	)|
+	(
+		(ADVERBS)*
+		{Token.string == "am"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(MAIN_VERB_VBG)
+	)|
+	(
+		(ADVERBS)*
+		{Token.string == "'m"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(MAIN_VERB_VBG)
+	)|
+	(
+		(ADVERBS)*
+		{Token.string == "'s"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(MAIN_VERB_VBG)
+	)|
+	(
+		(ADVERBS)*
+		{Token.string == "'re"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(MAIN_VERB_VBG)
+	) |
+
+	(
+		(ADVERBS)*
+		{Token.category == "VBZ"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(MAIN_VERB_VBG)
+	)
+	
+	
+):annotate --> :annotate.VC = 
+{ voice = "active", tense = "present", aspect = "progressive"
+}
+Rule: CD
+(
+	(
+		(ADVERBS)*
+		{Token.string == "was"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(AUX_BE_VBG)
+		(ADVERBS)*
+		(MAIN_VERB_VBN)	
+	)|
+	(
+		(ADVERBS)*
+		{Token.string == "were"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(AUX_BE_VBG)
+		(ADVERBS)*
+		(MAIN_VERB_VBN)	
+	) 
+):annotate --> :annotate.VC = 
+{ voice = "passive", tense = "past", aspect = "progressive"
+}
+Rule: CD2
+(
+	(
+		(ADVERBS)*
+		{Token.string == "is"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(AUX_BE_VBG)
+		(ADVERBS)*
+		(MAIN_VERB_VBN)	
+	)|
+	(
+		(ADVERBS)*
+		{Token.string == "are"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(AUX_BE_VBG)
+		(ADVERBS)*
+		(MAIN_VERB_VBN)	
+	)|
+	(
+		(ADVERBS)*
+		{Token.string == "am"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(AUX_BE_VBG)
+		(ADVERBS)*
+		(MAIN_VERB_VBN)	
+	)
+):annotate --> :annotate.VC = 
+{ voice = "passive", tense = "present", aspect = "progressive"
+}
+Rule: D
+(
+	(
+		(ADVERBS)*
+		{Token.string == "was"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(MAIN_VERB_VBN)
+	)|
+	(
+		(ADVERBS)*
+		{Token.string == "were"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(MAIN_VERB_VBN)
+	)
+
+
+):annotate --> :annotate.VC = 
+{ voice = "passive", tense = "past", aspect = "indefinite"
+}
+Rule: D2
+(
+	(
+		(ADVERBS)*
+		{Token.string == "is"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(MAIN_VERB_VBN)
+	)|
+	(
+		(ADVERBS)*
+		{Token.string == "are"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(MAIN_VERB_VBN)
+	)|
+	(
+		(ADVERBS)*
+		{Token.string == "am"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(MAIN_VERB_VBN)
+	)
+
+):annotate --> :annotate.VC = 
+{ voice = "passive", tense = "present", aspect = "indefinite"
+}
+Rule: simple
+(
+	(ADVERBS)*
+	{Token.category == "VBD"}
+):annotate --> :annotate.VC = { voice = "active", tense = "past", aspect = "indefinite"
+}
+Rule: simple2
+(
+	(	
+		(ADVERBS)*
+		{Token.category == "VBP"}
+	)|
+	(	
+		(ADVERBS)*
+		{Token.category == "VBZ"}
+	)
+):annotate --> :annotate.VC = { voice = "active", tense = "present", aspect = "indefinite"
+}
+Rule: Do
+(
+	(ADVERBS)*
+	{Token.string == "did"}
+	(ADVERBS)*
+	(INV_OBJ)*
+	(ADVERBS)*
+	(MAIN_VERB_VB)
+
+):annotate --> :annotate.VC = 
+{ voice = "active", tense = "past", aspect = "indefinite"
+}
+Rule: Do2
+(
+	(
+		(ADVERBS)*
+		{Token.string == "do", Token.category == "VBP"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(MAIN_VERB_VB)
+	)|
+	
+	(
+		(ADVERBS)*
+		{Token.string == "does"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(MAIN_VERB_VB)
+	) |
+
+		(
+		(ADVERBS)*
+		{Token.string == "do", Token.category == "VB"}
+		(ADVERBS)*
+		(INV_OBJ)*
+		(ADVERBS)*
+		(MAIN_VERB_VB)
+	)
+):annotate --> :annotate.VC = 
+{ voice = "active", tense = "present", aspect = "indefinite"
+}
+
+Rule: INFAct
+// Simple Infinitive Active: to eat
+// (to) VB
+(
+(TO)
+(ADVERBS)*
+{Token.category == VB}
+):annotate -->:annotate.VC = 
+{ voice = "active", tense = "", aspect = "indefinite",
+}
+
+Rule: INFPerAct
+// B Infinitive Perfect Active:  to have eaten
+// (to) have VBN
+(
+(TO)
+{Token.string == "have", Token.category == VB}
+(ADVERBS)*
+{Token.category == VBN}
+):annotate -->:annotate.VC = 
+{ voice = "active", tense = "", aspect = "perfect",
+}
+
+
+Rule: INFPerConAct
+//Priority:30
+// BC Infinitive Perfect Continuous Active:  to have been eating
+// (to) have been VBG
+(
+(TO)
+{Token.string == "have",Token.category == VB}
+{Token.string == "been"}
+(ADVERBS)
+{Token.category == VBG}
+):annotate -->:annotate.VC =
+{ voice = "active", tense = "", aspect = "perfect progressive",
+} 
+
+Rule: INFPerConPas
+//Priority:10
+// BCD Infinitive Perfect Continuous Passive:  to have been being eaten
+// (to) have been being VBN
+(
+(TO)
+{Token.string == "have"}
+{Token.string == "been"}
+{Token.string == "being"}
+(ADVERBS)*
+{Token.category == VBN}
+):annotate --> :annotate.VC =
+{ voice = "passive", tense = "", aspect = "perfect progressive",
+}
+
+Rule: INFPerPas
+//Priority:10
+// BD Infinitive Perfect Passive:  to have been eaten
+// (to) have been VBN
+(
+(TO)
+{Token.string == "have",Token.category == VB}
+{Token.string == "been"}
+(ADVERBS)*
+{Token.category == VBN}
+):annotate -->:annotate.VC =
+{ voice = "passive", tense = "", aspect = "perfect",
+}
+
+Rule: INFPreConAct
+// C Infinitive Present Continuous: to be eating
+// (to) be VBG
+(
+(TO)
+{Token.string == "be"}
+(ADVERBS)*
+{Token.category == VBG}
+):annotate --> :annotate.VC =
+{ voice = "active", tense = "", aspect = "progressive",
+}
+
+
+Rule: INFPreConPas
+// CD Infinitive Present Continuous: to be being eaten
+// (to) be being VBN
+(
+(TO)
+{Token.string == "be"}
+{Token.string == "being"}
+(ADVERBS)*
+{Token.category == VBN}
+):annotate --> :annotate.VC =
+{ voice = "passive", tense = "", aspect = "progressive",
+}
+
+
+
+Rule: INFPas
+// D Infinitive Passive: to be eaten
+// (to) be VBN
+(
+(TO)
+{Token.string == "be"}
+(ADVERBS)*
+{Token.category == VBN}
+):annotate --> :annotate.VC =
+{ voice = "passive", tense = "", aspect = "indefinite",
+}
+
+Rule: PARTPreAct
+// Simple or C Participle Present: eating
+// VBG
+(
+{Token.category == VBG}
+// special treatment for use in reporting verbs
+):annotate --> :annotate.VC =
+{ voice = "active", tense = "", aspect = "indefinite",
+}
+
+
+Rule: PARTPrePerAct
+// B Participle Present Perfect Active: having eaten
+// having VBN
+(
+{Token.string == "having"}
+(ADVERBS)*
+{Token.category == VBN}
+):annotate --> :annotate.VC =
+{ voice = "active", tense = "", aspect = "perfect",
+}
+
+
+
+
+
+Rule: PARTPrePerConAct
+//Priority:9
+// BC Participle Present Perfect Cont.  Active: having been eating
+// having VBN
+(
+{Token.string == "having"}
+{Token.string == "been"}
+(ADVERBS)*
+{Token.category == VBG}
+):annotate --> :annotate.VC =
+{ voice = "active", tense = "", aspect = "perfect progressive",
+}
+
+
+
+Rule: PARTPrePerConPas
+//Priority:9
+// BCD Participle Present Perfect Cont.  Passive: having been being eaten
+// having been being VBN
+
+(
+{Token.string == "having"}
+{Token.string == "been"}
+{Token.string == "being"}
+(ADVERBS)*
+{Token.category == VBN}
+):annotate --> :annotate.VC =
+{ voice = "passive", tense = "", aspect = "perfect progressive",
+}
+
+
+
+Rule: PARTPrePerPas
+//Priority:9
+// BD Participle Present Perfect Passive: having been eaten
+// having been VBN
+(
+{Token.string == "having"}
+{Token.string == "been"}
+(ADVERBS)*
+{Token.category == VBN}
+):annotate --> :annotate.VC =
+{ voice = "passive", tense = "", aspect = "perfect",
+}
+
+
+Rule: PARTPrePas
+// CD Participle Present Passive: being  eaten
+// being VBN
+
+(
+{Token.string == "being"}
+(ADVERBS)*
+{Token.category == VBN}
+):annotate --> :annotate.VC =
+{ voice = "passive", tense = "", aspect = "progressive",
+} 
+
+
+
+Rule: PARTPas
+// D Past Participle: eaten
+// VBN
+(
+{Token.category == VBN}
+):annotate -->  :annotate.VC =
+{ voice = "passive", tense = "", aspect = "indefinite",
+}
+
+
+// The following rule has a "have" ellipsis
+Rule: PARTPasPer
+// BD with ellipsis or finite verb group with ellipsis: Past Participle: been eaten
+// been VBN
+(
+{Token.string == "been"}
+(ADVERBS)*
+{Token.category == VBN}
+):annotate -->:annotate.VC =
+{ voice = "passive", tense = "", aspect = "indefinite",
+}
+
+
+
+// The following rule is a special rule for the pseudo reporting verb group "according to"
+Rule: PARTPreActAccordingTo
+// according to
+(
+({Token.string == "according"} | {Token.string == "According"})
+(TO)
+):annotate -->:annotate.VC =
+{ voice = "active", tense = "", aspect = "indefinite",
+}
+
+
+
+
+
+
+
+
+
+
+
+//Rule: NonFinite
+//(
+//	(
+//		{Token.category == "TO"}
+//		{Token.category == "VB" }
+//	) |
+//	(
+//		{Token.category == "TO"}
+//		{Token.string == "have" }
+//	) |
+//	(	{Token.category == "TO"}
+//		{Token.string == "be" }
+//	) |
+//	(	{Token.category == "TO"}
+//		{Token.string == "do" }
+//	) | 
+//	(	{Token.category == "TO"}
+//		{Token.string == "be"}
+//		{ Token.category == "VBG" }
+//	) |
+//	
+//	(	{Token.category == "VB" }
+//	) |
+//	(	{Token.category == "VBN" }
+//	)|
+//	(	{Token.category == "VBG" }
+//	)
+//):annotate --> :annotate.VC = 
+//{ voice = "", tense = "", aspect = "", 
+//}

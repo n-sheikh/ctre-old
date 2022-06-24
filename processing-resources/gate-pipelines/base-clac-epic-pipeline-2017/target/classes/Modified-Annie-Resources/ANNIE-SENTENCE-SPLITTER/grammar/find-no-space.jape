@@ -1,0 +1,83 @@
+/* 
+* 
+* cr.jape
+*
+* Copyright (c) 1998-2004, The University of Sheffield.
+*
+* This file is part of GATE (see http://gate.ac.uk/), and is free
+* software, licenced under the GNU Library General Public License,
+* Version 2, June 1991 (in the distribution as file licence.html,
+* and also available at http://gate.ac.uk/gate/licence.html).
+*
+* Diana Maynard, 10 Sep 2001
+* Modified By N.S. (July 2019)
+*  - The SRT and VTT formats produced by the GeoMedia lab in the page Rwanda project have sentences containing line breaks. 
+*  - The original sentence splitter in the ANNIE French pipeline contained a rule in cr.jape CR that split on new lines.
+*  - This modified version has that rule removed 
+* 
+* $Id: find-no-space.jape 6377 2004-11-24 16:35:18Z diana $
+*/
+
+Phase:	find
+Input: Token SpaceToken Lookup
+Options: control = appelt
+
+Macro: FULLSTOP
+(
+ {Token.string=="."}
+)
+
+Macro: THREEDOTS
+(
+ {Token.string=="."}
+ {Token.string=="."}
+ {Token.string=="."}
+)
+
+Macro: PUNCT
+(
+ ({Token.string == "!"} | 
+  {Token.string == "?"}
+ )
+)
+
+Rule: Ldots
+(
+ ({Token})?
+ THREEDOTS (FULLSTOP)+
+):fake
+-->
+{}
+
+Rule: Split1
+(
+ (PUNCT|FULLSTOP|THREEDOTS)
+ ({Token.string == "\""})?
+)
+:split
+-->
+:split.Split = {kind = "internal"}
+
+//Rule: CR removed!
+Rule:Fake
+(
+ ({Token}{Token.string == "."})+
+ ({Token.kind == number})
+):fake
+-->
+{}
+
+
+Rule: Abbrev1
+(
+ {Lookup.majorType == "splitter_abbreviation"}
+ {Token.string == "."}
+):fake
+-->
+{}
+
+Rule: Abbrev2
+({Token.orth=="upperInitial", Token.length=="1"} FULLSTOP)+
+:fake
+-->
+{}

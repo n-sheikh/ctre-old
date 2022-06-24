@@ -1,0 +1,12 @@
+<!-- creole.xml extractGenericTriggers -->
+
+
+<!--
+This file just references the JAR file that contains the compiled resource.
+Configuration is contained in the @CreoleResource annotation on 
+clac.creole.extractGenericTriggersV2
+-->
+
+<CREOLE-DIRECTORY>
+  <JAR SCAN="true">ExtractGenericTriggersV3.jar</JAR>
+</CREOLE-DIRECTORY>

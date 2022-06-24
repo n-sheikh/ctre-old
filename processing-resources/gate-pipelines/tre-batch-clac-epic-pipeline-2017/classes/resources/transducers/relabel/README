@@ -1,0 +1,2 @@
+This transducer is used to create Trigger annotations in the format used by
+negator. This allows the use of negator-scope without using negator-triggers.

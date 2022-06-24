@@ -1,0 +1,32 @@
+This directory includes several files that were developed under the
+NomBank project which have restricted distributions due to existing
+licenses that are owned or managed by the Linguistic Data Consortium
+(LDC). Except for these files, NomBank and related resources are
+available from: http://nlp.cs.nyu.edu/meyers/NomBank.html
+
+The NomBank files being distributed by the LDC are described below.
+
+I. nombank.1.0.print -- a complete printout of nombank in human-readable form
+
+   -- this file is available to those who have a license for the Wall
+      Street Journal Corpus (annotated for Penn Treebank, NomBank,
+      PropBank, PDTB, etc.)
+
+II. COMNOM is created by automatically adding classes to the most
+   uptodate version of COMLEX Syntax on the basis of NOMLEX-PLUS. For
+   details, please see the document entitled "Those Other NomBank
+   Dictionaries" available at:
+
+http://nlp.cs.nyu.edu/meyers/nombank/those-other-nombank-dictionaries.pdf
+
+   There are 3 versions of COMNOM (corresponding to the 3 versions of
+   NOMLEX-PLUS):
+
+   1. COMNOM-clean.1.0 -- contains no information derived from annotation
+   2. COMNOM.1.0 -- contains information from all of NomBank
+   3. COMNOM-training.1.0 -- contains information from 
+		       NomBank annotation of sections 2 to 21 only
+
+   -- these files are available to those who hold licenses for COMLEX
+      Syntax, the syntactic dictionary of English.
+

@@ -1,0 +1,3 @@
+collate_fn_name: FVConcatCollateFn
+connl_folder_path: /home/nadia/Documents/CLaC-Lab/ctre/cnc-task-3/script_development_data/CoNNL-Output
+max_nos_tokens: 40

@@ -1,0 +1,27 @@
+/**
+* Project: 
+* Created by:
+* Created on:
+* Purpose: 
+* Development Notes:
+* Use Notes:
+*		
+*/
+
+Imports:{
+	import static gate.Utils.*;
+}
+
+Phase:
+Input:
+Options:
+
+Rule:
+(
+	({})
+):
+--> 
+{
+
+}
+

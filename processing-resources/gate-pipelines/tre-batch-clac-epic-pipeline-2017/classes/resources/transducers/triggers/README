@@ -1,0 +1,2 @@
+This transducer is used to relabel Gazetteer Lookup as Trigger annotations
+with the proper format for the Scoper module.

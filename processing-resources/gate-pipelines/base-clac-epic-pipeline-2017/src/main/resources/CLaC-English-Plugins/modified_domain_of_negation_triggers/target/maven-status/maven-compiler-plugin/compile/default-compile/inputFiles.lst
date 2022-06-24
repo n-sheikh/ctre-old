@@ -1,0 +1,6 @@
+/home/claclab/GATE_EPIC_PIPELINE_2017/src/main/resources/CLaC-English-Plugins/ExtractDomainOfNegationTriggers/src/main/java/ca/concordia/clac/ExtractDomainOfNegationTriggers.java
+/home/claclab/GATE_EPIC_PIPELINE_2017/src/main/resources/CLaC-English-Plugins/ExtractDomainOfNegationTriggers/src/main/java/ca/concordia/clac/DepRules.java
+/home/claclab/GATE_EPIC_PIPELINE_2017/src/main/resources/CLaC-English-Plugins/ExtractDomainOfNegationTriggers/src/main/java/ca/concordia/clac/InvestigateDependencies.java
+/home/claclab/GATE_EPIC_PIPELINE_2017/src/main/resources/CLaC-English-Plugins/ExtractDomainOfNegationTriggers/src/main/java/ca/concordia/clac/InvestigateConstituentsFromParseTree.java
+/home/claclab/GATE_EPIC_PIPELINE_2017/src/main/resources/CLaC-English-Plugins/ExtractDomainOfNegationTriggers/src/main/java/ca/concordia/clac/CreateAnnotations.java
+/home/claclab/GATE_EPIC_PIPELINE_2017/src/main/resources/CLaC-English-Plugins/ExtractDomainOfNegationTriggers/src/main/java/ca/concordia/clac/GenericScopeHelperClass.java

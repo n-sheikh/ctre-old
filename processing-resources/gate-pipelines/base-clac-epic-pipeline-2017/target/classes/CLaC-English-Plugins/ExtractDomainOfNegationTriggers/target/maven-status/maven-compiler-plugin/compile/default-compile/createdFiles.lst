@@ -1,0 +1,6 @@
+ca/concordia/clac/GenericScopeHelperClass.class
+ca/concordia/clac/DepRules.class
+ca/concordia/clac/ExtractDomainOfNegationTriggers.class
+ca/concordia/clac/InvestigateConstituentsFromParseTree.class
+ca/concordia/clac/InvestigateDependencies.class
+ca/concordia/clac/CreateAnnotations.class

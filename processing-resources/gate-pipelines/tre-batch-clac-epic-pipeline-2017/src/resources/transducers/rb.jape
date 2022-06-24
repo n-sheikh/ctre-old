@@ -1,0 +1,118 @@
+/**
+* Project: Tense 
+* Created by: Nadia Sheikh
+* Purpose: Uses tense and aspect to assign point of reference with respect to point of speech, assigns point of event with respect to point of reference (see "The tense of verbs" - Reichenbach for further information)
+* Development Notes:
+* Use Notes:
+*/
+
+
+Imports:{
+    import static gate.Utils.*;
+}
+
+Phase: Point_Of_Reference_Point_Of_Event
+Input: VC
+Options: Control = Appelt
+ 
+Rule:E-R-S 
+(
+ {VC.tense == "past", VC.aspect == "perfect"}|
+ {VC.tense == "past", VC.aspect == "perfect progressive"}
+):VCtemp
+-->
+{
+  gate.AnnotationSet VCTemps = (gate.AnnotationSet)bindings.get("VCtemp");    
+  gate.Annotation VCTempAnn = (gate.Annotation)VCTemps.iterator().next();
+  gate.AnnotationSet VCReals = inputAS.get("VC", start(VCTempAnn), end(VCTempAnn));
+  gate.Annotation VCRealAnn = (gate.Annotation)VCReals.iterator().next();
+  VCRealAnn.getFeatures().put("PointOfReference","<S");
+  VCRealAnn.getFeatures().put("PointOfEvent", "<R");
+
+}
+
+Rule:ER-S 
+(
+ {VC.tense == "past", VC.aspect == "indefinite"}|
+ {VC.tense == "past", VC.aspect == "progressive"}
+):VCtemp
+-->
+{
+  gate.AnnotationSet VCTemps = (gate.AnnotationSet)bindings.get("VCtemp");    
+  gate.Annotation VCTempAnn = (gate.Annotation)VCTemps.iterator().next();
+  gate.AnnotationSet VCReals = inputAS.get("VC", start(VCTempAnn), end(VCTempAnn));
+  gate.Annotation VCRealAnn = (gate.Annotation)VCReals.iterator().next();
+  VCRealAnn.getFeatures().put("PointOfReference","<S");
+  VCRealAnn.getFeatures().put("PointOfEvent", "=R");
+
+}
+
+Rule:E-RS 
+(
+ {VC.tense == "present", VC.aspect == "perfect"}|
+ {VC.tense == "present", VC.aspect == "perfect progressive"}
+):VCtemp
+-->
+{
+  gate.AnnotationSet VCTemps = (gate.AnnotationSet)bindings.get("VCtemp");    
+  gate.Annotation VCTempAnn = (gate.Annotation)VCTemps.iterator().next();
+  gate.AnnotationSet VCReals = inputAS.get("VC", start(VCTempAnn), end(VCTempAnn));
+  gate.Annotation VCRealAnn = (gate.Annotation)VCReals.iterator().next();
+  VCRealAnn.getFeatures().put("PointOfReference","=S");
+  VCRealAnn.getFeatures().put("PointOfEvent", "<R");
+
+}
+
+Rule:ERS 
+(
+ {VC.tense == "present", VC.aspect == "indefinite"}|
+ {VC.tense == "present", VC.aspect == "progressive"}
+):VCtemp
+-->
+{
+  gate.AnnotationSet VCTemps = (gate.AnnotationSet)bindings.get("VCtemp");    
+  gate.Annotation VCTempAnn = (gate.Annotation)VCTemps.iterator().next();
+  gate.AnnotationSet VCReals = inputAS.get("VC", start(VCTempAnn), end(VCTempAnn));
+  gate.Annotation VCRealAnn = (gate.Annotation)VCReals.iterator().next();
+  VCRealAnn.getFeatures().put("PointOfReference","=S");
+  VCRealAnn.getFeatures().put("PointOfEvent", "=R");
+
+}
+
+Rule:RS-E 
+(
+ {VC.tense == "future", VC.aspect == "indefinite"}|
+ {VC.tense == "future", VC.aspect == "progressive"}
+):VCtemp
+-->
+{
+  gate.AnnotationSet VCTemps = (gate.AnnotationSet)bindings.get("VCtemp");    
+  gate.Annotation VCTempAnn = (gate.Annotation)VCTemps.iterator().next();
+  gate.AnnotationSet VCReals = inputAS.get("VC", start(VCTempAnn), end(VCTempAnn));
+  gate.Annotation VCRealAnn = (gate.Annotation)VCReals.iterator().next();
+  VCRealAnn.getFeatures().put("PointOfReference","=S");
+  VCRealAnn.getFeatures().put("PointOfEvent", ">R");
+
+}
+
+Rule:S-R-E 
+(
+ {VC.tense == "future", VC.aspect == "perfect"}|
+ {VC.tense == "future", VC.aspect == "perfect progressive"}
+):VCtemp
+-->
+{
+  gate.AnnotationSet VCTemps = (gate.AnnotationSet)bindings.get("VCtemp");    
+  gate.Annotation VCTempAnn = (gate.Annotation)VCTemps.iterator().next();
+  gate.AnnotationSet VCReals = inputAS.get("VC", start(VCTempAnn), end(VCTempAnn));
+  gate.Annotation VCRealAnn = (gate.Annotation)VCReals.iterator().next();
+  VCRealAnn.getFeatures().put("PointOfReference",">S");
+  VCRealAnn.getFeatures().put("PointOfEvent", ">R");
+
+}
+
+
+
+
+
+

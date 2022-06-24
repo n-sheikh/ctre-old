@@ -1,0 +1,12 @@
+<!-- creole.xml ExtractDomainOfNegationAndModalityTriggers-->
+
+
+<!--
+This file just references the JAR file that contains the compiled resource.
+Configuration is contained in the @CreoleResource annotation on 
+clac.creole.extractScopeNegatorV2
+-->
+
+<CREOLE-DIRECTORY>
+  <JAR SCAN="true">ExtractDomainOfNegationTriggers.jar</JAR>
+</CREOLE-DIRECTORY>

@@ -1,0 +1,15 @@
+Phase: scope
+Input: SyntaxTreeNode Trigger Token
+Options: control = First
+
+Rule: NominalizationWithOfScope
+( {
+	SyntaxTreeNode.cat == "NP",
+	SyntaxTreeNode contains { Trigger.type == "noun" }
+} ):triggerNP
+( {
+	SyntaxTreeNode.cat == "PP",
+	SyntaxTreeNode contains { Token.string ==~ "(?i)of" }
+} ):scope
+-->
+  :scope.Scope = { rule = NominalizationWithOfScope }

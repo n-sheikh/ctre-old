@@ -1,0 +1,51 @@
+
+
+Description of the GATE ExtractDomainOfNegationAndModalityTriggers processing resource
+Sabine Rosenberg for the CLaC lab, Concordia University, Montreal, QC
+Sept 2013
+
+The ExtractGenericTriggers(V3) processing resource is be placed into the relevant GATE plugins folder (in the GATE App folder). 
+It has been tried and tested in GATE 5.- and GATE 6.- . 
+*****************************************************************************************************************************
+Note: the aim of this module is also allow the user to run the domain extractor module for as many distinct trigger annotations as they like with only having to instantiate the ExtractDomainOfNegationTriggers module once in GATE. Therefore, I implemented the functionality for the resource to be able to read the required parameters from a custom text file
+
+** Requirements:
+1/ to have run the ExtractGenericTriggersV3 processing resource successfully on the dataset - and thereby having the i.e negation trigger annotations present.
+Input Parameters to the module:
+
+(A) - the name of the dependency annotation set i.e for the Stanford Parser would be : Dependency (is by default set for stanford)
+(B) - The path to the file containing the required input parameters. 
+i.e Users/eai/triggersToExtractDomainOf.txt. (Note: I have included a sample txt file in the paths folder which will annotate all needed domain annotations - however you need to specify YOUR path in the file...)
+(C) - The name of the parse tree constituents annotations (note the name is different depending on if you parsed with the Stanford or the Charniak  Parser - i.e for text parsed with Stanford the input parameter would be: SyntaxTreeNode.(by default is set for stanford)
+(D) - the name of the annotation set containing sentences (usually leave the default setting "Sentence")
+(E) - the name of the annotation set containing tokens (usually leave the default setting "Token")
+**Leave all other options (F) & (G) at their default if you are requiring only narrow scope. Currently, the wide scope option has only been implemented for  negation triggers.
+(F) set to true for wide scope for negation triggers
+(G) set to true for wide scope for affixal negation triggers
+
+
+** This text file for i.e "triggersToExtractDomainOf.txt" will contain one entry on each line (for each type of domain required): each entry is made up of 2 parts separated by a comma (A,B).
+
+Example:
+If you want to annotate both implicit and explicit negation domains:
+	A -  name of the triggers Annotation set (that one generated with the ExtractGenericTriggersV3 module (i.e explicitNegTriggers)
+	B -  name of the output AnnotationSet (i.e explicitNegDomain)
+	
+	A - name of the triggers Annotation set (that one generated with the ExtractGenericTriggers module (i.e implicitNegTriggers)
+	B - name of the output AnnotationSet (i.e implicitNegDomain)
+	
+
+Therefore the entry in the text file would be: 
+explicitNegTriggers,explicitNegDomain
+implicitNegTriggers,implicitNegDomain
+
+Now the module will process at one time as many trigger annotation sets as have been entered in the text file.
+
+Description of Module:
+This component is to be run after running the ExtractGenericTriggersV3 component since it relies on those annotations. This component attempts to find the domain within the phrase that the relevant trigger affects. The component will output annotations including the following features:
+(i)The ID of the Trigger responsible for this domain annotation
+(ii) The text string of the initial trigger affected by the dependency relation
+(iii) The text string of the input trigger
+(iii)the text span of the domain annotation
+(iv) the start and end offsets of the annotation
+*****************************************************************************************************************************

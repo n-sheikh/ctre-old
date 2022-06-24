@@ -1,0 +1,17 @@
+run_identifier: tst-bert-base-uncased-baseline
+utility_cls: cnc_utilities
+dataset_cls: CNCTask3aDataset
+trn_data_path: /home/nadia/Documents/CLaC-Lab/ctre/cnc-task-3/data/data/DebugPipeline
+tst_data_path: /home/nadia/Documents/CLaC-Lab/ctre/cnc-task-3/data/data/CSV GoldStandard/Development
+output_folder_path: /home/nadia/Documents/CLaC-Lab/ctre/cnc-task-3/experiments/runs/
+nos_of_folds: 5
+collate_fn_name: LLMCollateFn
+max_epochs: 10
+llm_name: bert-base-uncased
+loss_functions: cross-entropy-loss
+hidden_dropout_prob: 0.1
+attention_probs_dropout_prob: 0.1
+learning_rates: 0.00005, 0.00001, 0.000005
+pooling_strategy: mean
+batch_sizes: 1
+optimizers: adam

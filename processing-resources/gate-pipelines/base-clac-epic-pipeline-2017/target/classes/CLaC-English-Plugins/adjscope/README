@@ -1,0 +1,38 @@
+Scoper
+========
+
+Instructions
+------------
+
+This is a GATE Processing Resource is used to annotate the scope of a
+generic trigger.
+
+
+Requirements:
+    - Stanford Parser Wrapper (For Annotation Types)
+
+Parameters:
+    - triggerAnnName: Name of the trigger annotations
+    - sentenceAnnName: Name of the sentence annotations
+    - (optional) inputAnnotationSetName: Name of the input annotation set
+    - (optional) outputAnnotationSetName: Name of the output annotation set
+    - (optional) inheritedFeatures: List of Trigger features to add to the Scope
+
+Flags: (default value)
+    - filterPredicates: (false) limit scope detection for triggers with a known 'type'
+    - includeTrigger: (false) Always include the trigger within the scope
+    - EnableNegatorScope: (true) Include all Scoper heuristics
+    - EnableAdjScope: (false) Include only heuristics for modifiers
+    - EnableNomScope: (false) UNSTABLE - Include nominal qualifier heuristic
+    - EnableGrammarScope: (false) UNSTABLE - Include grammar scope heuristic
+
+Required Annotations:
+    - Sentence (param)
+    - Trigger (param)
+    - Token
+    - Dependency
+    - SyntaxTreeNode
+    - Sentence
+
+Output Annotation:
+    - Scope: Detected scope for a trigger

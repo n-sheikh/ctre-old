@@ -1,0 +1,56 @@
+Imports: {
+  import clac.creole.scope.Scoper;
+}
+// Fixes the triggerID feature by changing it from the negator trigger's ID
+// to the scoper "Trigger" Annotation's ID
+
+Phase: TriggerID
+Input: Trigger Scope
+Options: control = all
+
+Rule: fixTriggerID
+({Scope}):scope
+    -->
+:scope{
+    gate.Annotation scope = (gate.Annotation) scopeAnnots.iterator().next();
+    gate.FeatureMap scopeFeatures = scope.getFeatures();
+
+    // Get correct Trigger for this Scope
+    Annotation negatorTrigger = inputAS.get((Integer) scopeFeatures.get(Scoper.SCOPE_TRIGGERID_FEATURE));
+    Annotation trigger = null;
+
+    // Get the Trigger annotation with a "relabelID"
+    for (Annotation a : Scoper.getOverlaping(negatorTrigger, inputAS)) {
+        if ( a.getType().equals(Scoper.TRIGGER_ANNOTATION_TYPE)
+                && negatorTrigger.coextensive(a)
+                && a.getFeatures().containsKey("relabelID") ) {
+            trigger = a;
+        }
+    }
+    if (trigger == null) {
+        inputAS.remove(scope);
+        if (Scoper.DEBUG) {
+            System.err.println( "Warning: Removed Negator scope "
+                    + "for a non existing trigger ("
+                    + Scoper.getAnnotationText(negatorTrigger, doc).toString() + ")" );
+        }
+    } else {
+        gate.FeatureMap triggerFeatures = trigger.getFeatures();
+
+        // Add new Scope feature: triggerID, triggerString
+        scopeFeatures.remove(Scoper.SCOPE_TRIGGERID_FEATURE);
+        scopeFeatures.put(Scoper.SCOPE_TRIGGERID_FEATURE, trigger.getId());
+        scopeFeatures.put(Scoper.SCOPE_TRIGGERSTRING_FEATURE,
+                Scoper.getAnnotationText(trigger, doc));
+        for (String f : Scoper.SCOPE_INHERITED_FEATURES) {
+            if (triggerFeatures.containsKey(f)) {
+                scopeFeatures.put(f, triggerFeatures.get(f));
+            }
+        }
+
+        // Add new Trigger features: scopeID, scopeString, rScopeIDs
+        triggerFeatures.put(Scoper.TRIGGER_SCOPEID_FEATURE, scope.getId());
+        triggerFeatures.put(Scoper.TRIGGER_SCOPESTRING_FEATURE,
+                Scoper.getAnnotationText(scope, doc));
+    }
+}

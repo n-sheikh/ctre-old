@@ -1,0 +1,128 @@
+/** 
+* Project Twitter Semeval
+* Created by: Maksym Perepichka
+* Purpose: Create Tweet annotation
+* Development Notes:
+* Use Notes: 
+*
+* This is to be used for tweets downloaded via the tweet_downloader
+* associated with Semeval competition. This particular JAPE rule currently only
+* supports format obtained from downloading tweets associated with Subtask BD
+* of the Semeval competition.
+* 
+* The format of the input tweets should be as follows:
+* 
+* Tweet_ID[tab]Tweet_Topic[tab]Tweet_Sentiment[tab]Tweet_Content
+* [...]
+*
+* The rule also removes unavailable tweets.
+*
+*/
+
+Imports: {
+import static gate.Utils.*;
+}
+
+Phase:firstpass
+Input: Token SpaceToken
+Options: control = all
+
+Rule: TweetAnnotation
+
+(
+  {Token.kind == number}
+  {SpaceToken.kind == control}
+):tweetID
+/*(
+  (
+   {Token}
+   ({SpaceToken.kind == space})?
+  )*
+  {SpaceToken.kind == control}
+):tweetTopic
+(
+  (
+    ( 
+      {Token.string == negative} |
+      {Token.string == positive} |
+      {Token.string == neutral} |
+      {Token.string == 0} |
+      {Token.string == 1} |
+      {Token.string == 2} 
+    ) |
+    (
+      {Token.string == off}
+      {SpaceToken.kind == space}
+      {Token.string == topic}
+    ) |
+    (
+      {Token.subkind == dashpunct}
+      {Token.kind == number}
+    )
+  )
+  {SpaceToken.kind == control}
+):tweetSentiment
+(
+  (
+   {Token}
+   (({SpaceToken.kind == space})?)*
+  )*
+  {SpaceToken.kind == control}
+):tweetContent */
+-->
+{
+  try{
+
+    // Get the annotation sets we need
+    // gate.AnnotationSet tweetContentSet = (gate.AnnotationSet)bindings.get("tweetContent");
+    gate.AnnotationSet tweetIDSet = (gate.AnnotationSet)bindings.get("tweetID");
+    // gate.AnnotationSet tweetTopicSet = (gate.AnnotationSet)bindings.get("tweetTopic");
+    //gate.AnnotationSet tweetSentimentSet = (gate.AnnotationSet)bindings.get("tweetSentiment");
+
+    // Gets offsets we need
+    //Long startTweetContent = tweetContentSet.firstNode().getOffset();
+    //Long endTweetContent = tweetContentSet.lastNode().getOffset();
+
+    Long startTweetID = tweetIDSet.firstNode().getOffset();
+    Long endTweetID = tweetIDSet.lastNode().getOffset();
+
+    //Long startTweetTopic = tweetTopicSet.firstNode().getOffset();
+    //Long endTweetTopic = tweetTopicSet.lastNode().getOffset();
+
+    //Long startTweetSentiment = tweetSentimentSet.firstNode().getOffset();
+    //Long endTweetSentiment = tweetSentimentSet.lastNode().getOffset();
+
+    // Gets string content we need to store
+    //String tweetContent = doc.getContent().getContent(
+        //startTweetContent, endTweetContent-1).toString();
+    String tweetID = doc.getContent().getContent(
+        startTweetID, endTweetID-1).toString();
+    //String tweetTopic = doc.getContent().getContent(
+        //startTweetTopic, endTweetTopic-1).toString();
+    //String tweetSentiment = doc.getContent().getContent(
+        //startTweetSentiment, endTweetSentiment-1).toString();
+
+    // Create Feature map
+    gate.FeatureMap features = Factory.newFeatureMap();
+    features.put("rule", "TweetAnnotation");
+    features.put("ID", tweetID);
+    //features.put("topic", tweetTopic);
+    //features.put("sentiment", tweetSentiment);
+    //features.put("string", tweetContent);
+
+    outputAS.add(startTweetID, endTweetID, "Tweet", features);
+
+    // We should also make an empty output tweet annotation for later
+    /*gate.FeatureMap outputFeatures = Factory.newFeatureMap();
+    outputAS.add(
+        startTweetContent,
+        endTweetContent,
+        "OutputTweet",
+        outputFeatures
+    );*/
+
+
+  } catch (Exception e){
+    // Silence exception for now
+  }
+}

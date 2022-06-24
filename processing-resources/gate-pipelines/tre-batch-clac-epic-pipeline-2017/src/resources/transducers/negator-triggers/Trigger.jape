@@ -1,0 +1,190 @@
+//Import Added by N.S. (18/05/2022) to debug errors in Extract Domain of NegatorTriggers plugin.
+Imports:{
+   import static gate.Utils.*;
+}
+
+
+
+Phase: Trigger
+Input: Lookup Token Trigger
+Options: control = appelt
+
+// TODO: Negator cannot handle 'control = all' because negator's scope tracks
+// Token ID, and not Trigger ID.
+
+// Create annotations with features expected by negator-scope
+
+Rule: notContraction
+(
+ { Token.string == "n't" }
+):trigger
+    -->
+     :trigger.Trigger = {
+        type = negator
+        minorType = explicit
+        source = Not_Defined
+        relabelID = negator-explicit
+     },
+     :trigger.explicitNegTriggers = {
+        String = :trigger.Token@string
+        priorpolarity = negative
+        Type = explicitNeg
+        classType = NegTrigger
+        Pos_category = RB //TODO:?
+        source = Not_Defined
+        relabelID = negator-explicit
+     }
+
+Rule: NegatorExplicit
+(
+ { Lookup.majorType == negator, Lookup.minorType == explicit, Token }
+):trigger
+    -->
+     :trigger.Trigger = {
+        type = negator
+        minorType = :trigger.Lookup.minorType
+        source = :trigger.Lookup.source
+        relabelID = negator-explicit
+     },
+     :trigger.explicitNegTriggers = {
+        String = :trigger.Token@string
+        priorpolarity = negative
+        Type = explicitNeg
+        classType = NegTrigger
+        Pos_category = :trigger.Lookup.pos
+        source = :trigger.Lookup.source
+        relabelID = negator-explicit
+     }
+Rule: NegatorImplicit
+(
+ { Lookup.majorType == negator, Lookup.minorType == implicit, Token }
+):trigger
+    -->
+     :trigger.Trigger = {
+        type = negator
+        minorType = :trigger.Lookup.minorType
+        source = :trigger.Lookup.source
+        relabelID = negator-implicit
+     },
+     :trigger.implicitNegTriggers = {
+        String = :trigger.Token@string
+        priorpolarity = negative
+        Type = implicitNeg
+        classType = NegTrigger
+        Pos_category = :trigger.Lookup.pos
+        source = :trigger.Lookup.source
+        relabelID = negator-implicit
+     }
+Rule: NegatorSelf
+(
+ { Lookup.majorType == negator, Lookup.minorType == self, Token }
+):trigger
+    -->
+     :trigger.Trigger = {
+        type = negator
+        minorType = :trigger.Lookup.minorType
+        source = :trigger.Lookup.source
+        relabelID = negator-self
+     },
+     :trigger.SelfNegOriginal = {
+        String = :trigger.Token@string
+        priorpolarity = negative
+        Type = Affixal_Negation
+        classType = NegTrigger
+        Pos_category = :trigger.Lookup.pos
+        source = :trigger.Lookup.source
+        relabelID = negator-self
+     }
+Rule: NegatorModal
+(
+ { Token.category == "MD" }
+):trigger
+    -->
+     :trigger.Trigger = {
+        type = modal
+        source = tag
+        relabelID = negator-modal
+     },
+     :trigger.modalTriggers = {
+        String = :trigger.Token@string
+        // priorpolarity = :trigger.Lookup.priorpolarity
+        Type = modal
+        classType = ModalityTrigger
+        Pos_category = MD
+        relabelID = negator-modal
+     }
+/**     
+Rule: NegatorValence
+(
+ { Lookup.minorType == "diminisher" } |
+ { Lookup.minorType == "hedge" } |
+ { Lookup.minorType == "intensifier" } 
+):trigger
+    -->
+     :trigger.valenceTriggers = {
+        String = :trigger.Token@string
+        Type = ValenceTrigger
+        classType = ValenceTrigger
+        relabelID = negator-valence
+     }
+*/
+
+//A copy of NegatorValence created by N.S. (18/05/2022) to debug errors in Extract Domain of NegatorTriggers plugin.
+Rule: NegatorValence
+(
+ { Lookup.minorType == "diminisher" } |
+ { Lookup.minorType == "hedge" } |
+ { Lookup.minorType == "intensifier" } 
+):trigger -->
+{
+   gate.AnnotationSet valenceTriggerAnnSet = (gate.AnnotationSet)bindings.get("trigger");
+   gate.Annotation valenceTriggerAnn = valenceTriggerAnnSet.iterator().next();
+   gate.AnnotationSet tokenAnnSet = (gate.AnnotationSet)gate.Utils.getContainedAnnotations(inputAS, valenceTriggerAnn, "Token");
+   if(tokenAnnSet.size() > 0){
+               //System.out.println(gate.Utils.cleanStringFor(doc, valenceTriggerAnn));
+               //System.out.println(valenceTriggerAnn.getId());
+               gate.Annotation tokenAnn = tokenAnnSet.iterator().next();
+               gate.FeatureMap features = Factory.newFeatureMap();
+               features.put("String", tokenAnn.getFeatures().get("string"));
+               features.put("Type", "ValenceTrigger");
+               features.put("classType", "ValenceTrigger");
+               features.put("relabelID", "negator-valence");
+               outputAS.add(valenceTriggerAnn.getStartNode(), valenceTriggerAnn.getEndNode() ,"valenceTriggers", features);
+   }
+   //System.out.println(valenceTriggerAnnSet.size());
+   
+}
+
+
+
+//TODO: Evaluate which sentiment triggers Negator evaluates well
+Rule: Trigger2Negator
+(
+ { Trigger, Token.category ==~ "VB.*", Trigger.type == "negator" } |
+ { Trigger, Token.category ==~ "NN.*", Trigger.type == "negator" }
+):trigger
+    -->
+     :trigger.implicitNegTriggers = {
+        String = :trigger.Token@string
+        priorpolarity = :trigger.Trigger.priorPolarity
+        scoperType = sentiment
+        Type = implicitNeg
+        classType = NegTrigger
+        Pos_category = :trigger.Token.category
+        source = :trigger.Trigger.source
+        relabelID = negator-other
+     },
+:trigger{
+    Annotation trigger = null;
+    for (Annotation a : triggerAnnots) {
+        if (a.getType().equals("Trigger")) {
+            trigger = a;
+        }
+    }
+    if (trigger == null) {
+        System.err.println("ERROR: Missing trigger in negator-trigger transducer");
+    }
+
+    trigger.getFeatures().put("relabelID", "negator-other");
+}
+

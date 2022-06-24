@@ -1,0 +1,26 @@
+Phase: Trigger
+Input: Token Lookup
+Options: control = appelt
+
+/*
+Rule: VerbTrigger
+(
+ {Lookup, Token.category ==~ "VB.*" }
+):trigger
+	-->
+	 :trigger.Trigger = { type = "verb", rule = ClausalTrigger }
+
+Rule: AdverbTrigger
+(
+ {Lookup, Token.category ==~ "RB.*" }
+):trigger
+	-->
+	 :trigger.Trigger = { type = "adverb", rule = AdverbTrigger }
+*/
+
+Rule: NounTrigger
+(
+ {Lookup, Token.category ==~ "NN.*" }
+):trigger
+	-->
+	 :trigger.Trigger = { type = "noun", rule = NominalTrigger }

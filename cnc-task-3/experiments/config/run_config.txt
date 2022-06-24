@@ -1,0 +1,10 @@
+run_identifier: tst-FVConcatCollateFn
+max_epochs: 10
+loss_functions: cross-entropy-loss
+learning_rates: 0.00005, 0.00001, 0.000005
+batch_sizes: 1
+optimizers: adam
+llm_name: bert-base-uncased
+hidden_dropout_prob: 0.1
+attention_probs_dropout_prob: 0.1
+pooling_strategy: mean

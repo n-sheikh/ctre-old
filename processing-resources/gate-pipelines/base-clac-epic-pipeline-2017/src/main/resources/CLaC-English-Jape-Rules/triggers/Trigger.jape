@@ -1,0 +1,37 @@
+Phase: Trigger
+Input: MPQATrigger Lookup Token
+Options: control = all
+
+Rule: TriggerHalil
+(
+ {Lookup.majorType=="halil", Token}
+):trigger
+    -->
+     :trigger.Trigger = {
+         type = :trigger.Lookup.minorType
+         source = halil
+     }
+
+Rule: TriggerMPQA
+(
+ {MPQATrigger}
+):trigger
+    -->
+     :trigger.Trigger = {
+         type = sentiment
+         source = :trigger.MPQATrigger.source
+         priorPolarity = :trigger.MPQATrigger.priorPolarity
+     }
+
+Rule: TriggerOther
+(
+ {Lookup.majorType=="nrc",     Token} | // Not recommended!
+ {Lookup.majorType=="afinn",   Token} |
+ {Lookup.majorType=="bingliu", Token}
+):trigger
+    -->
+     :trigger.Trigger = {
+        type = sentiment
+        source = :trigger.Lookup.majorType
+        priorPolarity = :trigger.Lookup.priorpolarity
+     }

@@ -1,0 +1,87 @@
+/** 
+* Project Twitter Semeval
+* Created by: Maksym Perepichka
+* Purpose: Helps sentence splitter by additionally splitting sentences.
+* Development Notes:
+* Use Notes: Splits sentences on tabs.
+*/
+
+Imports: {
+import static gate.Utils.*;
+}
+
+Phase:firstpass
+Input: Tweet
+Options: control = all
+
+
+Rule: TrimSentence
+
+(
+  {Tweet}
+):match
+-->
+{
+
+  // Find if the sentence contains UserID tag
+  AnnotationSet set = (AnnotationSet) bindings.get("match");
+  Annotation annotation = set.iterator().next();
+
+  AnnotationSet sentenceSet = inputAS.get(
+        "Sentence", 
+        start(annotation),
+        end(annotation)
+  );
+
+  Long startTweetOffset = set.firstNode().getOffset();
+  Long endTweetOffset = set.lastNode().getOffset();
+
+  try{
+
+    FeatureMap features;
+
+    //Annotation spaceToken;
+
+    for (Annotation sentence : sentenceSet){
+
+      Long startOffset = sentence.getStartNode().getOffset();
+      Long endOffset = sentence.getEndNode().getOffset();
+
+      boolean changed = false;
+
+      if (startOffset < startTweetOffset){
+        startOffset = startTweetOffset; 
+        changed = true;
+      }
+        
+      if (endOffset > endTweetOffset){
+        endOffset = endTweetOffset;
+        changed = true;
+      }
+
+      if (changed){
+
+        // Now we want to split the sentence on the last char of the UserID
+        features = Factory.newFeatureMap();
+        features.putAll(sentence.getFeatures());
+        
+        // Creates the new annotation
+        outputAS.add(
+            startOffset,
+            endOffset,
+            "Sentence",
+            features
+        );
+
+        // Removes the original sentence annotation after splitting
+        outputAS.remove(sentence);
+      }
+    }
+
+  } catch (Exception e){
+      System.out.println("--- Exception ---");
+      System.out.println(e);
+    // For now, silence it
+  }
+
+}

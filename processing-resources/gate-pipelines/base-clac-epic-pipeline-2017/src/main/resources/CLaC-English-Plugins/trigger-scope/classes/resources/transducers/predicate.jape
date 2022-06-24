@@ -1,0 +1,11 @@
+Phase: Predicate
+Input: Lookup Token
+Options: control = appelt
+
+Rule: Predicate
+(
+ {Lookup}
+):pred
+	-->
+	 :pred.Predicate = {
+	 }

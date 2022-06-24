@@ -1,0 +1,94 @@
+
+	       README for Penn Treebank CDROM Release 3
+	       ========================================
+
+This CDROM contains the following previously released material:
+
+	+ WSJ tagged and parsed text
+	+ Atis tagged and parsed text
+	+ Brown tagged text (parsed text is new)
+
+and the following new material:
+
+	+ Switchboard tagged, dysfluency-annotated, and parsed text
+	+ Brown parsed text
+
+For information about the WSJ and Atis data, see the README.cd2 in the
+docs/ directory. 
+
+The Switchboard dataset includes:
+
+	+ 1126 files tagged and dysfluency-annotated
+	+ 650 files parsed (a subset of the 1126)
+
+These files are organized into 3 subdirectories, named "2","3","4",
+according to the initial digit of the 4-digit file-id number. The
+number of files per directory is shown here:
+
+    tagged and dysfluency-annotated:
+	2/  455 files
+	3/  477 files
+	4/  194 files
+    parsed:
+	2/  236 files
+	3/  260 files
+	4/  154 files
+
+The Brown Corpus dataset includes the following Brown subsets:
+
+	+ cf	popular lore
+	+ cg	belles lettres, biography, memoires, etc.
+	+ ck	general fiction
+	+ cl	mystery and detective fiction
+	+ cm	science fiction
+	+ cn	adventure and western fiction
+	+ cp	romance and love story
+	+ cr	humor
+
+all subsets are complete except /cf which contains files 1-32 and /cg which
+contains files 1-36.
+
+Directory structure
+
+	readme.1st			- this file
+
+	readme.all			- concatenation of all other
+					  readme files in this release
+					  (these are all found within the
+					  directories listed below)
+
+	tagged/				- part-of-speech tags only
+		pos/
+			atis/
+			brown/c*/
+			swbd/{2,3,4}/
+			wsj/
+
+	dysfl/
+		dff/			- dysfluency annotation only
+			swbd/{2,3,4}/
+		mgd/			- dysfluency annotation and
+					  part-of-speech tags
+			swbd/{2,3,4}/
+		dps/			- dysfluency annotation,
+					  part-of-speech tags and turns
+					  joined 
+			swbd/{2,3,4}/
+
+	parsed/
+		prd/			- syntactic annotation only
+			atis/
+			brown/c*/
+			swbd/{2,3,4}/
+			wsj/
+		mrg/			- syntactic annotation and part-
+					  of-speech tags
+			atis/
+			brown/c*/
+			swbd/{2,3,4}/
+			wsj/
+
+	docs/				- annotation style manuals and
+					  other information
+
+

@@ -1,0 +1,72 @@
+/**
+* Project: CNC - (Shared Task Carried out by Nadia (in May 2022)
+* Created by: Nadia Sheikh
+* Purpose: Annotates gold standard spans of arguments and signals of causal relations
+* Development Notes:
+* Use Notes:
+*/
+
+/**
+* Project: CNC - (Shared Task Carried out by Nadia (in May 2022)
+* Created by: Nadia Sheikh
+* Purpose: Annotates gold standard spans of arguments and signals of causal relations
+* Development Notes:
+* Use Notes:
+*/
+
+
+
+Imports:{
+   import static gate.Utils.*;
+}
+
+
+
+
+Phase: ArgSigSpan
+Input: text
+Options: control = appelt
+
+Rule: GoldStandardArgSigSpan
+(
+ {text}
+):text -->
+{
+   String[] featureNames = {"arg0", "arg1", "sig0", "sig1", "sig2"};
+   gate.AnnotationSet textAnnSet = (gate.AnnotationSet)bindings.get("text");
+   gate.Annotation textAnn = textAnnSet.iterator().next();
+   FeatureMap originalFeatures = (FeatureMap)textAnn.getFeatures();
+   FeatureMap features = Factory.newFeatureMap();
+   features.put("agreement", originalFeatures.get("agreement"));
+   features.put("index", originalFeatures.get("index"));
+   features.put("label", originalFeatures.get("label"));
+   features.put("num_votes", originalFeatures.get("num_votes"));
+   features.put("sample_set", originalFeatures.get("sample_set"));
+   int featureSize = (int)originalFeatures.size();
+   outputAS.add(textAnnSet.firstNode(), textAnnSet.lastNode() ,"TextAnn", features);
+   if (featureSize > 5){
+      int nosAnnSets = (featureSize - 5) / 5;
+      System.out.println(nosAnnSets);
+      Long startOffset = (Long)gate.Utils.start(textAnn);
+      System.out.println(startOffset);
+      for (int i = 0; i < nosAnnSets; i++){
+          String prefix = String.valueOf(i);
+          for (int j = 0; j < featureNames.length; j++){
+             String key = prefix + "_" + featureNames[j];
+         System.out.println(key);
+         String value = (String)originalFeatures.get(key);
+         System.out.println(value);
+         String[] indices = value.split(":", 0);
+         if (indices.length > 0){
+            Long annStartOffset = startOffset + Long.parseLong(indices[0]);
+            Long annEndOffset = startOffset + Long.parseLong(indices[1]);
+            try{
+               outputAS.add(annStartOffset, annEndOffset, key, Factory.newFeatureMap());
+               }catch(Exception e){
+                      e.printStackTrace();
+               }
+         }
+          }
+      }
+   }
+}

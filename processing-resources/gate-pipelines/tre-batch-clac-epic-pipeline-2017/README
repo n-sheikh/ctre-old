@@ -1,0 +1,78 @@
+BatchPipeline
+===================
+
+Instructions
+------------
+
+There are two ways to run this. It can be run through ant with a distributable
+jar using ant run with the GATE_HOME variable set, or the build.properties
+value set. Otherwise, it can be compiled to a system dependant jar by running
+ant localjar, which will include GATE libraries in the manifest classpath.
+
+Local:
+
+    # Compile it
+    ant localjar
+    # run
+    java -jar build/jar/BatchPipeline.jar <label> <output directory> <filePath> [<filePath> [...]]
+
+For example, you could use:
+
+    ant localjar && java -jar BatchPipeline.jar mpqa-testrun ~/Corpora/mpqa/test/ ~/Corpora/mpqa/preprocess/*
+
+Distributable:
+
+    ant jar # optional, ant run compiles if necessary
+
+    ant run -Dargs='<label> <output directory> <filePath> [<filePath> [...]]'
+
+The output files will be in <output directory> with the same name as the
+original file. These can be loaded directly into GATE.
+
+
+Configuration
+-------------
+
+This pipeline is setup so that it will load user plugins from a custom
+directory. To set this up for your environment, modify:
+
+    src/resources/config/plugin-paths.conf
+
+To include paths that contain plugin directories (not the plugin directories
+themselves). If you store all your plugins in a single directory, this would
+be as simple as adding the path to that directory. E.g. this could be:
+
+    /home/my_user/Plugins
+
+The pipeline will also work if the provided paths contain directories which
+aren't CREOLE resources.
+
+Requirements
+------------
+
+
+In addition to the plugins that come with GATE, as well as the gazetteers and
+transducers provided in 'src/resources', you will need the following in your
+environment in order to run the pipeline.
+
+Java Libraries Required:
+
+- Scoper: the jar should be in 'lib'
+
+CREOLE Plugin Requirements:
+
+- Negator-scope (ExtractDomainOfNegationAndModalityTriggers)
+- Scoper
+
+CREOLE Plugins for Exporting (if EXPORT flag is set to true):
+
+- FeatureExporter
+
+CREOLE Plugins for Tweets (if TWITTER flag is set to true):
+
+- ParserStanford (modified to reuse partially tagged tokens)
+- CarnegieMellonTokenizer (CMU Tokenizer)
+- StanfordSentenceSplitterForTweets
+- CMUposTagger
+- AnnotationModifier
+- TweetTokenMerger
